@@ -215,10 +215,11 @@
   pointer-events: none;
 }
 .envelope-full__monogram {
-  font-family: "Lobster", Georgia, cursive;
-  font-size: clamp(1.5rem, 5.2vw, 2.2rem);
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 4.4vw, 1.75rem);
   line-height: 1;
-  letter-spacing: .01em;
+  letter-spacing: .04em;
   color: var(--env-seal-ink);
   text-shadow:
     0 1px 0 color-mix(in srgb, var(--env-seal) 55%, #fff),
