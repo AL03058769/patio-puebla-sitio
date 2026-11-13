@@ -12,7 +12,6 @@
   if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
 
   var cover = document.querySelector(".cover");
-  var body = document.body;
 
   function safe(selector, root) {
     try { return (root || document).querySelector(selector); } catch (e) { return null; }
@@ -135,17 +134,9 @@
   }
 
   function watchGate() {
-    if (!body.classList.contains("is-locked")) {
-      initHero();
-      return;
-    }
-    var observer = new MutationObserver(function () {
-      if (body.classList.contains("invitation-open")) {
-        observer.disconnect();
-        initHero();
-      }
-    });
-    observer.observe(body, { attributes: true, attributeFilter: ["class"] });
+    // El héroe se revela detrás del sobre: cuando la portada termina de abrir,
+    // el contenido ya está en su sitio y no vuelve a aparecer con un segundo fade.
+    initHero();
   }
 
   initCover();

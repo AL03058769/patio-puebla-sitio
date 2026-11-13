@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="../collection/base.css">
 <link rel="stylesheet" href="eventos.css">
 <link rel="stylesheet" href="../collection/covers.css">
+<link rel="stylesheet" href="../collection/envelope.css">
+<link rel="stylesheet" href="../collection/clasico.css">
 </head>
 <body class="ev ev--talavera layout-split"
       data-demo="ev-talavera"
@@ -23,30 +25,33 @@
 <div class="progress" data-progress aria-hidden="true"><span></span></div>
 
 <div class="gate ev-gate" data-gate role="dialog" aria-modal="true" aria-label="Abrir la invitación de Mariana & Emilio · 16.10.2027">
-  <div class="cover cover--video cover--talavera" data-cover="video">
-  <picture class="cover__media">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/talavera-m.webp" type="image/webp">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/talavera-m.jpg" type="image/jpeg">
-  <source srcset="../../assets/covers/talavera.webp" type="image/webp">
-  <img src="../../assets/covers/talavera.jpg" alt="" aria-hidden="true" fetchpriority="high">
-</picture>
-  <div class="cover__tone" aria-hidden="true"></div>
-  <div class="cover__decor cover__tiles" aria-hidden="true"></div>
-  <video class="cover__video" data-gate-video data-rate="1.1" hidden muted playsinline preload="auto" poster="../../assets/envelope-talavera.jpg" aria-hidden="true"><source src="../../assets/envelope-talavera.mp4" type="video/mp4"></video>
-  <button class="gate__skip" data-skip type="button" hidden>Saltar video</button>
-  <div class="gate__content cover__content">
-    <div class="cover__panel">
-      <div class="cover__copy">
-        <p class="cover__names">Mariana <em>&amp;</em> Emilio</p>
-        <p class="cover__meta"><span>16 · 10 · 2027</span><i></i><span>Atlixco</span><i></i><span>17:00</span></p>
-        <p class="cover__note">Una boda de azul y barro.</p>
-      </div>
-      <div class="cover__action">
-  <button class="cover__seal" type="button" data-open aria-label="Abrir la invitación de Mariana &lt;em&gt;&amp;amp;&lt;/em&gt; Emilio">
-    <span class="cover__seal-mark">M&amp;E</span>
-  </button>
-  <span class="cover__hint">Toca el sello</span>
-</div>
+  <div class="cover cover--envelope cover--full cover--talavera" data-cover="envelope">
+  <div class="envelope-full" data-envelope>
+    <div class="envelope-full__paper" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--left" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--right" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--bottom" aria-hidden="true"></div>
+    <div class="envelope-full__flap" aria-hidden="true"></div>
+    <button class="envelope-full__seal" data-open type="button" aria-label="Abrir la invitación de Mariana &amp;amp;amp; Emilio">
+      <span class="sr-only">Abrir la invitación</span>
+      <span class="envelope-full__wax" aria-hidden="true"><svg class="envelope-full__emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 8c4.5 5 4.5 11 0 15-4.5-4-4.5-10 0-15Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M40 24c-5 4.5-11 4.5-15 0 4-4.5 10-4.5 15 0Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M24 40c-4.5-5-4.5-11 0-15 4.5 4 4.5 10 0 15Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M8 24c5-4.5 11-4.5 15 0-4 4.5-10 4.5-15 0Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M35.3 12.7c-6.4 2.5-11 7-12.7 12.7 5.7-1.7 10.2-6.3 12.7-12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M35.3 35.3c-2.5-6.4-7-11-12.7-12.7 1.7 5.7 6.3 10.2 12.7 12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M12.7 35.3c2.5-6.4 7-11 12.7-12.7-1.7 5.7-6.3 10.2-12.7 12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M12.7 12.7c6.4 2.5 11 7 12.7 12.7-5.7-1.7-10.2-6.3-12.7-12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <circle cx="24" cy="24" r="3.4" fill="currentColor" fill-opacity=".2"/>
+  </g>
+</svg></span>
+    </button>
+    <div class="envelope-full__foot">
+      <p class="envelope-full__names">Mariana <em>&amp;</em> Emilio</p>
+      <p class="envelope-full__date">16 · 10 · 2027 · Atlixco · 17:00</p>
+      <p class="envelope-full__hint">Toca el sello para abrir tu invitación</p>
     </div>
   </div>
 </div>
@@ -114,7 +119,7 @@
 
   <section class="ev-section ev-intro" id="historia">
     <div class="ev-wrap ev-intro__grid">
-      <h2 class="ev-h2">Una boda <em>de azul y barro.</em></h2>
+      <h2 class="ev-h2">Nuestra historia</h2>
       <div class="ev-intro__text">
         <p class="lede">Nos casamos en una hacienda de Atlixco, entre talavera, árboles y mesa larga. Queremos una tarde que se alargue hasta la madrugada.</p>
         <p>La ceremonia es a las cinco. Después hay cóctel, cena y baile en el patio.</p>
@@ -129,7 +134,7 @@
   <section class="ev-section ev-details" id="detalles">
     <div class="ev-wrap">
       <div class="ev-section-head">
-        <h2 class="ev-h2">El día, <em>en azul.</em></h2>
+        <h2 class="ev-h2">¿Dónde y cuándo?</h2>
         <p>Una sola sede y una mesa que no se acaba.</p>
       </div>
       <div class="ev-details__grid"><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg><p class="ev-detail__label">La hacienda</p><p class="ev-detail__value">Hacienda Santa Bárbara</p><p class="ev-detail__note">Atlixco, Puebla. Estacionamiento.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><p class="ev-detail__label">La fecha</p><p class="ev-detail__value">Sábado 16 de octubre</p><p class="ev-detail__note">Ceremonia 17:00.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6l1 5-2 1 3 9H7l3-9-2-1 1-5Z"/><path d="M9 4c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg><p class="ev-detail__label">Código</p><p class="ev-detail__value">Formal</p><p class="ev-detail__note">Acentos azules.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11"/><path d="M3 9h18v4H3zM12 9v11"/><path d="M12 9c-2.5 0-4-1.2-4-2.8C8 4.9 9 4 10.4 4 12 4 12 6.2 12 9Zm0 0c2.5 0 4-1.2 4-2.8C16 4.9 15 4 13.6 4 12 4 12 6.2 12 9Z"/></svg><p class="ev-detail__label">Regalos</p><p class="ev-detail__value">Lluvia de sobres</p><p class="ev-detail__note">Tu presencia es lo importante.</p></article></div>
@@ -139,7 +144,7 @@
   <section class="ev-section ev-plan" id="plan">
     <div class="ev-wrap ev-plan__grid">
       <div class="ev-plan__head">
-        <h2 class="ev-h2">La tarde, <em>paso a paso.</em></h2>
+        <h2 class="ev-h2">Itinerario</h2>
         <p>Ceremonia, cena y baile.</p>
       </div>
       <div class="ev-plan__list"><div class="ev-plan__row"><p class="ev-plan__time">17:00</p><div><p class="ev-plan__title">Ceremonia</p><p class="ev-plan__desc">En el patio de la hacienda.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">18:30</p><div><p class="ev-plan__title">Cóctel</p><p class="ev-plan__desc">Mezcal y música.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">20:00</p><div><p class="ev-plan__title">Cena</p><p class="ev-plan__desc">Mesa larga bajo los árboles.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">22:00</p><div><p class="ev-plan__title">Baile</p><p class="ev-plan__desc">Hasta que aguante la pista.</p></div></div></div>
@@ -153,7 +158,7 @@
 <section class="ev-section ev-vinyl" id="cancion">
   <div class="ev-wrap ev-vinyl__grid">
     <div class="ev-vinyl__copy">
-      <h2 class="ev-h2">Nuestra <em>canción.</em></h2>
+      <h2 class="ev-h2">La playlist de la fiesta</h2>
       <p>La primera que bailamos. La que vamos a bailar otra vez cuando la pista esté vacía.</p>
       <p class="ev-vinyl__note">Lado A · 03:42 · Para bailar juntos</p>
       <button class="btn btn--ghost" type="button" data-vinyl-toggle aria-pressed="true">
@@ -172,6 +177,10 @@
 
   <section class="ev-section ev-gallery" id="galeria">
     <div class="ev-wrap">
+      <div class="ev-section-head">
+        <h2 class="ev-h2">Momentos</h2>
+        <p>Un repaso de los momentos que nos trajeron hasta aquí.</p>
+      </div>
       <div class="ev-gallery__grid"><button type="button" data-lightbox data-alt="Fachada de referencia de una hacienda" data-caption="La hacienda."><img src="../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-6.jpg" alt="Fachada de referencia de una hacienda" loading="lazy"></button><button type="button" data-lightbox data-alt="Patrón de referencia de talavera poblana" data-caption="La mesa, en azul."><img src="../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-6.jpg" alt="Patrón de referencia de talavera poblana" loading="lazy"></button></div>
       <p class="ev-gallery__caption">Fotografías de referencia. Esta celebración es una demo de Patio.</p>
     </div>
@@ -225,7 +234,7 @@
   
 <section class="ev-section ev-gift" id="regalos">
   <div class="ev-wrap ev-gift__inner">
-    <h2 class="ev-h2">Lluvia de sobres</h2>
+    <h2 class="ev-h2">Mesa de regalos</h2>
     <div><p>Si quieres darnos algo, un sobre con tu bendición. Lo abriremos en casa, sin prisa.</p><p>No hay mesa de regalos.</p></div>
   </div>
 </section>
@@ -233,7 +242,7 @@
   <section class="ev-section ev-rsvp" id="confirma">
     <div class="ev-wrap ev-rsvp__grid">
       <div class="ev-rsvp__head">
-        <h2 class="ev-h2">¿Nos <em>acompañas?</em></h2>
+        <h2 class="ev-h2">Confirma tu asistencia</h2>
         <p>Confirma antes del 1 de octubre. Los lugares son limitados.</p>
         <p class="small">Demo. Tus datos quedan en este navegador.</p>
       </div>
@@ -256,7 +265,7 @@
         <label for="ev-talavera-guests">Lugares</label>
         <select id="ev-talavera-guests" name="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
       </div>
-      <div class="field js-attending">
+      <div class="field field--wide js-attending">
           <label for="ev-talavera-menu">Menú</label>
           <select id="ev-talavera-menu" name="menu"><option value="Carne">Carne</option><option value="Pescado">Pescado</option><option value="Vegetariano">Vegetariano</option></select>
         </div>
@@ -271,7 +280,6 @@
     </div>
             <div class="rsvp__actions">
               <button class="btn" type="submit">Confirmar</button>
-              <span class="form__note">Demo. Tus datos quedan en este navegador.</span>
             </div>
           </form>
         </div>

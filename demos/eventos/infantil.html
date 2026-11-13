@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="../collection/base.css">
 <link rel="stylesheet" href="eventos.css">
 <link rel="stylesheet" href="../collection/covers.css">
+<link rel="stylesheet" href="../collection/envelope.css">
+<link rel="stylesheet" href="../collection/clasico.css">
 </head>
 <body class="ev ev--safari layout-poster"
       data-demo="ev-infantil"
@@ -23,63 +25,33 @@
 <div class="progress" data-progress aria-hidden="true"><span></span></div>
 
 <div class="gate ev-gate" data-gate role="dialog" aria-modal="true" aria-label="Abrir la invitación de Emilia 5 · 27.02.2027">
-  <div class="cover cover--popup cover--safari" data-cover="popup">
-  <picture class="cover__media">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/infantil-m.webp" type="image/webp">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/infantil-m.jpg" type="image/jpeg">
-  <source srcset="../../assets/covers/infantil.webp" type="image/webp">
-  <img src="../../assets/covers/infantil.jpg" alt="" aria-hidden="true" fetchpriority="high">
-</picture>
-  <div class="cover__tone" aria-hidden="true"></div>
-  <div class="cover__decor cover__decor--safari" aria-hidden="true">
-  <span class="cover__sun"></span>
-  <div class="cover__balloons">
-    <span class="cover__balloon cover__balloon--1"></span>
-    <span class="cover__balloon cover__balloon--2"></span>
-    <span class="cover__balloon cover__balloon--3"></span>
-  </div>
-  <svg class="cover__safari-floor" viewBox="0 0 900 240" preserveAspectRatio="none">
-    <path d="M0 240V150c70-48 150-52 230-18 74 32 160 34 240 0 82-36 170-38 250 4 62 32 128 38 180 20v84Z" fill="#3F6B3C"/>
-    <path d="M0 240V182c80-36 160-34 240-4 70 26 150 26 220-4 90-38 180-30 260 4 60 26 120 30 180 12v50Z" fill="#4E7A3E"/>
-    <g fill="#6C8363">
-      <path d="M64 172c-10-20-26-30-42-32 8 20 24 32 42 32Z"/>
-      <path d="M120 186c8-22 22-34 40-40-4 24-18 38-40 40Z"/>
-      <path d="M206 168c-12-18-28-26-44-26 10 18 26 28 44 26Z"/>
-      <path d="M692 176c10-20 26-30 42-32-8 20-24 32-42 32Z"/>
-      <path d="M760 166c-8-22-22-34-40-40 4 24 18 38 40 40Z"/>
-      <path d="M830 184c12-18 28-26 44-26-10 18-26 28-44 26Z"/>
-    </g>
-  </svg>
-  <svg class="cover__animal cover__animal--elephant" viewBox="0 0 260 200" fill="none">
-    <g fill="#FBF1D8">
-      <ellipse cx="120" cy="116" rx="72" ry="50"/>
-      <circle cx="186" cy="92" r="40"/>
-      <path d="M212 108c10 10 14 26 10 44" stroke="#FBF1D8" stroke-width="16" stroke-linecap="round"/>
-      <path d="M170 72c-16-14-36-10-42 6 12 14 32 16 44 6Z" fill="#F2E3C2"/>
-      <rect x="66" y="148" width="18" height="44" rx="9"/>
-      <rect x="102" y="152" width="18" height="40" rx="9"/>
-      <rect x="138" y="152" width="18" height="40" rx="9"/>
-      <rect x="172" y="148" width="18" height="44" rx="9"/>
-      <path d="M50 112c-14-4-22-16-20-28" stroke="#FBF1D8" stroke-width="10" stroke-linecap="round"/>
-    </g>
-    <circle cx="196" cy="84" r="4" fill="#2F5A34"/>
-  </svg>
-</div>
-  
-  
-  <div class="gate__content cover__content">
-    <div class="cover__panel">
-      <div class="cover__copy">
-        <p class="cover__names">Emilia <em>5</em></p>
-        <p class="cover__meta"><span>27 · 02 · 2027</span><i></i><span>Puebla</span><i></i><span>13:00</span></p>
-        <p class="cover__note">Mundo salvaje.</p>
-      </div>
-      <div class="cover__action">
-  <button class="cover__seal" type="button" data-open aria-label="Abrir la invitación de Emilia &lt;em&gt;5&lt;/em&gt;">
-    <span class="cover__seal-mark">E5</span>
-  </button>
-  <span class="cover__hint">Toca el sello</span>
-</div>
+  <div class="cover cover--envelope cover--full cover--safari" data-cover="envelope">
+  <div class="envelope-full" data-envelope>
+    <div class="envelope-full__paper" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--left" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--right" aria-hidden="true"></div>
+    <div class="envelope-full__fold envelope-full__fold--bottom" aria-hidden="true"></div>
+    <div class="envelope-full__flap" aria-hidden="true"></div>
+    <button class="envelope-full__seal" data-open type="button" aria-label="Abrir la invitación de Emilia 5">
+      <span class="sr-only">Abrir la invitación</span>
+      <span class="envelope-full__wax" aria-hidden="true"><svg class="envelope-full__emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 8c4.5 5 4.5 11 0 15-4.5-4-4.5-10 0-15Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M40 24c-5 4.5-11 4.5-15 0 4-4.5 10-4.5 15 0Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M24 40c-4.5-5-4.5-11 0-15 4.5 4 4.5 10 0 15Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M8 24c5-4.5 11-4.5 15 0-4 4.5-10 4.5-15 0Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M35.3 12.7c-6.4 2.5-11 7-12.7 12.7 5.7-1.7 10.2-6.3 12.7-12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M35.3 35.3c-2.5-6.4-7-11-12.7-12.7 1.7 5.7 6.3 10.2 12.7 12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M12.7 35.3c2.5-6.4 7-11 12.7-12.7-1.7 5.7-6.3 10.2-12.7 12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <path d="M12.7 12.7c6.4 2.5 11 7 12.7 12.7-5.7-1.7-10.2-6.3-12.7-12.7Z" fill="currentColor" fill-opacity=".1"/>
+    <circle cx="24" cy="24" r="3.4" fill="currentColor" fill-opacity=".2"/>
+  </g>
+</svg></span>
+    </button>
+    <div class="envelope-full__foot">
+      <p class="envelope-full__names">Emilia <em>5</em></p>
+      <p class="envelope-full__date">27 · 02 · 2027 · Puebla · 13:00</p>
+      <p class="envelope-full__hint">Toca el sello para abrir tu invitación</p>
     </div>
   </div>
 </div>
@@ -147,7 +119,7 @@
 
   <section class="ev-section ev-intro" id="historia">
     <div class="ev-wrap ev-intro__grid">
-      <h2 class="ev-h2">Cumple cinco y quiere <em>una selva.</em></h2>
+      <h2 class="ev-h2">Nuestra historia</h2>
       <div class="ev-intro__text">
         <p class="lede">Emilia cumple cinco y eligió una fiesta de animales. Habrá safari, pintura y pastel. Los papás se quedan; los niños corren.</p>
         <p>La fiesta empieza a la una. El safari es a las dos y el pastel a las tres.</p>
@@ -162,7 +134,7 @@
   <section class="ev-section ev-details" id="detalles">
     <div class="ev-wrap">
       <div class="ev-section-head">
-        <h2 class="ev-h2">La fiesta, <em>sin pausa.</em></h2>
+        <h2 class="ev-h2">¿Dónde y cuándo?</h2>
         <p>Una tarde de juego, pintura y pastel.</p>
       </div>
       <div class="ev-details__grid"><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><p class="ev-detail__label">La fecha</p><p class="ev-detail__value">Sábado 27 de febrero</p><p class="ev-detail__note">13:00. Puebla.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C10 4 4 9 4 16c0 2.2 1.8 4 4 4 7 0 12-6 12-16Z"/><path d="M4 20c3-5 6-8 11-10"/></svg><p class="ev-detail__label">El lugar</p><p class="ev-detail__value">Jardín Las Palmas</p><p class="ev-detail__note">Puebla. Jardín privado.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6l1 5-2 1 3 9H7l3-9-2-1 1-5Z"/><path d="M9 4c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg><p class="ev-detail__label">Código</p><p class="ev-detail__value">Cómodo</p><p class="ev-detail__note">Colores de selva.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11"/><path d="M3 9h18v4H3zM12 9v11"/><path d="M12 9c-2.5 0-4-1.2-4-2.8C8 4.9 9 4 10.4 4 12 4 12 6.2 12 9Zm0 0c2.5 0 4-1.2 4-2.8C16 4.9 15 4 13.6 4 12 4 12 6.2 12 9Z"/></svg><p class="ev-detail__label">Regalos</p><p class="ev-detail__value">Un libro o un juguete</p><p class="ev-detail__note">Mejor para el jardín.</p></article></div>
@@ -172,7 +144,7 @@
   <section class="ev-section ev-plan" id="plan">
     <div class="ev-wrap ev-plan__grid">
       <div class="ev-plan__head">
-        <h2 class="ev-h2">La tarde, <em>paso a paso.</em></h2>
+        <h2 class="ev-h2">Itinerario</h2>
         <p>Bienvenida, safari, pastel y pintura.</p>
       </div>
       <div class="ev-plan__list"><div class="ev-plan__row"><p class="ev-plan__time">13:00</p><div><p class="ev-plan__title">Bienvenida</p><p class="ev-plan__desc">Canguros y snacks.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">14:00</p><div><p class="ev-plan__title">Safari</p><p class="ev-plan__desc">Búsqueda de animales.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">15:00</p><div><p class="ev-plan__title">Pastel</p><p class="ev-plan__desc">Cumpleaños y fotos.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">16:00</p><div><p class="ev-plan__title">Pintura</p><p class="ev-plan__desc">Taller y cambio de ropa.</p></div></div></div>
@@ -187,6 +159,10 @@
 
   <section class="ev-section ev-gallery" id="galeria">
     <div class="ev-wrap">
+      <div class="ev-section-head">
+        <h2 class="ev-h2">Momentos</h2>
+        <p>Un repaso de los momentos que nos trajeron hasta aquí.</p>
+      </div>
       <div class="ev-gallery__grid"><button type="button" data-lightbox data-alt="Mesa de referencia con decoración de safari" data-caption="La mesa."><img src="../../assets/img/eventos/infantil2/safari-birthday-party-kids-2.jpg" alt="Mesa de referencia con decoración de safari" loading="lazy"></button><button type="button" data-lightbox data-alt="Decoración de referencia de fiesta safari" data-caption="La selva."><img src="../../assets/img/eventos/infantil2/safari-birthday-party-kids-5.jpg" alt="Decoración de referencia de fiesta safari" loading="lazy"></button></div>
       <p class="ev-gallery__caption">Fotografías de referencia. Esta celebración es una demo de Patio.</p>
     </div>
@@ -240,7 +216,7 @@
   
 <section class="ev-section ev-gift" id="regalos">
   <div class="ev-wrap ev-gift__inner">
-    <h2 class="ev-h2">Un libro o un juguete al aire libre</h2>
+    <h2 class="ev-h2">Mesa de regalos</h2>
     <div><p>Emilia tiene muchos juguetes. Si quieres traer algo, mejor un libro o algo para el jardín.</p><p>Gracias por venir.</p></div>
   </div>
 </section>
@@ -248,7 +224,7 @@
   <section class="ev-section ev-rsvp" id="confirma">
     <div class="ev-wrap ev-rsvp__grid">
       <div class="ev-rsvp__head">
-        <h2 class="ev-h2">¿Vienes a <em>la selva?</em></h2>
+        <h2 class="ev-h2">Confirma tu asistencia</h2>
         <p>Confirma antes del 20 de febrero. Indica cuántos niños y adultos vienen.</p>
         <p class="small">Demo. Tus datos quedan en este navegador.</p>
       </div>
@@ -280,7 +256,6 @@
     </div>
             <div class="rsvp__actions">
               <button class="btn" type="submit">Confirmar</button>
-              <span class="form__note">Demo. Tus datos quedan en este navegador.</span>
             </div>
           </form>
         </div>

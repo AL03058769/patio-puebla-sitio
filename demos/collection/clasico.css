@@ -1,0 +1,894 @@
+/* Patio · capa editorial
+   Reinterpreta las 17 invitaciones con la gramática de las referencias:
+   una columna central, papel claro, títulos Lobster, cuerpo Lora y una
+   sola fotografía a sangre en la portada interior. */
+
+@font-face {
+  font-family: "Lobster";
+  src: url("../../assets/fonts/Lobster.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../../assets/fonts/Lora.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ev {
+  --font-display: "Lobster", Georgia, cursive;
+  --font-body: "Lora", Georgia, serif;
+  --ev-max: 720px;
+  --title-weight: 400;
+  --section-space: clamp(3.4rem, 7vw, 5.5rem);
+  /* El interior es papel claro para las 17, aunque la portada sea oscura.
+     Estas tintas son literales para que ningún tema herede su tinta clara. */
+  --ink: #2b2520;
+  --muted: #675e55;
+  --read-accent: color-mix(in srgb, var(--accent) 40%, #241e19);
+  --rsvp-bg: #fff;
+  --rsvp-ink: #2b2520;
+  --rsvp-muted: #675e55;
+  --rsvp-accent: #2b2520;
+  --rsvp-accent-ink: #fff;
+  --rsvp-line: color-mix(in srgb, var(--accent) 24%, transparent);
+  --pass-bg: #fff;
+  --pass-ink: #2b2520;
+  --pass-muted: #675e55;
+  --pass-line: color-mix(in srgb, var(--accent) 24%, transparent);
+  --pass-accent: var(--read-accent);
+  background: #fff !important;
+  color: var(--ink) !important;
+  font-family: "Lora", Georgia, serif;
+}
+
+.ev .ev-wrap {
+  width: min(100% - 2rem, var(--ev-max));
+}
+
+.ev .progress,
+.ev .ev-mobile,
+.ev .ev-nav,
+.ev .ev-brand,
+.ev .ev-nav-toggle {
+  display: none !important;
+}
+
+.ev .skip-link {
+  background: var(--read-accent) !important;
+  color: #fff !important;
+}
+.ev .toast {
+  background: #2b2520 !important;
+  color: #fff !important;
+}
+.ev .ev-footer {
+  --muted: #675e55;
+}
+.ev .wish-dialog {
+  background: #fff !important;
+  color: #2b2520 !important;
+}
+.ev .ev-surprise__front {
+  background: #fff !important;
+}
+.ev .ev-surprise__back {
+  background: var(--read-accent) !important;
+  color: #fff !important;
+}
+.ev .ev-surprise__seal,
+.ev .wish__delete {
+  color: var(--read-accent) !important;
+}
+
+/* Barra mínima: solo música y compartir, abajo a la derecha */
+.ev .ev-topbar {
+  position: fixed;
+  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
+  z-index: 120;
+  color: var(--read-accent) !important;
+  text-shadow: none !important;
+}
+.ev .ev-topbar::before {
+  display: none !important;
+}
+.ev .ev-topbar__inner {
+  min-height: 0;
+  justify-content: flex-end;
+}
+.ev .ev-tools {
+  gap: .4rem;
+  margin: 0;
+}
+.ev .ev-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  background: rgba(255, 255, 255, .92);
+  color: var(--read-accent) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+}
+.ev .ev-icon:hover {
+  border-color: var(--accent);
+}
+.ev .ev-icon.is-playing {
+  background: var(--read-accent);
+  color: #fff !important;
+}
+
+/* ---------- héroe a sangre ---------- */
+.ev .ev-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr !important;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0;
+  overflow: hidden;
+  background: var(--ink) !important;
+  color: #fff;
+}
+.ev .ev-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0 !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+.ev .ev-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.92) contrast(1.02);
+}
+.ev .ev-hero__scrim {
+  position: absolute;
+  inset: 0;
+  display: block !important;
+  background:
+    linear-gradient(180deg, rgba(15, 12, 10, .5) 0%, rgba(15, 12, 10, .08) 34%, rgba(15, 12, 10, .18) 60%, rgba(15, 12, 10, .76) 100%),
+    radial-gradient(80% 60% at 50% 54%, transparent 30%, rgba(15, 12, 10, .32) 100%);
+}
+.ev .ev-hero::before,
+.ev .ev-hero::after,
+.ev .ev-hero__content::before,
+.ev .ev-hero__content::after {
+  display: none !important;
+}
+.ev .ev-hero__content {
+  position: relative;
+  z-index: 2;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: end !important;
+  width: min(100% - 2rem, 760px) !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: 6rem 1rem clamp(3.2rem, 9vh, 6.5rem) !important;
+  background: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  text-align: center;
+}
+.ev .ev-hero__title,
+.ev .ev-hero__title * {
+  font-family: "Lobster", Georgia, cursive !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  font-size: clamp(2.6rem, 5.6vw, 4.8rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0 !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .45), 0 1px 3px rgba(0, 0, 0, .4);
+}
+.ev .ev-hero__title em {
+  font-style: normal !important;
+  opacity: .85;
+}
+.ev .ev-hero__title small {
+  display: block;
+  font-size: .38em !important;
+  letter-spacing: .12em !important;
+  margin-bottom: .4rem;
+}
+.ev .ev-hero__sub {
+  margin-top: .9rem;
+  font-family: "Lora", Georgia, serif !important;
+  font-size: clamp(.68rem, 1.8vw, .8rem) !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .88) !important;
+}
+.ev .ev-hero__meta {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem .8rem;
+  font-family: "Lora", Georgia, serif !important;
+  font-size: clamp(.72rem, 1.8vw, .82rem) !important;
+  letter-spacing: .06em;
+  color: rgba(255, 255, 255, .9) !important;
+}
+.ev .ev-hero__meta i {
+  width: 18px;
+  height: 1px;
+  align-self: center;
+  background: currentColor;
+  opacity: .55;
+}
+.ev .ev-hero__guest {
+  margin-top: .8rem;
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .9);
+}
+.ev .ev-hero__actions {
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+}
+.ev .ev-hero__actions .btn {
+  background: rgba(255, 255, 255, .96) !important;
+  border-color: rgba(255, 255, 255, .96) !important;
+  color: #1d1a17 !important;
+  border-radius: 999px;
+  padding: .7rem 1.35rem;
+  min-height: 44px;
+}
+.ev .ev-hero__actions .link-line {
+  display: none !important;
+}
+.ev .ev-hero__scroll {
+  display: none !important;
+}
+.ev .ev-tile-band {
+  display: none !important;
+}
+
+/* ---------- cuenta ---------- */
+.ev .ev-count {
+  padding: clamp(2.8rem, 6vw, 4.5rem) 0;
+  background: #fff !important;
+  color: var(--ink) !important;
+  text-align: center;
+}
+.ev .ev-count__inner {
+  display: block;
+}
+.ev .ev-count__label {
+  font-family: "Lobster", Georgia, cursive;
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  color: var(--read-accent);
+  line-height: 1;
+}
+.ev .countdown {
+  margin: 1.5rem auto 1.2rem;
+  display: flex !important;
+  justify-content: center;
+  gap: clamp(.45rem, 1.6vw, .8rem);
+  flex-wrap: nowrap;
+}
+.ev .countdown > div {
+  min-width: clamp(64px, 17vw, 92px);
+  padding: .85rem .4rem .7rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.ev .countdown strong {
+  display: block;
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(1.5rem, 4.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--read-accent);
+}
+.ev .countdown span {
+  display: block;
+  margin-top: .35rem;
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ev .ev-count .link-line {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .78rem;
+  color: var(--read-accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  padding-bottom: .12rem;
+  text-decoration: none;
+}
+.ev .ev-count .link-line svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ---------- secciones ---------- */
+.ev .ev-section {
+  position: relative;
+  padding-block: var(--section-space);
+  background: #fff !important;
+  color: var(--ink) !important;
+  text-align: center;
+}
+.ev .ev-section::before,
+.ev .ev-section::after {
+  display: none !important;
+}
+.ev .ev-section .ev-wrap {
+  width: min(100% - 2rem, var(--ev-max));
+}
+.ev .ev-h2,
+.ev .ev-h2 * {
+  font-family: "Lobster", Georgia, cursive !important;
+  font-weight: 400 !important;
+  color: var(--read-accent) !important;
+  font-size: clamp(2.25rem, 5.4vw, 3.15rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+.ev .ev-h2 em {
+  font-style: normal !important;
+}
+.ev .ev-section-head {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+.ev .ev-section-head p {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+.ev .ornament,
+.ev .ev-ornament {
+  display: none;
+}
+
+.ev .ev-intro__grid,
+.ev .ev-plan__grid,
+.ev .ev-rsvp__grid,
+.ev .ev-wishes__grid,
+.ev .ev-vinyl__grid {
+  display: block !important;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.ev .ev-intro__text {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.ev .ev-intro__text .lede {
+  font-size: clamp(1.02rem, 2.2vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--ink);
+}
+.ev .ev-intro__text p {
+  color: color-mix(in srgb, var(--ink) 82%, #fff);
+}
+.ev .ev-facts {
+  margin-top: 1.8rem;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .7rem;
+  border: 0;
+}
+.ev .ev-facts > div {
+  padding: 1rem .6rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 12px;
+  background: #fff;
+}
+.ev .ev-facts dt {
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ev .ev-facts dd {
+  margin: .3rem 0 0;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  color: var(--read-accent);
+}
+
+.ev .ev-details__grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.ev .ev-detail {
+  padding: 1.5rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 14px;
+  background: #fff !important;
+  color: var(--ink) !important;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 12%, transparent);
+  text-align: center;
+}
+.ev .ev-detail__icon {
+  width: 26px;
+  height: 26px;
+  margin: 0 auto .7rem;
+  color: var(--read-accent) !important;
+}
+.ev .ev-detail__label {
+  font-size: .56rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+}
+.ev .ev-detail__value {
+  margin-top: .3rem;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--read-accent) !important;
+}
+.ev .ev-detail__note {
+  margin-top: .35rem;
+  font-size: .78rem;
+  line-height: 1.45;
+  color: var(--muted) !important;
+}
+
+.ev .ev-plan__head {
+  text-align: center;
+}
+.ev .ev-plan__list {
+  margin-top: 1.6rem;
+  display: block !important;
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: left;
+}
+.ev .ev-plan__row {
+  display: grid !important;
+  grid-template-columns: 74px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.ev .ev-plan__row:first-child {
+  border-top: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.ev .ev-plan__time {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--read-accent) !important;
+}
+.ev .ev-plan__title {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink) !important;
+}
+.ev .ev-plan__desc {
+  font-size: .8rem;
+  color: var(--muted) !important;
+}
+
+.ev .ev-vinyl {
+  background: #fff !important;
+  color: var(--ink) !important;
+}
+.ev .ev-vinyl__copy {
+  text-align: center;
+}
+.ev .ev-vinyl__copy p {
+  color: var(--muted) !important;
+}
+.ev .ev-vinyl__note {
+  color: var(--read-accent) !important;
+}
+.ev .ev-vinyl .btn--ghost {
+  color: var(--read-accent) !important;
+  border-color: color-mix(in srgb, var(--read-accent) 30%, transparent) !important;
+}
+.ev .ev-vinyl__stage {
+  margin: 1.4rem auto 0;
+  max-width: 210px;
+}
+.ev .ev-vinyl__disc {
+  width: 200px;
+  height: 200px;
+  margin-inline: auto;
+}
+
+.ev .ev-gallery__grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .6rem;
+}
+.ev .ev-gallery__grid button {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent), 0 8px 24px rgba(0, 0, 0, .08);
+}
+.ev .ev-gallery__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform .6s var(--ease);
+}
+.ev .ev-gallery__grid button:hover img {
+  transform: scale(1.03);
+}
+.ev .ev-gallery__caption {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: .66rem;
+  color: var(--muted) !important;
+}
+
+.ev .ev-wishes,
+.ev .ev-gift,
+.ev .ev-rsvp,
+.ev .ev-playlist,
+.ev .ev-team,
+.ev .ev-surprise {
+  /* Literales: .ev-rsvp redefine --ink/--accent a partir de estas variables.
+     Encadenarlas a var(--ink) o var(--accent) crea un ciclo y deja el panel sin color. */
+  --rsvp-ink: #2b2520;
+  --rsvp-muted: #675e55;
+  --rsvp-line: color-mix(in srgb, var(--accent) 22%, transparent);
+  --rsvp-bg: #fff;
+  --rsvp-accent: #2b2520;
+  --rsvp-accent-ink: #fff;
+  background: #fff !important;
+  color: var(--ink) !important;
+}
+.ev .ev-playlist__grid,
+.ev .ev-surprise__grid {
+  display: block !important;
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+.ev .ev-playlist__head,
+.ev .ev-surprise__grid > div {
+  text-align: center;
+}
+.ev .ev-playlist__head p,
+.ev .ev-surprise__grid p {
+  margin-inline: auto;
+}
+.ev .ev-playlist__list {
+  max-width: 560px;
+  margin: 1.4rem auto 0;
+  text-align: left;
+}
+.ev .ev-team__grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  border: 0;
+}
+.ev .ev-team__member {
+  padding: 1rem .8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: 12px;
+  background: #fff;
+}
+.ev .ev-team__member:last-child {
+  border-right: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.ev .ev-team__name {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.05rem;
+}
+.ev .ev-surprise__card {
+  max-width: 420px;
+  margin: 1.5rem auto 0;
+}
+.ev .ev-marquee {
+  display: none !important;
+}
+.ev .ev-wishes__head {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(1.2rem, 4vw, 2.4rem);
+  align-items: start;
+  text-align: left;
+  margin: 0 auto 1.6rem;
+  max-width: 640px;
+}
+.ev .ev-wishes__head p {
+  margin-top: .35rem;
+  font-size: .86rem;
+  color: var(--muted);
+}
+.ev .ev-wishes__grid {
+  display: block !important;
+}
+.ev .ev-wishes__form,
+.ev .ev-rsvp__form,
+.ev .ev-wishes__list {
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1.3rem;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.ev .ev-wishes__list {
+  margin-top: 1.2rem;
+  text-align: left;
+}
+.ev .ev-wishes__label {
+  font-size: .6rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ev .ev-wishes__examples {
+  margin-top: .8rem;
+  display: grid;
+  gap: .7rem;
+}
+.ev .wish {
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  background: color-mix(in srgb, var(--accent) 3%, #fff);
+}
+.ev .wish__head strong,
+.ev .wish__text {
+  font-family: "Lora", Georgia, serif !important;
+}
+.ev .wish__text {
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.ev .wish__meta {
+  margin-top: .35rem;
+  font-size: .66rem;
+  color: var(--muted);
+}
+
+.ev .ev-gift__inner {
+  display: block !important;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.ev .ev-gift__inner > div {
+  margin-top: 1rem;
+}
+.ev .ev-gift p {
+  max-width: 520px;
+  margin-inline: auto;
+  color: var(--muted);
+}
+
+.ev .ev-rsvp__grid {
+  display: block !important;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.ev .ev-rsvp__head {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+.ev .ev-rsvp__head p {
+  max-width: 520px;
+  margin-inline: auto;
+}
+.ev .rsvp,
+.ev .wishes,
+.ev .ev-wishes__list {
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1.3rem;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.ev .ev-wishes__list {
+  margin-top: 1.2rem;
+  text-align: left;
+}
+.ev .form__grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem;
+}
+.ev .form__grid .field--wide {
+  grid-column: 1 / -1;
+}
+.ev .rsvp__actions {
+  display: block !important;
+  margin-top: .4rem;
+}
+.ev .rsvp__actions .btn {
+  width: 100%;
+}
+.ev .rsvp__actions .form__note {
+  display: block;
+  margin-top: .7rem;
+  text-align: center;
+}
+.ev .ev-rsvp .btn,
+.ev .ev-wishes .btn,
+.ev .ev-form .btn {
+  width: 100%;
+  border-radius: 999px;
+  min-height: 48px;
+  background: var(--read-accent) !important;
+  border-color: var(--read-accent) !important;
+  color: #fff !important;
+  font-family: "Lora", Georgia, serif;
+  font-size: .86rem;
+}
+.ev .field {
+  margin-bottom: .9rem;
+}
+.ev .field label,
+.ev .field > span {
+  display: block;
+  margin-bottom: .35rem;
+  font-size: .6rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ev .field input:not([type="radio"]):not([type="checkbox"]),
+.ev .field select,
+.ev .field textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: .7rem .8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Lora", Georgia, serif;
+  font-size: .9rem;
+}
+.ev .form__grid {
+  text-align: left;
+}
+.ev .field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+.ev .ev-choice {
+  display: flex;
+  gap: .55rem;
+  flex-wrap: wrap;
+}
+.ev .ev-choice label {
+  flex: 0 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: 44px;
+  margin: 0;
+  padding: .55rem 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 999px;
+  font-size: .86rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.ev .ev-choice label:has(input:checked) {
+  border-color: var(--read-accent);
+  background: color-mix(in srgb, var(--accent) 9%, #fff);
+  color: var(--ink);
+  font-weight: 600;
+}
+.ev .ev-choice input {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--read-accent);
+}
+.ev .ev-rsvp__note,
+.ev .ev-wishes__hint,
+.ev .form-note {
+  font-size: .68rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- pie ---------- */
+.ev .ev-footer {
+  background: color-mix(in srgb, var(--accent) 4%, #fff) !important;
+  color: var(--ink) !important;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  text-align: center;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.ev .ev-footer__grid {
+  display: block !important;
+}
+.ev .ev-footer__names {
+  font-family: "Lobster", Georgia, cursive;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--read-accent);
+}
+.ev .ev-footer__meta {
+  margin-top: .3rem;
+  font-size: .76rem;
+  color: var(--muted);
+}
+.ev .ev-footer__credit {
+  margin-top: 1.2rem;
+  font-size: .64rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.ev .ev-footer a {
+  color: var(--read-accent);
+}
+
+@media (max-width: 620px) {
+  .ev .ev-hero__content {
+    padding: 4rem 1rem 1.6rem !important;
+  }
+  .ev .ev-hero__sub {
+    margin-top: .55rem;
+    font-size: .6rem !important;
+    letter-spacing: .2em !important;
+  }
+  .ev .ev-hero__meta {
+    margin-top: .7rem;
+    gap: .35rem .55rem;
+    font-size: .64rem !important;
+  }
+  .ev .ev-hero__actions {
+    margin-top: .9rem;
+  }
+  .ev .ev-hero__actions .btn {
+    min-height: 40px;
+    padding: .55rem 1.1rem;
+    font-size: .78rem;
+  }
+  .ev .ev-details__grid {
+    grid-template-columns: 1fr;
+  }
+  .ev .ev-facts {
+    grid-template-columns: 1fr;
+  }
+  .ev .ev-wishes__form,
+  .ev .ev-rsvp__form,
+  .ev .ev-wishes__list,
+  .ev .rsvp,
+  .ev .wishes {
+    padding: 1rem;
+  }
+  .ev .form__grid {
+    grid-template-columns: 1fr;
+  }
+  .ev .countdown > div {
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .ev .ev-wishes__head {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ev .ev-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}
