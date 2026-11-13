@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /qa/
+Disallow: /docs/
+Disallow: /scripts/

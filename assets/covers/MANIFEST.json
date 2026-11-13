@@ -1,0 +1,121 @@
+{
+  "talavera": {
+    "source": "silver-stationery/silver-blue-wedding-stationery-3.jpg",
+    "desktop": "assets/covers/talavera.webp",
+    "desktop_fallback": "assets/covers/talavera.jpg",
+    "mobile": "assets/covers/talavera-m.webp",
+    "mobile_fallback": "assets/covers/talavera-m.jpg"
+  },
+  "mariposa": {
+    "source": "sage-stationery/sage-green-wedding-stationery-4.jpg",
+    "desktop": "assets/covers/mariposa.webp",
+    "desktop_fallback": "assets/covers/mariposa.jpg",
+    "mobile": "assets/covers/mariposa-m.webp",
+    "mobile_fallback": "assets/covers/mariposa-m.jpg"
+  },
+  "bride": {
+    "source": "envelopes/wedding-invitation-envelope-wax-seal-1.jpg",
+    "desktop": "assets/covers/bride.webp",
+    "desktop_fallback": "assets/covers/bride.jpg",
+    "mobile": "assets/covers/bride-m.webp",
+    "mobile_fallback": "assets/covers/bride-m.jpg"
+  },
+  "bautizo": {
+    "source": "sage-stationery/sage-green-wedding-stationery-2.jpg",
+    "desktop": "assets/covers/bautizo.webp",
+    "desktop_fallback": "assets/covers/bautizo.jpg",
+    "mobile": "assets/covers/bautizo-m.webp",
+    "mobile_fallback": "assets/covers/bautizo-m.jpg"
+  },
+  "jovenes": {
+    "source": "y2k/y2k-chrome-aesthetic-1.jpg",
+    "desktop": "assets/covers/jovenes.webp",
+    "desktop_fallback": "assets/covers/jovenes.jpg",
+    "mobile": "assets/covers/jovenes-m.webp",
+    "mobile_fallback": "assets/covers/jovenes-m.jpg"
+  },
+  "boda": {
+    "source": "sage-stationery/sage-green-wedding-stationery-3.jpg",
+    "desktop": "assets/covers/boda.webp",
+    "desktop_fallback": "assets/covers/boda.jpg",
+    "mobile": "assets/covers/boda-m.webp",
+    "mobile_fallback": "assets/covers/boda-m.jpg"
+  },
+  "pedida": {
+    "source": "candlelight/candlelight-dinner-table-elegant-3.jpg",
+    "desktop": "assets/covers/pedida.webp",
+    "desktop_fallback": "assets/covers/pedida.jpg",
+    "mobile": "assets/covers/pedida-m.webp",
+    "mobile_fallback": "assets/covers/pedida-m.jpg"
+  },
+  "xv": {
+    "source": "celestial/celestial-night-sky-stars-3.jpg",
+    "desktop": "assets/covers/xv.webp",
+    "desktop_fallback": "assets/covers/xv.jpg",
+    "mobile": "assets/covers/xv-m.webp",
+    "mobile_fallback": "assets/covers/xv-m.jpg"
+  },
+  "comunion": {
+    "source": "stained-glass/stained-glass-church-light-4.jpg",
+    "desktop": "assets/covers/comunion.webp",
+    "desktop_fallback": "assets/covers/comunion.jpg",
+    "mobile": "assets/covers/comunion-m.webp",
+    "mobile_fallback": "assets/covers/comunion-m.jpg"
+  },
+  "graduacion": {
+    "source": "graduation/graduation-cap-portrait-2.jpg",
+    "desktop": "assets/covers/graduacion.webp",
+    "desktop_fallback": "assets/covers/graduacion.jpg",
+    "mobile": "assets/covers/graduacion-m.webp",
+    "mobile_fallback": "assets/covers/graduacion-m.jpg"
+  },
+  "oro": {
+    "source": "gold-stationery/gold-wedding-invitation-luxury-5.jpg",
+    "desktop": "assets/covers/oro.webp",
+    "desktop_fallback": "assets/covers/oro.jpg",
+    "mobile": "assets/covers/oro-m.webp",
+    "mobile_fallback": "assets/covers/oro-m.jpg"
+  },
+  "plata": {
+    "source": "silver-stationery/silver-blue-wedding-stationery-5.jpg",
+    "desktop": "assets/covers/plata.webp",
+    "desktop_fallback": "assets/covers/plata.jpg",
+    "mobile": "assets/covers/plata-m.webp",
+    "mobile_fallback": "assets/covers/plata-m.jpg"
+  },
+  "civil": {
+    "source": "civil/wedding-rings-document-office-1.jpg",
+    "desktop": "assets/covers/civil.webp",
+    "desktop_fallback": "assets/covers/civil.jpg",
+    "mobile": "assets/covers/civil-m.webp",
+    "mobile_fallback": "assets/covers/civil-m.jpg"
+  },
+  "baby": {
+    "source": "baby/neutral-baby-blanket-nursery-5.jpg",
+    "desktop": "assets/covers/baby.webp",
+    "desktop_fallback": "assets/covers/baby.jpg",
+    "mobile": "assets/covers/baby-m.webp",
+    "mobile_fallback": "assets/covers/baby-m.jpg"
+  },
+  "infantil": {
+    "source": "safari/safari-birthday-party-kids-1.jpg",
+    "desktop": "assets/covers/infantil.webp",
+    "desktop_fallback": "assets/covers/infantil.jpg",
+    "mobile": "assets/covers/infantil-m.webp",
+    "mobile_fallback": "assets/covers/infantil-m.jpg"
+  },
+  "corporativo": {
+    "source": "corporate/conference-stage-lights-2.jpg",
+    "desktop": "assets/covers/corporativo.webp",
+    "desktop_fallback": "assets/covers/corporativo.jpg",
+    "mobile": "assets/covers/corporativo-m.webp",
+    "mobile_fallback": "assets/covers/corporativo-m.jpg"
+  },
+  "despedida": {
+    "source": "disco/disco-ball-party-4.jpg",
+    "desktop": "assets/covers/despedida.webp",
+    "desktop_fallback": "assets/covers/despedida.jpg",
+    "mobile": "assets/covers/despedida-m.webp",
+    "mobile_fallback": "assets/covers/despedida-m.jpg"
+  }
+}

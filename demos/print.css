@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans.ttf') format('truetype');
+  font-weight: 100 1000;
+}
+
+@page { size: 5in 7in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; width: 5in; background: #F5EFE4; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1B1916;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  position: relative; width: 5in; height: 7in; overflow: hidden;
+  page-break-after: always; break-after: page;
+  background: #F5EFE4;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+img { display: block; }
+
+/* front */
+.photo { position: absolute; inset: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.03) brightness(.84); }
+.shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 20, 26, .35) 0%, rgba(8, 20, 26, .02) 35%, rgba(8, 20, 26, .82) 100%),
+    linear-gradient(90deg, rgba(8, 20, 26, .28), transparent 65%);
+}
+.topline {
+  position: absolute; top: .28in; left: .38in; right: .38in;
+  display: flex; justify-content: space-between; gap: .2in;
+  font-size: 6pt; font-weight: 500; letter-spacing: 0;
+  color: rgba(248, 242, 231, .82);
+}
+.front {
+  position: absolute; left: .4in; right: .4in; bottom: .42in;
+  color: #F8F2E7;
+}
+.names {
+  margin: 0 0 .1in;
+  font-family: 'Instrument Serif', serif; font-size: 39pt; line-height: .88; letter-spacing: -.02em;
+}
+.names em { font-style: italic; color: #E4B45C; }
+.meta {
+  display: flex; flex-wrap: wrap; gap: .06in .12in; align-items: center;
+  font-size: 7pt; font-weight: 500; letter-spacing: 0;
+  color: rgba(248, 242, 231, .9);
+}
+.meta i { width: .16in; height: 1px; background: rgba(248, 242, 231, .5); }
+.front-note { margin-top: .12in; font-size: 6pt; font-weight: 500; letter-spacing: 0; color: rgba(248, 242, 231, .62); }
+
+/* back */
+.back { padding: .38in .42in .3in; display: flex; flex-direction: column; }
+.back__head { border-bottom: 1px solid rgba(27, 25, 22, .22); padding-bottom: .14in; }
+.back__title { font-family: 'Instrument Serif', serif; font-size: 24pt; line-height: 1.05; }
+.back__title em { font-style: italic; color: #B85C3E; }
+.back__sub { margin-top: .06in; font-size: 7pt; font-weight: 500; letter-spacing: 0; color: #625C52; }
+.details { margin-top: .18in; }
+.detail { display: grid; grid-template-columns: .62in 1fr; gap: .1in; padding: .09in 0; border-bottom: 1px solid rgba(27, 25, 22, .13); }
+.detail dt { font-family: 'Instrument Serif', serif; font-size: 12pt; color: #1D4E6B; }
+.detail dd { margin: 0; }
+.detail strong { display: block; font-family: 'Instrument Serif', serif; font-size: 11pt; font-weight: 400; }
+.detail span { display: block; font-size: 6.2pt; line-height: 1.4; color: #625C52; }
+.back__bottom { margin-top: auto; display: grid; grid-template-columns: 1fr 1.15in; gap: .16in; align-items: end; }
+.qr { text-align: center; }
+.qr img { width: 1.1in; height: 1.1in; margin-inline: auto; }
+.qr p { margin-top: .04in; font-size: 5.5pt; font-weight: 500; letter-spacing: 0; color: #625C52; }
+.rsvp-copy { font-size: 6.4pt; line-height: 1.45; color: #625C52; }
+.rsvp-copy strong { display: block; font-family: 'Instrument Serif', serif; font-size: 11pt; font-weight: 400; color: #1B1916; margin-bottom: .04in; }
+.foot { margin-top: .12in; font-size: 5.5pt; letter-spacing: 0; color: rgba(27, 25, 22, .5); }
+
+/* express accents */
+.express .shade {
+  background:
+    linear-gradient(180deg, rgba(35, 16, 22, .38) 0%, rgba(35, 16, 22, .02) 35%, rgba(35, 16, 22, .84) 100%),
+    linear-gradient(90deg, rgba(35, 16, 22, .28), transparent 65%);
+}
+.express .names { font-size: 54pt; line-height: .84; letter-spacing: -.02em; }
+.express .meta { color: rgba(248, 242, 231, .9); }
+.back--express { background: #FBF1ED; }
+.back--express .back__title em { color: #B8526E; }
+.back--express .detail dt { color: #B8526E; }
+.back--express .qr img { width: 1.1in; height: 1.1in; }
