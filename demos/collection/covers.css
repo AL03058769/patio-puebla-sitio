@@ -2748,6 +2748,36 @@
 }
 .ref-tal__shard--terrace img { border-radius: inherit; }
 
+.ref-tal__linen {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.ref-tal__linen--napkin {
+  left: 1.5%;
+  top: 8%;
+  width: clamp(10rem, 18vw, 16rem);
+  aspect-ratio: 1;
+  background-image: url("../../assets/img/eventos/talavera-v3/textil-servilleta-azul.webp");
+  transform: rotate(-10deg);
+  opacity: .92;
+  filter: drop-shadow(0 1rem 1.6rem rgba(2, 9, 20, .28));
+}
+.ref-tal__linen--doily {
+  left: 50%;
+  bottom: 5.2%;
+  z-index: 2;
+  width: clamp(7rem, 11vw, 10rem);
+  aspect-ratio: 1;
+  background-image: url("../../assets/img/eventos/talavera-v3/textil-encaje-doily.webp");
+  transform: translateX(-50%) rotate(7deg);
+  opacity: .95;
+  filter: drop-shadow(0 .5rem 1rem rgba(2, 9, 20, .3));
+}
+
 .ref-tal__arch {
   position: absolute;
   z-index: 2;
@@ -2891,7 +2921,7 @@
     0 1rem 1.8rem rgba(2, 9, 20, .42);
   transition: transform .3s var(--ease), opacity .3s ease;
 }
-.ref-tal__seal img { display: block; width: 100%; height: 100%; filter: drop-shadow(0 .8rem 1rem rgba(3, 13, 26, .55)); }
+.ref-tal__seal img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 .8rem 1rem rgba(3, 13, 26, .55)); }
 .ref-tal__seal:hover { transform: translateX(-50%) rotate(-2deg) scale(1.06); }
 .ref-tal__seal:active { transform: translateX(-50%) rotate(-2deg) scale(.96); }
 .ref-tal__seal:focus-visible { outline: 3px solid #F6EFDF; outline-offset: .55rem; border-radius: 50%; }
@@ -2937,6 +2967,11 @@
 .ref-tal__shard--arches { animation: tal-shard-float 8.5s ease-in-out infinite reverse; }
 .ref-tal__arch { animation: tal-arch-breathe 12s ease-in-out infinite alternate; }
 
+@media (min-width: 761px) and (max-width: 1280px) {
+  .ref-tal__arch { top: 39%; width: min(34vw, 27rem); height: min(54svh, 31rem); }
+  .ref-tal__plaque { bottom: 15%; width: min(34rem, 76vw); }
+}
+
 @media (max-width: 1020px) {
   .ref-tal__shard--garden,
   .ref-tal__shard--table { display: none; }
@@ -2946,9 +2981,12 @@
   .ref-tal__frieze { height: 2.1rem; }
   .ref-tal__shard--pottery { left: 4%; top: 13%; width: 4.2rem; }
   .ref-tal__shard--arches { right: 4%; top: 12%; width: 4.6rem; }
-  .ref-tal__shard--garden { display: none; }
+  .ref-tal__shard--garden { display: block; left: 3%; bottom: 6.5%; width: 3.4rem; }
+  .ref-tal__shard--table { display: block; right: 3%; bottom: 6.5%; width: 3.6rem; }
   .ref-tal__shard--cloister,
   .ref-tal__shard--terrace { display: none; }
+  .ref-tal__linen--napkin { display: none; }
+  .ref-tal__linen--doily { width: 5.6rem; bottom: 4.8%; }
   .ref-tal__arch {
     top: 44%;
     width: 82vw;
@@ -2979,7 +3017,7 @@
   .ref-tal__names { font-size: clamp(1.95rem, 8.9vw, 2.5rem); }
   .ref-tal__meta { font-size: .51rem; }
   .ref-tal__seal { width: 4.15rem; }
-  .ref-tal__shard--table { display: none; }
+  .ref-tal__shard--table { display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1046,6 +1046,10 @@
 .ev-index .ev-index__foot { padding: 2rem 0 3rem; border-top: 1px solid rgba(30, 42, 34, .18); font-size: .72rem; color: #66705F; }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1180px) {
+  .ev--talavera .ev-gift::after { display: none; }
+}
+
 @media (max-width: 980px) {
   .ev-count__inner { grid-template-columns: 1fr auto; }
   .ev-count__label { grid-column: 1 / -1; }
@@ -1767,7 +1771,8 @@
   text-align: center;
 }
 .ev--talavera .ev-gallery__caption {
-  color: rgba(246, 239, 223, .72);
+  color: rgba(246, 239, 223, .9);
+  font-size: .72rem;
   text-align: center;
 }
 
@@ -2168,6 +2173,7 @@
     transform: none;
     gap: 1.2rem;
   }
+  .ev--talavera .ev-gift__inner::before { width: min(70%, 15rem); margin-inline: auto; aspect-ratio: 4 / 3; }
   .ev--talavera .ev-gift__inner::after { top: -1.35rem; right: 1rem; width: 3rem; height: 3rem; }
   .ev--talavera .ev-share {
     width: min(100% - 1.7rem, 58rem);
@@ -2414,12 +2420,12 @@
 }
 .ev--talavera .ev-count::before {
   left: max(3%, calc(50% - 40rem));
-  background-image: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-3.jpg");
+  background-image: url("../../assets/img/eventos/talavera-v3/plato-menu.webp");
   transform: translateY(-50%) rotate(-5deg);
 }
 .ev--talavera .ev-count::after {
   right: max(3%, calc(50% - 40rem));
-  background-image: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-5.jpg");
+  background-image: url("../../assets/img/eventos/talavera-v3/patio.webp");
   transform: translateY(-50%) rotate(4deg);
 }
 .ev--talavera .ev-count__inner {
@@ -2487,7 +2493,7 @@
   aspect-ratio: 1;
   border: 5px solid var(--tal-cream);
   border-radius: 50%;
-  background: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-2.jpg") center / cover;
+  background: url("../../assets/img/eventos/talavera-v3/jarron-patio.webp") center / cover;
   box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .24);
   transform: rotate(6deg);
 }
@@ -2607,6 +2613,7 @@
 }
 .tal-intro__stamp {
   position: absolute;
+  z-index: 3;
   right: -2.1rem;
   bottom: 2.4rem;
   width: clamp(5.6rem, 8vw, 7.6rem);
@@ -2642,7 +2649,7 @@
   aspect-ratio: 1;
   border: 5px solid var(--tal-card);
   border-radius: 50%;
-  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-5.jpg") center / cover;
+  background: url("../../assets/img/eventos/talavera-v3/mesa-talavera.webp") center / cover;
   box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .2);
   transform: translateY(-50%) rotate(4deg);
 }
@@ -2695,8 +2702,19 @@
     0 2.4rem 4.8rem rgba(2, 12, 27, .46);
   transform: none;
 }
-.ev--talavera .ev-plan__grid::before,
-.ev--talavera .ev-plan__grid::after { display: none; }
+.ev--talavera .ev-plan__grid::before { display: none; }
+.ev--talavera .ev-plan__grid::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.2rem;
+  right: 2.2rem;
+  bottom: .35rem;
+  height: 34px;
+  background: url("../../assets/img/eventos/talavera-v3/textil-encaje-tira-3.webp") center / 100% 100% no-repeat;
+  opacity: .58;
+  pointer-events: none;
+}
 .ev--talavera .ev-plan__head { align-self: start; }
 .ev--talavera .ev-plan__head::after {
   content: "";
@@ -2706,7 +2724,7 @@
   margin-top: 1.8rem;
   border: 5px solid var(--tal-card);
   border-radius: 50%;
-  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-2.jpg") center / cover;
+  background: url("../../assets/img/eventos/talavera-v3/patio-noche.webp") center / cover;
   box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .2);
   transform: rotate(-4deg);
 }
@@ -2839,7 +2857,7 @@
   aspect-ratio: 1;
   border: 6px solid var(--tal-cream);
   border-radius: 50%;
-  background: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-2.jpg") center / cover;
+  background: url("../../assets/img/eventos/talavera-v3/jarron-patio.webp") center / cover;
   box-shadow: 0 1.2rem 2.4rem rgba(7, 25, 48, .22);
   transform: rotate(5deg);
   pointer-events: none;
@@ -2856,8 +2874,29 @@
     0 2.2rem 4.4rem rgba(2, 12, 27, .3);
   transform: none;
 }
-.ev--talavera .ev-gift__inner::before { display: none; }
+.ev--talavera .ev-gift__inner > * { order: 1; }
+.ev--talavera .ev-gift__inner > div { order: 2; }
+.ev--talavera .ev-gift__inner::before {
+  content: "";
+  position: static;
+  inset: auto;
+  display: block;
+  order: 3;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: transparent url("../../assets/img/eventos/talavera-v3/cut-jarron.webp") center / contain no-repeat;
+  filter: drop-shadow(0 1.2rem 1.6rem rgba(7, 25, 48, .16));
+  transform: rotate(-2deg);
+}
 .ev--talavera .ev-gift__inner::after { top: -1.8rem; right: 2.4rem; z-index: 2; }
+@media (min-width: 821px) {
+  .ev--talavera .ev-gift__inner {
+    grid-template-columns: .72fr 1.08fr .8fr;
+    align-items: center;
+    gap: clamp(1.5rem, 3.5vw, 3.2rem);
+  }
+}
 
 /* --- compartir --- */
 .ev--talavera .ev-share {
@@ -2883,11 +2922,27 @@
   margin-top: 2rem;
   border: 5px solid rgba(246, 239, 223, .7);
   border-radius: 50%;
-  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-6.jpg") center / cover;
+  background: url("../../assets/img/eventos/talavera-v3/arco-patio.webp") center / cover;
   box-shadow: 0 1rem 2rem rgba(2, 12, 27, .32);
   transform: rotate(-4deg);
 }
+.ev--talavera .tal-intro__photo > img { position: relative; z-index: 1; }
+.ev--talavera .tal-intro__lace {
+  position: absolute;
+  left: -2.4rem;
+  bottom: -2.4rem;
+  z-index: 0;
+  width: clamp(4.8rem, 6.5vw, 6.6rem);
+  aspect-ratio: 1;
+  background: url("../../assets/img/eventos/talavera-v3/textil-encaje-doily.webp") center / contain no-repeat;
+  transform: rotate(-12deg);
+  opacity: .92;
+  filter: drop-shadow(0 .7rem 1rem rgba(7, 25, 48, .22));
+  pointer-events: none;
+}
 .ev--talavera .tal-rsvp__photo {
+  position: relative;
+  z-index: 1;
   width: min(100%, 16.5rem);
   margin: 2.2rem 0 0;
   padding: 7px;
@@ -2903,6 +2958,18 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: inherit;
+}
+.ev--talavera .tal-rsvp__lace {
+  display: block;
+  position: relative;
+  z-index: 0;
+  width: 6.4rem;
+  aspect-ratio: 1;
+  margin: -3.2rem 0 0 -.9rem;
+  background: url("../../assets/img/eventos/talavera-v3/textil-encaje-doily.webp") center / contain no-repeat;
+  transform: rotate(-10deg);
+  opacity: .9;
+  filter: drop-shadow(0 .45rem .8rem rgba(2, 12, 27, .3));
 }
 .ev--talavera [data-rsvp-form-wrap] {
   border: 0;
@@ -2979,6 +3046,10 @@
   .ev--talavera .ev-details .ev-section-head { padding-right: 7rem; }
 }
 
+@media (min-width: 641px) and (max-width: 820px) {
+  .ev--talavera .ev-gift__inner::before { width: min(62%, 18rem); margin-inline: auto; }
+}
+
 @media (max-width: 900px) {
   .ev--talavera.layout-split .ev-hero {
     display: flex;
@@ -3037,7 +3108,8 @@
   }
   .ev--talavera .ev-intro__grid .ev-h2 { grid-column: 1; grid-row: 2; }
   .ev--talavera .ev-intro__text { grid-column: 1; grid-row: 3; }
-  .tal-intro__stamp { right: -1rem; bottom: 1.4rem; width: 5.2rem; }
+  .ev--talavera .tal-intro__stamp { right: -1rem; bottom: 1.4rem; width: 5.2rem; }
+  .ev--talavera .tal-intro__lace { width: 4.4rem; left: -.6rem; bottom: -1.1rem; }
   .ev--talavera .ev-details .ev-section-head { padding-right: 5.5rem; }
   .ev--talavera .ev-details .ev-section-head::after { width: 4.8rem; }
   .ev--talavera .ev-detail { min-height: 17rem; }
@@ -3062,6 +3134,7 @@
   .ev--talavera .ev-rsvp__grid { grid-template-columns: 1fr; }
   .ev--talavera .ev-rsvp__head::after { width: 5.4rem; margin-top: 1.3rem; }
   .ev--talavera .tal-rsvp__photo { display: none; }
+  .ev--talavera .tal-rsvp__lace { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -3093,15 +3166,17 @@
   .ev--talavera .ev-intro__grid { padding-block: .8rem 1.6rem; }
   .ev--talavera .ev-intro__grid::before { inset: 7px; left: 7px; right: 7px; top: 7px; bottom: 7px; }
   .ev--talavera .ev-intro__grid::after { width: 3.2rem; height: 3.2rem; top: -1.35rem; }
-  .ev--talavera .ev-facts { grid-template-columns: 1fr 1fr; gap: .8rem; }
-  .ev--talavera .ev-facts > div:last-child { grid-column: span 2; }
+  .ev--talavera .ev-plan__grid::after { left: 1rem; right: 1rem; height: 24px; opacity: .5; }
+  .ev--talavera .ev-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+  .ev--talavera .ev-facts > div:last-child { grid-column: auto; }
   .ev--talavera .ev-details .ev-section-head { padding-right: 0; padding-bottom: 5.8rem; }
   .ev--talavera .ev-details .ev-section-head::after {
     width: 4.6rem;
     top: auto;
     bottom: 0;
-    right: .4rem;
-    transform: rotate(4deg);
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) rotate(4deg);
   }
   .ev--talavera .ev-detail { min-height: 0; padding: 1.4rem 1.1rem 1.2rem; }
   .ev--talavera .ev-detail:nth-child(2n) { margin-top: 0; }
