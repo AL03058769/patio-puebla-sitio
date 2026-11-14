@@ -528,10 +528,10 @@
   function startMusic() {
     if (track && !trackFailed) {
       try {
-        track.volume = 0;
+        track.volume = 0.18;
         var play = track.play();
         var unlock = function () {
-          if (musicOn) fadeTrack(0.55, 700);
+          if (musicOn) fadeTrack(0.55, 450);
         };
         var fallback = function () {
           trackFailed = true;
