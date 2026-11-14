@@ -2204,3 +2204,1011 @@
   .ev--talavera .ev-scratch__button { font-size: .52rem; letter-spacing: .1em; }
 }
 
+
+/* ============================================================
+   TALAVERA V3 · MOSAICO DE AZULEJO
+   Portada de pared, arcos de papel, fotos recortadas y azulejos.
+   ============================================================ */
+
+/* --- barra: medallones de cerámica --- */
+.ev--talavera .ev-tools { gap: .45rem; }
+.ev--talavera .ev-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(251, 247, 238, .72);
+}
+.ev--talavera .ev-topbar:not(.is-scrolled) .ev-icon { background: rgba(251, 247, 238, .62); }
+.ev--talavera .ev-icon svg { width: 21px; height: 21px; }
+.ev--talavera .ev-icon svg * { stroke-width: 1.8; }
+.ev--talavera .ev-icon.ev-music {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: auto;
+  min-width: 44px;
+  padding: 0 .9rem;
+  border-radius: 999px;
+}
+.ev--talavera .ev-music [data-music-label] {
+  font-family: var(--font-body);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ev--talavera .ev-icon.ev-music.is-playing {
+  background: var(--tal-blue);
+  border-color: var(--tal-blue);
+  color: var(--tal-cream);
+}
+
+/* --- héroe: foto a sangre y arco de papel --- */
+.ev--talavera.layout-split .ev-hero {
+  display: block;
+  min-height: 100svh;
+  padding: 0;
+  overflow: hidden;
+  background: #0B2745;
+}
+.ev--talavera.layout-split .ev-hero__media {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+.ev--talavera.layout-split .ev-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 46% 50%;
+}
+.ev--talavera.layout-split .ev-hero__media::after {
+  background:
+    linear-gradient(90deg, rgba(5, 18, 35, .18) 0%, rgba(5, 18, 35, .02) 42%, rgba(5, 18, 35, .46) 100%),
+    linear-gradient(180deg, rgba(5, 18, 35, .42) 0%, transparent 28%, rgba(5, 18, 35, .3) 78%, rgba(5, 18, 35, .58) 100%);
+}
+.ev--talavera.layout-split .ev-hero__scrim {
+  display: block;
+  z-index: -1;
+  background: radial-gradient(ellipse at 34% 44%, transparent 0 34%, rgba(5, 18, 35, .24) 72%, rgba(5, 18, 35, .48) 100%);
+}
+.ev--talavera.layout-split .ev-hero__content {
+  position: absolute;
+  z-index: 3;
+  top: clamp(6.6rem, 11vh, 8.6rem);
+  right: clamp(1.4rem, 5vw, 5.4rem);
+  bottom: clamp(2rem, 5vh, 4rem);
+  left: auto;
+  width: min(35rem, 43vw);
+  margin: 0;
+  padding: clamp(2.7rem, 4.4vw, 4.2rem) clamp(1.8rem, 3.2vw, 3.2rem) clamp(2.2rem, 3vw, 3rem);
+  align-self: auto;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--tal-ink);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  border: 0;
+  border-radius: 50% 50% 1.4rem 1.4rem / 15% 15% 1.4rem 1.4rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .24),
+    0 2.6rem 5rem rgba(2, 12, 27, .52);
+}
+.ev--talavera.layout-split .ev-hero__content::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(31, 78, 140, .32);
+  border-radius: 50% 50% 1rem 1rem / 15% 15% 1rem 1rem;
+  background: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+.ev--talavera.layout-split .ev-hero__content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-hero__marks { margin-bottom: 1rem; }
+.ev--talavera .ev-hero__seal { width: 3.8rem; height: 3.8rem; }
+.ev--talavera.layout-split .ev-hero__title { font-size: clamp(3.3rem, 5.2vw, 5.4rem); line-height: .92; }
+.ev--talavera .ev-hero__sub { font-size: clamp(1.2rem, 1.9vw, 1.7rem); }
+.ev--talavera .ev-hero__meta { gap: .45rem .8rem; font-size: .72rem; }
+.ev--talavera .ev-hero__meta i { width: 1rem; }
+.ev--talavera .ev-hero__actions { margin-top: 1.5rem; }
+.ev--talavera .ev-hero__actions .btn { border-radius: 999px; }
+.ev--talavera .ev-hero__actions .link-line { text-underline-offset: .4em; }
+.ev--talavera .ev-hero__caption {
+  left: clamp(1.1rem, 3vw, 2rem);
+  bottom: clamp(1.1rem, 3vw, 2rem);
+  padding: .62rem 1rem .58rem;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--tal-cream);
+  color: var(--tal-blue);
+  box-shadow: 0 0 0 1px rgba(31, 78, 140, .18), 0 .8rem 1.6rem rgba(4, 16, 34, .3);
+  transform: none;
+}
+
+/* fotos recortadas sobre la hacienda */
+.tal-hero-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.tal-hero-decor figure {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border: 6px solid var(--tal-cream);
+  background: var(--tal-cream);
+  box-shadow: 0 1.2rem 2.4rem rgba(3, 14, 28, .48), 0 0 0 1px rgba(31, 78, 140, .22);
+  animation: tal-shard-float 9s ease-in-out infinite;
+}
+.tal-hero-decor img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tal-hero-decor__round {
+  left: 6%;
+  bottom: 16%;
+  width: clamp(7rem, 10vw, 10.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: rotate(-4deg);
+}
+.tal-hero-decor__arch {
+  left: 22%;
+  top: 12%;
+  width: clamp(8rem, 10.5vw, 11.5rem);
+  aspect-ratio: 3 / 4;
+  border-radius: 50% 50% .7rem .7rem / 34% 34% .7rem .7rem;
+  transform: rotate(2.5deg);
+  animation-delay: -3s;
+}
+.tal-hero-decor__arch img { object-position: 54% 50%; }
+.tal-hero-decor__oct {
+  left: 39%;
+  top: 14%;
+  width: clamp(4.8rem, 6vw, 6.6rem);
+  aspect-ratio: 1;
+  border: 0;
+  background: none;
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+  filter: drop-shadow(0 .9rem 1.4rem rgba(3, 14, 28, .42));
+  animation-delay: -6s;
+  transform: rotate(7deg);
+}
+@keyframes tal-shard-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
+
+/* --- cuenta: placa de cerámica y cuentas redondas --- */
+.ev--talavera .ev-count { position: relative; overflow: hidden; }
+.ev--talavera .ev-count::before,
+.ev--talavera .ev-count::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  width: clamp(6rem, 9.5vw, 9.5rem);
+  aspect-ratio: 1;
+  border: 6px solid var(--tal-cream);
+  border-radius: 50%;
+  background-position: 50% 50%;
+  background-size: cover;
+  box-shadow: 0 1.4rem 2.8rem rgba(2, 12, 27, .44), 0 0 0 1px rgba(31, 78, 140, .24);
+  pointer-events: none;
+}
+.ev--talavera .ev-count::before {
+  left: max(3%, calc(50% - 40rem));
+  background-image: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-3.jpg");
+  transform: translateY(-50%) rotate(-5deg);
+}
+.ev--talavera .ev-count::after {
+  right: max(3%, calc(50% - 40rem));
+  background-image: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-5.jpg");
+  transform: translateY(-50%) rotate(4deg);
+}
+.ev--talavera .ev-count__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2.5rem, 56rem);
+  padding: clamp(3.4rem, 6vw, 5.2rem) clamp(1.2rem, 4vw, 3rem) clamp(2rem, 3vw, 2.8rem);
+  border: 0;
+  border-radius: 50% 50% 1.4rem 1.4rem / 14% 14% 1.4rem 1.4rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .24),
+    0 2.4rem 4.8rem rgba(2, 12, 27, .46);
+}
+.ev--talavera .ev-count__inner::after {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(31, 78, 140, .28);
+  border-radius: 50% 50% 1rem 1rem / 14% 14% 1rem 1rem;
+  pointer-events: none;
+}
+.ev--talavera .ev-count__inner::before { z-index: 1; top: -2.35rem; }
+.ev--talavera .ev-count .countdown {
+  gap: clamp(.45rem, 1.4vw, 1.1rem);
+  align-items: start;
+}
+.ev--talavera .ev-count .countdown div {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  width: 100%;
+  max-width: clamp(4rem, 7vw, 7.8rem);
+  margin-inline: auto;
+  aspect-ratio: 1;
+  padding: .4rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--tal-blue);
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 239, 223, .3),
+    inset 0 0 0 5px rgba(246, 239, 223, .08),
+    0 .6rem 1.2rem rgba(7, 25, 48, .22);
+}
+.ev--talavera .ev-count .countdown strong {
+  color: var(--tal-cream);
+  font-size: clamp(1.15rem, 2.4vw, 2rem);
+  line-height: 1;
+}
+.ev--talavera .ev-count .countdown span {
+  margin-top: .28rem;
+  color: rgba(246, 239, 223, .8);
+  font-size: clamp(.46rem, .68vw, .56rem);
+  letter-spacing: .12em;
+}
+
+/* --- rascar: tarjeta en arco --- */
+.ev--talavera .ev-scratch__copy { position: relative; }
+.ev--talavera .ev-scratch__copy::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -.5rem;
+  width: clamp(4.8rem, 7vw, 6.6rem);
+  aspect-ratio: 1;
+  border: 5px solid var(--tal-cream);
+  border-radius: 50%;
+  background: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-2.jpg") center / cover;
+  box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .24);
+  transform: rotate(6deg);
+}
+.ev--talavera .ev-scratch__copy .ev-h2,
+.ev--talavera .ev-scratch__copy p { max-width: 27rem; }
+.ev--talavera .ev-scratch__card {
+  width: min(100%, 23rem);
+  aspect-ratio: 3 / 4;
+  border: 0;
+  border-radius: 50% 50% 1rem 1rem / 12% 12% 1rem 1rem;
+  background-color: var(--tal-cream);
+  box-shadow:
+    0 0 0 7px var(--tal-cream),
+    0 0 0 10px rgba(31, 78, 140, .32),
+    0 2rem 4rem rgba(7, 25, 48, .28);
+  transform: rotate(.8deg);
+}
+.ev--talavera .ev-scratch__card::before {
+  height: 10px;
+  z-index: 4;
+  border-radius: 50% 50% 0 0 / 12% 12% 0 0;
+}
+.ev--talavera .ev-scratch__card::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 10px;
+  border: 1px solid rgba(31, 78, 140, .3);
+  border-radius: 50% 50% .7rem .7rem / 12% 12% .7rem .7rem;
+  pointer-events: none;
+}
+.ev--talavera .ev-scratch__reveal { padding: 2.4rem 1.3rem 3.2rem; }
+.ev--talavera .ev-scratch__reveal span {
+  max-width: 17rem;
+  margin-inline: auto;
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  line-height: 1;
+}
+.ev--talavera .ev-scratch__button {
+  right: 50%;
+  bottom: 1rem;
+  transform: translateX(50%);
+  min-height: 40px;
+  padding: .4rem .85rem;
+  border-radius: 999px;
+  font-size: .55rem;
+}
+
+/* --- historia: dos arcos --- */
+.ev--talavera .ev-intro {
+  background-color: #0D2E53;
+  background-image:
+    linear-gradient(180deg, rgba(8, 27, 51, .78), rgba(8, 27, 51, .88)),
+    var(--tal-tile);
+  background-size: auto, cover;
+  background-position: center, center;
+}
+.ev--talavera .ev-intro__grid {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  grid-template-rows: auto 1fr;
+  gap: .4rem clamp(1.8rem, 4vw, 3.5rem);
+  align-items: center;
+  width: min(100% - 2.5rem, 66rem);
+  padding: clamp(1rem, 2vw, 1.4rem) clamp(1.2rem, 3vw, 2rem) clamp(1.8rem, 3.2vw, 2.4rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  border: 0;
+  border-radius: 50% 50% 1.4rem 1.4rem / 7% 7% 1.4rem 1.4rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .2),
+    0 2.4rem 4.8rem rgba(2, 12, 27, .46);
+  transform: none;
+}
+.ev--talavera .ev-intro__grid::before {
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: auto;
+  bottom: 10px;
+  border: 1px solid rgba(31, 78, 140, .28);
+  border-radius: 50% 50% 1rem 1rem / 7% 7% 1rem 1rem;
+  background: none;
+  pointer-events: none;
+}
+.ev--talavera .ev-intro__grid::after {
+  top: -1.7rem;
+  right: clamp(2rem, 6vw, 4rem);
+  width: 4rem;
+  height: 4rem;
+  z-index: 2;
+}
+.tal-intro__photo {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 100%;
+  margin: 0;
+  align-self: stretch;
+  min-height: 22rem;
+  overflow: visible;
+  border: 7px solid var(--tal-card);
+  border-radius: 50% 50% .8rem .8rem / 28% 28% .8rem .8rem;
+  background: var(--tal-card);
+  box-shadow: 0 1.4rem 2.8rem rgba(7, 25, 48, .24), 0 0 0 1px rgba(31, 78, 140, .22);
+  transform: rotate(-1deg);
+}
+.tal-intro__photo > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50% 50% .4rem .4rem / 28% 28% .4rem .4rem;
+}
+.tal-intro__stamp {
+  position: absolute;
+  right: -2.1rem;
+  bottom: 2.4rem;
+  width: clamp(5.6rem, 8vw, 7.6rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 5px solid var(--tal-cream);
+  border-radius: 50%;
+  background: var(--tal-cream);
+  box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .28);
+  transform: rotate(7deg);
+}
+.tal-intro__stamp img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ev--talavera .ev-intro__grid .ev-h2 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  margin: 0;
+  padding: 0;
+}
+.ev--talavera .ev-intro__text { grid-column: 2; grid-row: 2; align-self: start; }
+
+/* --- detalles: portavasos con medallón --- */
+.ev--talavera .ev-details .ev-section-head {
+  position: relative;
+  padding-right: 9rem;
+}
+.ev--talavera .ev-details .ev-section-head::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: clamp(5.6rem, 8vw, 8rem);
+  aspect-ratio: 1;
+  border: 5px solid var(--tal-card);
+  border-radius: 50%;
+  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-5.jpg") center / cover;
+  box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .2);
+  transform: translateY(-50%) rotate(4deg);
+}
+.ev--talavera .ev-details__grid { align-items: start; gap: 1.1rem; }
+.ev--talavera .ev-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 19rem;
+  padding: 1.7rem 1.3rem 1.4rem;
+  border: 1px solid rgba(27, 43, 66, .16);
+  border-radius: 9rem 9rem .9rem .9rem / 24% 24% .9rem .9rem;
+  box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .09), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+.ev--talavera .ev-detail:nth-child(2n) {
+  margin-top: 2rem;
+  border-radius: .9rem .9rem 9rem 9rem / .9rem .9rem 24% 24%;
+}
+.ev--talavera .ev-detail:nth-child(1) { transform: rotate(-.4deg); }
+.ev--talavera .ev-detail:nth-child(2) { transform: rotate(.5deg); }
+.ev--talavera .ev-detail:nth-child(3) { transform: rotate(.3deg); }
+.ev--talavera .ev-detail:nth-child(4) { transform: rotate(-.5deg); }
+.ev--talavera .ev-detail:hover { transform: translateY(-4px) rotate(0); }
+.ev--talavera .ev-detail__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: .78rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(246, 239, 223, .5);
+  border-radius: 50%;
+  background: var(--tal-blue);
+  color: var(--tal-cream);
+  box-shadow: 0 0 0 4px rgba(31, 78, 140, .12), 0 .5rem .9rem rgba(7, 25, 48, .2);
+}
+.ev--talavera .ev-detail__icon * { stroke-width: 1.8; }
+.ev--talavera .ev-detail__label { margin-top: auto; }
+.ev--talavera .ev-palette {
+  border: 0;
+  border-radius: 999px;
+  background: rgba(251, 246, 234, .72);
+  box-shadow: 0 0 0 1px rgba(27, 43, 66, .14), 0 .8rem 1.6rem rgba(7, 25, 48, .06);
+}
+
+/* --- programa: menú en arco y línea de tiempo --- */
+.ev--talavera .ev-plan__grid {
+  border: 0;
+  border-radius: 50% 50% 1.2rem 1.2rem / 8% 8% 1.2rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .2),
+    0 2.4rem 4.8rem rgba(2, 12, 27, .46);
+  transform: none;
+}
+.ev--talavera .ev-plan__grid::before,
+.ev--talavera .ev-plan__grid::after { display: none; }
+.ev--talavera .ev-plan__head { align-self: start; }
+.ev--talavera .ev-plan__head::after {
+  content: "";
+  display: block;
+  width: clamp(6.5rem, 9vw, 9rem);
+  aspect-ratio: 1;
+  margin-top: 1.8rem;
+  border: 5px solid var(--tal-card);
+  border-radius: 50%;
+  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-2.jpg") center / cover;
+  box-shadow: 0 .9rem 1.8rem rgba(7, 25, 48, .2);
+  transform: rotate(-4deg);
+}
+.ev--talavera .ev-plan__list { border-top: 0; }
+.ev--talavera .ev-plan__row {
+  position: relative;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.05rem 0;
+  border-bottom: 1px dashed rgba(27, 43, 66, .24);
+}
+.ev--talavera .ev-plan__time {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--tal-blue);
+  color: var(--tal-cream);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  box-shadow: inset 0 0 0 1px rgba(246, 239, 223, .28), 0 .4rem .8rem rgba(7, 25, 48, .18);
+}
+.ev--talavera .ev-plan__row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 1.95rem;
+  top: calc(50% + 2.1rem);
+  bottom: -.35rem;
+  width: 1px;
+  background: rgba(31, 78, 140, .32);
+}
+.ev--talavera .ev-plan__title { font-size: 1.34rem; }
+.ev--talavera .ev-plan__desc { font-size: .82rem; }
+
+/* --- canción: plato de cerámica --- */
+.ev--talavera .ev-vinyl__grid {
+  border: 0;
+  border-radius: 50% 50% 1.2rem 1.2rem / 9% 9% 1.2rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .2),
+    0 2.4rem 4.8rem rgba(2, 12, 27, .46);
+  transform: none;
+}
+.ev--talavera .ev-vinyl__grid::before,
+.ev--talavera .ev-vinyl__grid::after { display: none; }
+.ev--talavera .ev-vinyl__stage { position: relative; }
+.ev--talavera .ev-vinyl__stage::before {
+  content: "";
+  position: absolute;
+  inset: -1.2rem;
+  border: 1px dashed rgba(31, 78, 140, .32);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ev--talavera .ev-vinyl .btn--ghost { border-radius: 999px; }
+
+/* --- galería: mosaico irregular --- */
+.ev--talavera .ev-gallery__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, clamp(7.5rem, 9.5vw, 10.2rem));
+  gap: .8rem;
+  padding: .8rem;
+  background: rgba(246, 239, 223, .08);
+  box-shadow: 0 0 0 1px rgba(246, 239, 223, .16), 0 1.4rem 2.8rem rgba(2, 12, 27, .24);
+  border-radius: 1.4rem;
+}
+.ev--talavera .ev-print {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--tal-card);
+  box-shadow: 0 .8rem 1.6rem rgba(2, 12, 27, .28);
+  transform: none;
+}
+.ev--talavera .ev-print:hover { transform: translateY(-3px); }
+.ev--talavera .ev-print button,
+.ev--talavera .ev-print img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.ev--talavera .ev-print img { object-fit: cover; }
+.ev--talavera .ev-print figcaption {
+  position: absolute;
+  z-index: 2;
+  left: .75rem;
+  bottom: .75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: .34rem .65rem;
+  border-radius: 999px;
+  background: rgba(246, 239, 223, .94);
+  color: var(--tal-blue);
+  font-family: var(--font-body);
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+  box-shadow: 0 .3rem .7rem rgba(2, 12, 27, .22);
+}
+.ev--talavera .ev-print:nth-child(1) { grid-area: 1 / 1 / 3 / 3; border-radius: 2rem; }
+.ev--talavera .ev-print:nth-child(2) { grid-area: 1 / 3 / 2 / 4; border-radius: 50%; }
+.ev--talavera .ev-print:nth-child(3) { grid-area: 1 / 4 / 3 / 5; border-radius: 50% 50% .8rem .8rem / 20% 20% .8rem .8rem; }
+.ev--talavera .ev-print:nth-child(4) { grid-area: 2 / 3 / 3 / 4; border-radius: 50%; }
+.ev--talavera .ev-print:nth-child(5) { grid-area: 3 / 1 / 4 / 3; border-radius: 1.4rem; }
+.ev--talavera .ev-print:nth-child(6) { grid-area: 3 / 3 / 4 / 4; border-radius: 50%; }
+.ev--talavera .ev-print:nth-child(7) { grid-area: 3 / 4 / 5 / 5; border-radius: 50% 50% .8rem .8rem / 20% 20% .8rem .8rem; }
+.ev--talavera .ev-print:nth-child(8) { grid-area: 4 / 1 / 5 / 4; border-radius: 1.4rem; }
+.ev--talavera .ev-print:nth-child(1) figcaption,
+.ev--talavera .ev-print:nth-child(5) figcaption,
+.ev--talavera .ev-print:nth-child(8) figcaption { font-size: .58rem; }
+.ev--talavera .ev-gallery__caption { margin-top: 1.2rem; }
+
+/* --- regalos: sobre en arco y foto --- */
+.ev--talavera .ev-gift { position: relative; overflow: hidden; }
+.ev--talavera .ev-gift::after {
+  content: "";
+  position: absolute;
+  right: max(4%, calc(50% - 34rem));
+  top: 18%;
+  width: clamp(6rem, 9vw, 9.5rem);
+  aspect-ratio: 1;
+  border: 6px solid var(--tal-cream);
+  border-radius: 50%;
+  background: url("../../assets/img/eventos/talavera/talavera-pottery-puebla-blue-ceramic-2.jpg") center / cover;
+  box-shadow: 0 1.2rem 2.4rem rgba(7, 25, 48, .22);
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+.ev--talavera .ev-gift__inner {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  border-top: 0;
+  border-radius: 50% 50% 1.2rem 1.2rem / 9% 9% 1.2rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .18),
+    0 2.2rem 4.4rem rgba(2, 12, 27, .3);
+  transform: none;
+}
+.ev--talavera .ev-gift__inner::before { display: none; }
+.ev--talavera .ev-gift__inner::after { top: -1.8rem; right: 2.4rem; z-index: 2; }
+
+/* --- compartir --- */
+.ev--talavera .ev-share {
+  width: min(100% - 2.5rem, 58rem);
+  border-top: 0;
+  padding-top: 0;
+}
+.ev--talavera .ev-share__links a {
+  padding: .2rem 1rem;
+  border: 1px solid rgba(31, 78, 140, .28);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.ev--talavera .ev-share__links a:hover { background: rgba(31, 78, 140, .08); }
+
+/* --- rsvp: tarjeta de respuesta en arco --- */
+.ev--talavera .ev-rsvp__head { position: relative; }
+.ev--talavera .ev-rsvp__head::after {
+  content: "";
+  display: block;
+  width: clamp(6rem, 9vw, 8.5rem);
+  aspect-ratio: 1;
+  margin-top: 2rem;
+  border: 5px solid rgba(246, 239, 223, .7);
+  border-radius: 50%;
+  background: url("../../assets/img/eventos/talavera-venue/mexican-hacienda-wedding-courtyard-6.jpg") center / cover;
+  box-shadow: 0 1rem 2rem rgba(2, 12, 27, .32);
+  transform: rotate(-4deg);
+}
+.ev--talavera .tal-rsvp__photo {
+  width: min(100%, 16.5rem);
+  margin: 2.2rem 0 0;
+  padding: 7px;
+  background: #F6EFDF;
+  border-radius: 50% 50% .9rem .9rem / 12% 12% .9rem .9rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .8),
+    0 1.4rem 2.6rem rgba(2, 12, 27, .32);
+  transform: rotate(-1.3deg);
+}
+.ev--talavera .tal-rsvp__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.ev--talavera [data-rsvp-form-wrap] {
+  border: 0;
+  border-radius: 50% 50% 1.2rem 1.2rem / 6% 6% 1.2rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .2),
+    0 2.2rem 4.4rem rgba(2, 12, 27, .42);
+  transform: none;
+}
+.ev--talavera [data-rsvp-form-wrap]::before { display: none; }
+.ev--talavera .ev-rsvp .rsvp__actions .btn { border-radius: 999px; }
+.ev--talavera .pass {
+  border: 0;
+  border-radius: 1.5rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .75),
+    0 0 0 7px rgba(31, 78, 140, .16),
+    0 1.6rem 3.2rem rgba(2, 12, 27, .36);
+  transform: rotate(-.35deg);
+}
+.ev--talavera .pass::before {
+  left: 1.5rem;
+  right: 1.5rem;
+  border-radius: 0 0 999px 999px;
+}
+.ev--talavera .pass__qr { border-radius: 1rem; }
+.ev--talavera .pass__actions .btn--ghost { border-radius: 999px; }
+
+/* --- muro: azulejos con mensajes --- */
+.ev--talavera .ev-wall {
+  border: 0;
+  border-radius: 50% 50% 1.2rem 1.2rem / 5% 5% 1.2rem 1.2rem;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 223, .85),
+    0 0 0 9px rgba(31, 78, 140, .18),
+    0 2.2rem 4.4rem rgba(2, 12, 27, .4);
+  transform: none;
+}
+.ev--talavera .ev-wall::before { display: none; }
+.ev--talavera .ev-wall__user,
+.ev--talavera .ev-wall__examples { gap: 1rem; }
+.ev--talavera .ev-wall .wish {
+  padding: 1.2rem 1.15rem 1rem;
+  border: 1px solid rgba(31, 78, 140, .18);
+  border-radius: 6rem 6rem .8rem .8rem / 22% 22% .8rem .8rem;
+  background: rgba(255, 252, 244, .58);
+  box-shadow: 0 .7rem 1.4rem rgba(7, 25, 48, .08);
+}
+.ev--talavera .ev-wall .wish:nth-child(2n) {
+  border-radius: .8rem .8rem 6rem 6rem / .8rem .8rem 22% 22%;
+  background: rgba(31, 78, 140, .06);
+}
+
+/* --- pie --- */
+.ev--talavera .ev-footer { border-top: 0; }
+.ev--talavera .ev-footer::before { border-radius: 0 0 999px 999px; }
+
+/* ---------- ajustes de ancho ---------- */
+@media (max-width: 1180px) {
+  .ev--talavera .ev-music [data-music-label] { display: none; }
+  .ev--talavera .ev-icon.ev-music { width: 44px; padding: 0; }
+  .ev--talavera .ev-count::before,
+  .ev--talavera .ev-count::after { width: 6.4rem; }
+}
+
+@media (max-width: 980px) {
+  .ev--talavera.layout-split .ev-hero__content {
+    width: min(32rem, 48vw);
+  }
+  .ev--talavera .ev-gallery__grid {
+    grid-template-rows: repeat(4, clamp(6.2rem, 10vw, 8.2rem));
+  }
+  .ev--talavera .ev-details .ev-section-head { padding-right: 7rem; }
+}
+
+@media (max-width: 900px) {
+  .ev--talavera.layout-split .ev-hero {
+    display: flex;
+    align-items: flex-end;
+    min-height: 100svh;
+    padding: 0 0 1.1rem;
+  }
+  .ev--talavera.layout-split .ev-hero__media { position: absolute; inset: 0; }
+  .ev--talavera.layout-split .ev-hero__content {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 1.6rem);
+    max-width: 34rem;
+    margin: 48svh auto 0;
+    padding: 2.3rem 1.3rem 2rem;
+    border-radius: 50% 50% 1rem 1rem / 8% 8% 1rem 1rem;
+    box-shadow:
+      0 0 0 1px rgba(246, 239, 223, .85),
+      0 0 0 7px rgba(31, 78, 140, .22),
+      0 1.6rem 3.2rem rgba(2, 12, 27, .44);
+  }
+  .ev--talavera.layout-split .ev-hero__content::before {
+    inset: 8px;
+    border-radius: 50% 50% .7rem .7rem / 8% 8% .7rem .7rem;
+  }
+  .ev--talavera.layout-split .ev-hero__title { font-size: clamp(2.9rem, 11vw, 4.2rem); }
+  .ev--talavera .ev-hero__caption { display: none; }
+  .tal-hero-decor__arch,
+  .tal-hero-decor__oct { display: none; }
+  .tal-hero-decor__round {
+    left: auto;
+    right: 6%;
+    top: 13%;
+    bottom: auto;
+    width: 6.4rem;
+    border-width: 4px;
+  }
+  .ev--talavera .ev-count::before,
+  .ev--talavera .ev-count::after,
+  .ev--talavera .ev-gift::after { display: none; }
+  .ev--talavera .ev-scratch__inner { grid-template-columns: 1fr; gap: 2.4rem; }
+  .ev--talavera .ev-scratch__card { justify-self: center; width: min(100%, 22rem); }
+  .ev--talavera .ev-scratch__copy::after { width: 4.6rem; top: -3.6rem; right: .5rem; }
+  .ev--talavera .ev-intro__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.4rem;
+  }
+  .tal-intro__photo {
+    grid-column: 1;
+    grid-row: 1;
+    width: min(100%, 24rem);
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    margin-inline: auto;
+  }
+  .ev--talavera .ev-intro__grid .ev-h2 { grid-column: 1; grid-row: 2; }
+  .ev--talavera .ev-intro__text { grid-column: 1; grid-row: 3; }
+  .tal-intro__stamp { right: -1rem; bottom: 1.4rem; width: 5.2rem; }
+  .ev--talavera .ev-details .ev-section-head { padding-right: 5.5rem; }
+  .ev--talavera .ev-details .ev-section-head::after { width: 4.8rem; }
+  .ev--talavera .ev-detail { min-height: 17rem; }
+  .ev--talavera .ev-plan__head::after { width: 6rem; }
+  .ev--talavera .ev-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: clamp(8rem, 28vw, 11rem);
+  }
+  .ev--talavera .ev-print:nth-child(1) { grid-area: auto / 1 / auto / 3; }
+  .ev--talavera .ev-print:nth-child(2),
+  .ev--talavera .ev-print:nth-child(3),
+  .ev--talavera .ev-print:nth-child(4),
+  .ev--talavera .ev-print:nth-child(5),
+  .ev--talavera .ev-print:nth-child(6),
+  .ev--talavera .ev-print:nth-child(7) { grid-area: auto; }
+  .ev--talavera .ev-print:nth-child(8) { grid-area: auto / 1 / auto / 3; }
+  .ev--talavera .ev-print:nth-child(1),
+  .ev--talavera .ev-print:nth-child(8) { min-height: 0; }
+  .ev--talavera .ev-print:nth-child(1) { border-radius: 1.6rem; }
+  .ev--talavera .ev-print:nth-child(8) { border-radius: 1.4rem; }
+  .ev--talavera .ev-rsvp__grid { grid-template-columns: 1fr; }
+  .ev--talavera .ev-rsvp__head::after { width: 5.4rem; margin-top: 1.3rem; }
+  .ev--talavera .tal-rsvp__photo { display: none; }
+}
+
+@media (max-width: 640px) {
+  .ev--talavera .ev-topbar__inner { gap: .45rem; }
+  .ev--talavera .ev-tools { gap: .3rem; }
+  .ev--talavera .ev-icon { width: 40px; height: 40px; }
+  .ev--talavera .ev-icon.ev-music { width: 40px; min-width: 40px; }
+  .ev--talavera .ev-icon svg { width: 19px; height: 19px; }
+  .ev--talavera.layout-split .ev-hero__content { margin-top: 46svh; }
+  .ev--talavera .ev-count__inner {
+    width: calc(100% - 1.7rem);
+    padding: 3rem 1rem 1.7rem;
+    border-radius: 50% 50% 1rem 1rem / 7% 7% 1rem 1rem;
+  }
+  .ev--talavera .ev-count__inner::after { inset: 7px; }
+  .ev--talavera .ev-count__inner::before { width: 3.5rem; height: 3.5rem; top: -1.8rem; }
+  .ev--talavera .ev-count .countdown { gap: .35rem; }
+  .ev--talavera .ev-count .countdown strong { font-size: clamp(1.05rem, 4.6vw, 1.5rem); }
+  .ev--talavera .ev-count .countdown span { font-size: .43rem; letter-spacing: .08em; }
+  .ev--talavera .ev-scratch__copy::after { display: none; }
+  .ev--talavera .ev-scratch__card { width: min(100%, 19.5rem); }
+  .ev--talavera .ev-intro__grid,
+  .ev--talavera .ev-plan__grid,
+  .ev--talavera .ev-vinyl__grid,
+  .ev--talavera .ev-gift__inner {
+    width: calc(100% - 1.7rem);
+    padding-inline: 1.15rem;
+  }
+  .ev--talavera .ev-intro__grid { padding-block: .8rem 1.6rem; }
+  .ev--talavera .ev-intro__grid::before { inset: 7px; left: 7px; right: 7px; top: 7px; bottom: 7px; }
+  .ev--talavera .ev-intro__grid::after { width: 3.2rem; height: 3.2rem; top: -1.35rem; }
+  .ev--talavera .ev-facts { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .ev--talavera .ev-facts > div:last-child { grid-column: span 2; }
+  .ev--talavera .ev-details .ev-section-head { padding-right: 0; padding-bottom: 5.8rem; }
+  .ev--talavera .ev-details .ev-section-head::after {
+    width: 4.6rem;
+    top: auto;
+    bottom: 0;
+    right: .4rem;
+    transform: rotate(4deg);
+  }
+  .ev--talavera .ev-detail { min-height: 0; padding: 1.4rem 1.1rem 1.2rem; }
+  .ev--talavera .ev-detail:nth-child(2n) { margin-top: 0; }
+  .ev--talavera .ev-detail__icon { width: 3.1rem; height: 3.1rem; padding: .68rem; }
+  .ev--talavera .ev-plan__head::after { width: 5.4rem; margin-top: 1.2rem; }
+  .ev--talavera .ev-plan__row { grid-template-columns: 3.6rem 1fr; gap: .9rem; }
+  .ev--talavera .ev-plan__time { width: 3.4rem; font-size: .74rem; }
+  .ev--talavera .ev-plan__row:not(:last-child)::after { left: 1.65rem; }
+  .ev--talavera .ev-vinyl__stage::before { inset: -.8rem; }
+  .ev--talavera .ev-gallery__grid { gap: .55rem; padding: .55rem; border-radius: 1rem; }
+  .ev--talavera .ev-gallery__grid { grid-auto-rows: clamp(7.5rem, 32vw, 10rem); }
+  .ev--talavera .ev-print figcaption { left: .55rem; bottom: .55rem; font-size: .48rem; padding: .3rem .5rem; }
+  .ev--talavera .ev-gift__inner { padding-block: 2.4rem 1.8rem; }
+  .ev--talavera .ev-gift__inner::after { width: 3.4rem; height: 3.4rem; top: -1.5rem; right: 1.5rem; }
+  .ev--talavera [data-rsvp-form-wrap] {
+    padding: 1.5rem 1.05rem 1.3rem;
+    border-radius: 50% 50% 1rem 1rem / 4% 4% 1rem 1rem;
+  }
+  .ev--talavera .pass { width: 100%; padding: 1.3rem 1.1rem 1.15rem; border-radius: 1.2rem; }
+  .ev--talavera .ev-wall {
+    width: 100%;
+    padding: 1.5rem 1.1rem 1.3rem;
+    border-radius: 50% 50% 1rem 1rem / 4% 4% 1rem 1rem;
+  }
+  .ev--talavera .ev-wall .wish { border-radius: 4rem 4rem .7rem .7rem / 18% 18% .7rem .7rem; }
+  .ev--talavera .ev-wall .wish:nth-child(2n) { border-radius: .7rem .7rem 4rem 4rem / .7rem .7rem 18% 18%; }
+}
+
+@media (max-width: 380px) {
+  .ev--talavera .ev-tools .ev-icon:not(.ev-music):not(.ev-nav-toggle) { display: inline-grid; }
+  .ev--talavera.layout-split .ev-hero__content { margin-top: 44svh; padding: 2rem 1.1rem 1.8rem; }
+  .ev--talavera.layout-split .ev-hero__title { font-size: 2.65rem; }
+  .ev--talavera .ev-count .countdown div { max-width: 3.5rem; }
+  .ev--talavera .ev-count .countdown strong { font-size: 1rem; }
+  .ev--talavera .ev-count .countdown span { font-size: .4rem; }
+  .ev--talavera .ev-detail { padding: 1.2rem 1rem 1.1rem; }
+  .ev--talavera .ev-gallery__grid { grid-auto-rows: 7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tal-hero-decor figure { animation: none; }
+}
+
+/* --- correcciones de la revisión visual --- */
+.ev--talavera.layout-split .ev-hero__media { contain: paint; }
+.ev--talavera .ev-detail::before { display: none; }
+.ev--talavera .ev-detail { min-height: 15.5rem; }
+.ev--talavera .ev-detail__label { margin-top: .85rem; }
+.ev--talavera .ev-count::before,
+.ev--talavera .ev-count::after {
+  bottom: auto;
+  height: auto;
+  clip-path: inset(0 round 50%);
+}
+.ev--talavera .ev-count::before { clip-path: inset(0 round 50%); }
+.ev--talavera .ev-print figcaption {
+  left: 50%;
+  right: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.ev--talavera .ev-print:nth-child(2) figcaption,
+.ev--talavera .ev-print:nth-child(4) figcaption,
+.ev--talavera .ev-print:nth-child(6) figcaption { bottom: 14%; }
+.ev--talavera .ev-gift::after {
+  left: max(4%, calc(50% - 34rem));
+  right: auto;
+  top: 14%;
+}
+@media (max-width: 900px) {
+  .ev--talavera .ev-detail { min-height: 0; }
+}
+@media (max-width: 640px) {
+  .ev--talavera .ev-scratch__copy::after { display: block; width: 4.1rem; top: -3.3rem; right: .2rem; }
+  .ev--talavera .ev-print figcaption { bottom: .55rem; }
+  .ev--talavera .ev-print:nth-child(2) figcaption,
+  .ev--talavera .ev-print:nth-child(4) figcaption,
+  .ev--talavera .ev-print:nth-child(6) figcaption { bottom: 14%; }
+}
+@media (max-width: 380px) {
+  .ev--talavera .ev-tools .ev-icon:not(.ev-music):not(.ev-nav-toggle) { display: inline-grid; }
+  .ev--talavera .ev-scratch__copy::after { display: none; }
+  .ev--talavera .ev-detail__label { margin-top: .6rem; }
+}
+
+.ev--talavera .ev-count::before { right: auto; }
+.ev--talavera .ev-count::after { left: auto; }
+.ev--talavera #inicio,
+.ev--talavera #historia,
+.ev--talavera #detalles,
+.ev--talavera #plan,
+.ev--talavera #cancion,
+.ev--talavera #galeria,
+.ev--talavera #regalos,
+.ev--talavera #confirma,
+.ev--talavera #deseos { scroll-margin-top: 5.5rem; }
+@media (max-width: 380px) {
+  .ev--talavera.layout-split .ev-hero__media img { transform: none !important; }
+}
+.ev--talavera .ev-vinyl__grid { overflow: hidden; }
+
+@media (max-width: 340px) {
+  .ref-tal__meta { display: grid; gap: .12rem; }
+  .ref-tal__meta i { display: none; }
+  .ref-tal__meta span:nth-child(2)::after { content: " · "; }
+  .ev--talavera .ev-details__grid { grid-template-columns: 1fr; max-width: 21rem; margin-inline: auto; }
+  .ev--talavera .ev-detail:nth-child(2n) { margin-top: 0; }
+}

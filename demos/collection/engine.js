@@ -328,13 +328,16 @@
     if (storedLang === "en") setLang("en");
   }
 
-  /* ---------- música generativa ---------- */
+  /* ---------- música: pista original o sintetizador de respaldo ---------- */
   var musicButtons = $$("[data-music]");
   var audioCtx = null;
   var musicTimer = 0;
   var musicGain = null;
   var musicOn = false;
   var musicStep = 0;
+  var track = $("[data-track]");
+  var trackFade = 0;
+  var trackFailed = false;
   var musicMode = musicButtons.length ? (musicButtons[0].getAttribute("data-music") || "jardin") : "jardin";
 
   function mtof(midi) {
@@ -489,7 +492,62 @@
     musicStep += 1;
   }
 
+  function setMusicUI(on) {
+    musicButtons.forEach(function (btn) {
+      btn.classList.toggle("is-playing", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      var label = $("[data-music-label]", btn);
+      if (label) label.textContent = on ? "Pausar" : "Música";
+    });
+    var disc = $("[data-vinyl]");
+    if (disc) disc.classList.toggle("is-paused", !on);
+    var vinyl = $("[data-vinyl-toggle]");
+    if (vinyl) {
+      vinyl.setAttribute("aria-pressed", on ? "true" : "false");
+      var vinylLabel = $("[data-vinyl-label]", vinyl);
+      if (vinylLabel) vinylLabel.textContent = on ? "Pausar" : "Escuchar";
+    }
+  }
+
+  function fadeTrack(target, duration, done) {
+    if (!track) { if (done) done(); return; }
+    window.clearInterval(trackFade);
+    var from = track.volume;
+    var started = Date.now();
+    trackFade = window.setInterval(function () {
+      var p = Math.min(1, (Date.now() - started) / duration);
+      track.volume = Math.max(0, Math.min(1, from + (target - from) * p));
+      if (p >= 1) {
+        window.clearInterval(trackFade);
+        trackFade = 0;
+        if (done) done();
+      }
+    }, 30);
+  }
+
   function startMusic() {
+    if (track && !trackFailed) {
+      try {
+        track.volume = 0;
+        var play = track.play();
+        var unlock = function () {
+          if (musicOn) fadeTrack(0.55, 700);
+        };
+        var fallback = function () {
+          trackFailed = true;
+          musicOn = false;
+          setMusicUI(false);
+          startMusic();
+        };
+        if (play && typeof play.then === "function") play.then(unlock).catch(fallback);
+        else unlock();
+        musicOn = true;
+        setMusicUI(true);
+        return;
+      } catch (e) {
+        trackFailed = true;
+      }
+    }
     var ctx = ensureAudio();
     if (!ctx) { toast("Tu navegador no permite audio."); return; }
     if (ctx.state === "suspended") ctx.resume();
@@ -499,41 +557,23 @@
     window.clearInterval(musicTimer);
     var cfg = musicConfig[musicMode] || musicConfig.jardin;
     musicTimer = window.setInterval(playMusicStep, cfg.tempo * 1000);
-    musicButtons.forEach(function (btn) {
-      btn.classList.add("is-playing");
-      btn.setAttribute("aria-pressed", "true");
-    });
-    var discOn = $("[data-vinyl]");
-    if (discOn) discOn.classList.remove("is-paused");
-    var vinylOn = $("[data-vinyl-toggle]");
-    if (vinylOn) {
-      vinylOn.setAttribute("aria-pressed", "true");
-      var labelOn = $("[data-vinyl-label]", vinylOn);
-      if (labelOn) labelOn.textContent = "Pausar";
-    }
+    setMusicUI(true);
   }
 
   function stopMusic() {
     musicOn = false;
     window.clearInterval(musicTimer);
-    if (musicGain && audioCtx) {
+    if (track && !trackFailed) {
+      fadeTrack(0, 350, function () {
+        try { track.pause(); } catch (e) {}
+      });
+    } else if (musicGain && audioCtx) {
       musicGain.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.15);
       window.setTimeout(function () {
         if (musicGain && !musicOn) musicGain.gain.value = 0.1;
       }, 500);
     }
-    musicButtons.forEach(function (btn) {
-      btn.classList.remove("is-playing");
-      btn.setAttribute("aria-pressed", "false");
-    });
-    var discOff = $("[data-vinyl]");
-    if (discOff) discOff.classList.add("is-paused");
-    var vinylOff = $("[data-vinyl-toggle]");
-    if (vinylOff) {
-      vinylOff.setAttribute("aria-pressed", "false");
-      var labelOff = $("[data-vinyl-label]", vinylOff);
-      if (labelOff) labelOff.textContent = "Girar";
-    }
+    setMusicUI(false);
   }
 
   musicButtons.forEach(function (btn) {
@@ -543,6 +583,13 @@
   });
 
   document.addEventListener("visibilitychange", function () {
+    if (track && !trackFailed) {
+      if (document.hidden && musicOn && !track.paused) track.pause();
+      if (!document.hidden && musicOn && track.paused) {
+        try { track.play(); } catch (e) {}
+      }
+      return;
+    }
     if (!audioCtx) return;
     if (document.hidden && musicOn && audioCtx.state === "running") audioCtx.suspend();
     if (!document.hidden && musicOn && audioCtx.state === "suspended") audioCtx.resume();
