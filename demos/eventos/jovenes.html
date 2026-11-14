@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="../collection/base.css">
 <link rel="stylesheet" href="eventos.css">
 <link rel="stylesheet" href="../collection/covers.css">
-<link rel="stylesheet" href="../collection/envelope.css">
-<link rel="stylesheet" href="../collection/clasico.css">
 </head>
 <body class="ev ev--jovenes layout-poster"
       data-demo="ev-jovenes"
@@ -25,21 +23,38 @@
 <div class="progress" data-progress aria-hidden="true"><span></span></div>
 
 <div class="gate ev-gate" data-gate role="dialog" aria-modal="true" aria-label="Abrir la invitación de Dani 20 · 06.03.2027">
-  <div class="cover cover--envelope cover--full cover--jovenes" data-cover="envelope">
-  <div class="envelope-full" data-envelope>
-    <div class="envelope-full__paper" aria-hidden="true"></div>
-    <div class="envelope-full__fold envelope-full__fold--left" aria-hidden="true"></div>
-    <div class="envelope-full__fold envelope-full__fold--right" aria-hidden="true"></div>
-    <div class="envelope-full__fold envelope-full__fold--bottom" aria-hidden="true"></div>
-    <div class="envelope-full__flap" aria-hidden="true"></div>
-    <button class="envelope-full__seal" data-open type="button" aria-label="Abrir la invitación de Dani 20">
-      <span class="sr-only">Abrir la invitación</span>
-      <span class="envelope-full__wax" aria-hidden="true"><span class="envelope-full__monogram">20</span></span>
-    </button>
-    <div class="envelope-full__foot">
-      <p class="envelope-full__names">Dani <em>20</em></p>
-      <p class="envelope-full__date">06 · 03 · 2027 · Puebla · 21:00</p>
-      <p class="envelope-full__hint">Toca el sello para abrir tu invitación</p>
+  <div class="cover cover--collage cover--jovenes" data-cover="collage">
+  <picture class="cover__media">
+  <source media="(max-width: 620px)" srcset="../../assets/covers/jovenes-m.webp" type="image/webp">
+  <source media="(max-width: 620px)" srcset="../../assets/covers/jovenes-m.jpg" type="image/jpeg">
+  <source srcset="../../assets/covers/jovenes.webp" type="image/webp">
+  <img src="../../assets/covers/jovenes.jpg" alt="" aria-hidden="true" fetchpriority="high">
+</picture>
+  <div class="cover__tone" aria-hidden="true"></div>
+  <div class="cover__decor cover__decor--y2k" aria-hidden="true">
+  <span class="cover__sticker cover__sticker--2000">2000</span>
+  <span class="cover__cd"></span>
+  <span class="cover__phone"></span>
+  <span class="cover__photostrip"><i></i><i></i><i></i></span>
+  <span class="cover__chain"></span>
+  <span class="cover__spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.8 8.2L23 11l-8.2 2.8L12 22l-2.8-8.2L1 11l8.2-2.8L12 0Z"/></svg></span>
+  <span class="cover__tape"></span>
+</div>
+  
+  
+  <div class="gate__content cover__content">
+    <div class="cover__panel">
+      <div class="cover__copy">
+        <p class="cover__names">Dani <em>20</em></p>
+        <p class="cover__meta"><span>06 · 03 · 2027</span><i></i><span>Puebla</span><i></i><span>21:00</span></p>
+        <p class="cover__note">After hours.</p>
+      </div>
+      <div class="cover__action">
+  <button class="cover__seal" type="button" data-open aria-label="Abrir la invitación de Dani &lt;em&gt;20&lt;/em&gt;">
+    <span class="cover__seal-mark">20</span>
+  </button>
+  <span class="cover__hint">Toca el sello</span>
+</div>
     </div>
   </div>
 </div>
@@ -107,7 +122,7 @@
 
   <section class="ev-section ev-intro" id="historia">
     <div class="ev-wrap ev-intro__grid">
-      <h2 class="ev-h2">Nuestra historia</h2>
+      <h2 class="ev-h2">La fiesta empieza <em>tarde.</em></h2>
       <div class="ev-intro__text">
         <p class="lede">Cumplo veinte y no quiero una cena tranquila. Hay pista, luces y una lista de canciones que ya empezó.</p>
         <p>Llega a las nueve. La primera canción es a las diez. No hay hora de salida.</p>
@@ -122,7 +137,7 @@
   <section class="ev-section ev-details" id="detalles">
     <div class="ev-wrap">
       <div class="ev-section-head">
-        <h2 class="ev-h2">¿Dónde y cuándo?</h2>
+        <h2 class="ev-h2">La noche, <em>sin filtro.</em></h2>
         <p>Una sola pista, una sola regla: bailar.</p>
       </div>
       <div class="ev-details__grid"><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><p class="ev-detail__label">La fecha</p><p class="ev-detail__value">Sábado 6 de marzo</p><p class="ev-detail__note">21:00. Puebla.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg><p class="ev-detail__label">El lugar</p><p class="ev-detail__value">Foro Casa Sonora</p><p class="ev-detail__note">Puebla. Entrada por la calle.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6l1 5-2 1 3 9H7l3-9-2-1 1-5Z"/><path d="M9 4c0 1.7 1.3 3 3 3s3-1.3 3-3"/></svg><p class="ev-detail__label">Código</p><p class="ev-detail__value">Negro + neón</p><p class="ev-detail__note">Sin tenis blancos.</p></article><article class="ev-detail"><svg class="ev-detail__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><p class="ev-detail__label">Regalo</p><p class="ev-detail__value">Tu canción</p><p class="ev-detail__note">No hay mesa de regalos.</p></article></div>
@@ -132,7 +147,7 @@
   <section class="ev-section ev-plan" id="plan">
     <div class="ev-wrap ev-plan__grid">
       <div class="ev-plan__head">
-        <h2 class="ev-h2">Itinerario</h2>
+        <h2 class="ev-h2">La noche, <em>sin reloj.</em></h2>
         <p>Puertas, pista y after.</p>
       </div>
       <div class="ev-plan__list"><div class="ev-plan__row"><p class="ev-plan__time">21:00</p><div><p class="ev-plan__title">Puertas</p><p class="ev-plan__desc">Barra abierta y fotos.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">22:00</p><div><p class="ev-plan__title">Primera canción</p><p class="ev-plan__desc">La pista no se detiene.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">00:00</p><div><p class="ev-plan__title">Pastel</p><p class="ev-plan__desc">Rápido, que hay baile.</p></div></div><div class="ev-plan__row"><p class="ev-plan__time">02:00</p><div><p class="ev-plan__title">After</p><p class="ev-plan__desc">Para los que aguanten.</p></div></div></div>
@@ -147,7 +162,7 @@
 <section class="ev-section ev-playlist" id="playlist">
   <div class="ev-wrap ev-playlist__grid">
     <div class="ev-playlist__head">
-      <h2 class="ev-h2">La playlist de la fiesta</h2>
+      <h2 class="ev-h2">La <em>playlist.</em></h2>
       <p>Tres momentos, una sola pista. La lista se completa con tu canción.</p>
       <a class="link-line" href="#confirma"><span>Sugerir una canción</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -157,10 +172,6 @@
 
   <section class="ev-section ev-gallery" id="galeria">
     <div class="ev-wrap">
-      <div class="ev-section-head">
-        <h2 class="ev-h2">Momentos</h2>
-        <p>Un repaso de los momentos que nos trajeron hasta aquí.</p>
-      </div>
       <div class="ev-gallery__grid"><button type="button" data-lightbox data-alt="Retrato de referencia con lentejuela y luces" data-caption="La noche."><img src="../../assets/img/fiesta-hero2.jpg" alt="Retrato de referencia con lentejuela y luces" loading="lazy"></button><button type="button" data-lightbox data-alt="Confeti de referencia en una fiesta" data-caption="El after."><img src="../../assets/img/fiesta-confetti.jpg" alt="Confeti de referencia en una fiesta" loading="lazy"></button></div>
       <p class="ev-gallery__caption">Fotografías de referencia. Esta celebración es una demo de Patio.</p>
     </div>
@@ -214,7 +225,7 @@
   
 <section class="ev-section ev-gift" id="regalos">
   <div class="ev-wrap ev-gift__inner">
-    <h2 class="ev-h2">Mesa de regalos</h2>
+    <h2 class="ev-h2">Sin regalos</h2>
     <div><p>No hay mesa de regalos. Si quieres traer algo, trae una canción para la pista.</p><p>Tu presencia es el regalo.</p></div>
   </div>
 </section>
@@ -222,7 +233,7 @@
   <section class="ev-section ev-rsvp" id="confirma">
     <div class="ev-wrap ev-rsvp__grid">
       <div class="ev-rsvp__head">
-        <h2 class="ev-h2">Confirma tu asistencia</h2>
+        <h2 class="ev-h2">¿Vienes <em>o no?</em></h2>
         <p>Confirma antes del 28 de febrero. La lista se cierra.</p>
         <p class="small">Demo. Tus datos quedan en este navegador.</p>
       </div>
@@ -257,6 +268,7 @@
     </div>
             <div class="rsvp__actions">
               <button class="btn" type="submit">Confirmar</button>
+              <span class="form__note">Demo. Tus datos quedan en este navegador.</span>
             </div>
           </form>
         </div>

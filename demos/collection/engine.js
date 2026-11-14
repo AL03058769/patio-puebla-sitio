@@ -107,12 +107,12 @@
       startVideoGate();
       return;
     }
-    var envelope = $(".envelope, .envelope-full", gate);
+    var envelope = $(".envelope", gate);
     if (envelope) {
-      gateHideDelay = 350;
+      gateHideDelay = 400;
       gate.classList.add("is-envelope", "is-opening", "is-open");
       envelope.classList.add("is-open");
-      window.setTimeout(finishGate, reduceMotion ? 40 : 1300);
+      window.setTimeout(finishGate, reduceMotion ? 40 : 1200);
       return;
     }
     gateHideDelay = 500;
@@ -135,20 +135,6 @@
       }
       if (event.key === "Escape") finishGate();
     });
-    if (openBtn && params.get("qa") !== "open") {
-      // La puerta es un diálogo: el foco empieza en el contenedor (Enter abre,
-      // Tab lleva al sello) y no se escapa a la página mientras está cerrada.
-      gate.setAttribute("tabindex", "-1");
-      window.setTimeout(function () {
-        if (!gateDone) gate.focus({ preventScroll: true });
-      }, 60);
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Tab" && body.classList.contains("is-locked")) {
-          event.preventDefault();
-          openBtn.focus({ preventScroll: true });
-        }
-      });
-    }
   }
   if (skipBtn) skipBtn.addEventListener("click", finishGate);
   if (params.get("qa") === "open") finishGate();
