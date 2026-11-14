@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/img/eventos/talavera-cover/cover-table.jpg",
+    "source": "dark-walnut-wood-table-texture-3.jpg",
+    "by": "Kaboompics",
+    "by_url": "https://www.pexels.com/@karola-g",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-wooden-surface-4705928/",
+    "alt": "Close-up of a dark walnut table surface.",
+    "note": "Recorte, desenfoque, luz cálida y viñeta generados con scripts/make-talavera-cover.py."
+  },
+  {
+    "file": "assets/img/eventos/talavera-cover/cover-table-mobile.jpg",
+    "by": "Kaboompics",
+    "by_url": "https://www.pexels.com/@karola-g",
+    "pexels_url": "https://www.pexels.com/photo/close-up-shot-of-a-wooden-surface-4705928/",
+    "alt": "Detalle vertical de una mesa de nogal oscuro.",
+    "note": "Derivado vertical de cover-table.jpg para móvil."
+  },
+  {
+    "file": "assets/img/eventos/talavera-cover/tile-surface.jpg",
+    "by": "Olga Lioncat",
+    "by_url": "https://www.pexels.com/@olgalioncat",
+    "pexels_url": "https://www.pexels.com/photo/blue-and-white-ceramic-tile-of-construction-7245518/",
+    "alt": "Azulejo blanco y azul de una pared antigua.",
+    "note": "Textura de fondo para las secciones oscuras; recorte y color ajustados."
+  },
+  {
+    "file": "assets/img/eventos/talavera-cover/paper-cream.jpg",
+    "by": "Patio",
+    "note": "Textura de papel crema generada proceduralmente con numpy/Pillow para esta demo."
+  },
+  {
+    "file": "assets/img/eventos/talavera-cover/wax-seal.png",
+    "by": "Patio",
+    "note": "Lacre de cobalto generado proceduralmente con un mapa de altura, normales, luz difusa, especular y oclusión."
+  },
+  {
+    "file": "assets/img/eventos/talavera/talavera-trim.svg",
+    "by": "Patio",
+    "note": "Banda de talavera vectorial y sin costura, dibujada para esta demo."
+  }
+]

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <rect width="240" height="120" fill="#1B4A86"/>
+  <g stroke="#F7F0DF" stroke-opacity=".62" stroke-width="1.1" fill="none">
+    <path d="M0 13h240M0 107h240"/>
+  </g>
+  <g fill="#F7F0DF">
+    <!-- roseta principal -->
+    <g transform="translate(120 60)">
+      <g>
+        <ellipse rx="8" ry="24"/>
+        <ellipse rx="8" ry="24" transform="rotate(45)"/>
+        <ellipse rx="8" ry="24" transform="rotate(90)"/>
+        <ellipse rx="8" ry="24" transform="rotate(135)"/>
+      </g>
+      <g opacity=".8">
+        <ellipse rx="4.6" ry="14" transform="rotate(22.5)"/>
+        <ellipse rx="4.6" ry="14" transform="rotate(67.5)"/>
+        <ellipse rx="4.6" ry="14" transform="rotate(112.5)"/>
+        <ellipse rx="4.6" ry="14" transform="rotate(157.5)"/>
+      </g>
+      <circle r="8.8" fill="#1B4A86"/>
+      <circle r="3.8"/>
+    </g>
+    <!-- rosetas de orilla, partidas para repetir sin costura -->
+    <g transform="translate(0 60)">
+      <ellipse rx="7" ry="20"/>
+      <ellipse rx="7" ry="20" transform="rotate(45)"/>
+      <ellipse rx="7" ry="20" transform="rotate(90)"/>
+      <ellipse rx="7" ry="20" transform="rotate(135)"/>
+      <circle r="7.4" fill="#1B4A86"/>
+      <circle r="3.2"/>
+    </g>
+    <g transform="translate(240 60)">
+      <ellipse rx="7" ry="20"/>
+      <ellipse rx="7" ry="20" transform="rotate(45)"/>
+      <ellipse rx="7" ry="20" transform="rotate(90)"/>
+      <ellipse rx="7" ry="20" transform="rotate(135)"/>
+      <circle r="7.4" fill="#1B4A86"/>
+      <circle r="3.2"/>
+    </g>
+    <!-- flor pequeña entre rosetas -->
+    <g transform="translate(60 60)">
+      <g opacity=".92">
+        <ellipse rx="3.6" ry="10"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(90)"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(45)" opacity=".72"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(135)" opacity=".72"/>
+      </g>
+      <circle r="3.6" fill="#1B4A86"/>
+      <circle r="1.7"/>
+    </g>
+    <g transform="translate(180 60)">
+      <g opacity=".92">
+        <ellipse rx="3.6" ry="10"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(90)"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(45)" opacity=".72"/>
+        <ellipse rx="3.6" ry="10" transform="rotate(135)" opacity=".72"/>
+      </g>
+      <circle r="3.6" fill="#1B4A86"/>
+      <circle r="1.7"/>
+    </g>
+    <!-- roleos verticales finos -->
+    <g fill="none" stroke="#F7F0DF" stroke-width="1.5" opacity=".7">
+      <path d="M60 28c-8 12-8 52 0 64"/>
+      <path d="M180 28c8 12 8 52 0 64"/>
+    </g>
+    <g opacity=".72">
+      <path d="M52 38c-7-4-13-2-17 4 6 4 13 3 17-4Z"/>
+      <path d="M68 82c7 4 13 2 17-4-6-4-13-3-17 4Z"/>
+      <path d="M188 38c7-4 13-2 17 4-6 4-13 3-17-4Z"/>
+      <path d="M172 82c-7 4-13 2-17-4 6-4 13-3 17 4Z"/>
+    </g>
+  </g>
+  <g fill="#A9C4E6" opacity=".85">
+    <circle cx="24" cy="24" r="1.5"/><circle cx="216" cy="24" r="1.5"/>
+    <circle cx="24" cy="96" r="1.5"/><circle cx="216" cy="96" r="1.5"/>
+    <circle cx="120" cy="18" r="1.7"/><circle cx="120" cy="102" r="1.7"/>
+  </g>
+</svg>

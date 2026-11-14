@@ -1316,101 +1316,379 @@
 
 /* ---------- Talavera · Invítame OK ---------- */
 .ref-cover--talavera {
-  background:
-    radial-gradient(ellipse at 50% 38%, #FAF5EA 0%, #F1E7D4 58%, #E4D5BC 100%);
+  background: #0C1B2E;
+  transition: background-color .8s ease;
 }
-.ref-cover--talavera::before {
-  content: ""; position: absolute; inset: 1.4rem; z-index: 7;
-  border: 1px solid rgba(31, 78, 140, .24);
+.ref-talavera__scene,
+.ref-talavera__scene img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ref-talavera__scene { transition: opacity .8s ease; }
+.ref-talavera__shade { transition: opacity .8s ease; }
+.ref-talavera__scene img {
+  transform: scale(1.04);
+  animation: talavera-scene 28s ease-in-out infinite alternate;
+}
+.ref-talavera__shade {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-}
-.ref-talavera__grain {
-  position: absolute; inset: 0; pointer-events: none; opacity: .22;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
-}
-.ref-talavera__envelope {
-  position: absolute; left: 50%; top: 50%;
-  width: min(34vw, 30rem); height: min(92vh, 61rem);
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-  background: #F7F1E3;
-  box-shadow:
-    0 2.4rem 5rem rgba(31, 43, 66, .28),
-    0 .2rem .5rem rgba(31, 43, 66, .16),
-    inset 0 0 0 1px rgba(255,255,255,.7);
-  transition: transform .6s var(--ease), box-shadow .6s var(--ease);
-}
-.ref-talavera__envelope::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(to bottom right, transparent calc(50% - 1px), rgba(31,43,66,.10) 50%, transparent calc(50% + 1px)),
-    linear-gradient(to bottom left, transparent calc(50% - 1px), rgba(31,43,66,.10) 50%, transparent calc(50% + 1px));
-  opacity: .9;
+    radial-gradient(ellipse at 50% 44%, rgba(255, 233, 197, .14), transparent 56%),
+    radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(3, 11, 24, .55) 100%),
+    linear-gradient(180deg, rgba(3, 10, 20, .42), rgba(3, 10, 20, .10) 42%, rgba(3, 10, 20, .52));
 }
-.ref-talavera__envelope::after { content: none; }
+.ref-talavera__paper {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: min(44vw, 40rem);
+  height: min(94svh, 62rem);
+  transform: translate(-50%, -50%) rotate(-.3deg);
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #F6EFDF;
+  background-image: url("../../assets/img/eventos/talavera-cover/paper-cream.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow:
+    0 3.2rem 6.4rem rgba(2, 9, 20, .58),
+    0 .8rem 1.8rem rgba(2, 9, 20, .34),
+    0 0 0 1px rgba(255, 250, 238, .34),
+    inset 0 1px 0 rgba(255, 255, 255, .8);
+  transition: transform .95s var(--ease), box-shadow .7s var(--ease), opacity .5s ease;
+}
+.ref-talavera__paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  box-shadow:
+    inset 0 1.6rem 1.8rem -1.5rem rgba(44, 32, 16, .22),
+    inset 0 -1.4rem 1.6rem -1.3rem rgba(44, 32, 16, .18);
+}
+.ref-talavera__texture {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.36'/%3E%3C/svg%3E");
+}
+.ref-talavera__creases {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  fill: none;
+  stroke: rgba(22, 49, 83, .11);
+  stroke-width: 1;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .5));
+}
+.ref-talavera__creases path {
+  vector-effect: non-scaling-stroke;
+}
+.ref-talavera__sheen {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: -40%;
+  width: 180%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .45;
+  mix-blend-mode: soft-light;
+  background: linear-gradient(104deg, transparent 38%, rgba(255, 252, 242, .26) 48%, transparent 58%);
+  transform: translateX(-38%);
+  animation: talavera-sheen 14s ease-in-out infinite;
+}
 .ref-talavera__band {
-  position: absolute; z-index: 2;
-  background-image: url("../../assets/img/eventos/talavera/talavera-band.svg");
-  background-size: 4rem auto;
-  background-repeat: repeat;
-  box-shadow: 0 0 0 1px rgba(12,42,87,.25), 0 .35rem .9rem rgba(31,43,66,.18);
+  position: absolute;
+  z-index: 3;
+  background-image: url("../../assets/img/eventos/talavera/talavera-trim.svg");
+  background-size: 140% auto;
+  background-repeat: repeat-y;
+  background-position: 50% 50%;
+  box-shadow:
+    0 0 0 1px rgba(10, 38, 76, .34),
+    inset 0 1px 0 rgba(255, 255, 255, .24),
+    inset 0 -1px 0 rgba(6, 26, 54, .32);
+  filter: drop-shadow(0 .55rem .8rem rgba(14, 32, 56, .22));
+}
+.ref-talavera__band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .34;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
 }
 .ref-talavera__band--left {
-  top: -1%; left: 23%; width: 10%; height: 43.5%;
-  transform: rotate(-19deg); transform-origin: top center;
+  top: -3%;
+  left: 8%;
+  width: 16%;
+  height: 55%;
+  transform: rotate(20deg);
+  transform-origin: top center;
 }
 .ref-talavera__band--right {
-  top: -1%; right: 23%; width: 10%; height: 43.5%;
-  transform: rotate(19deg); transform-origin: top center;
+  top: -3%;
+  right: 8%;
+  width: 16%;
+  height: 55%;
+  transform: rotate(-20deg);
+  transform-origin: top center;
 }
 .ref-talavera__band--bottom {
-  left: 0; right: 0; bottom: 0; height: 12.5%;
-  background-size: 4rem auto;
-  border-top: 1px solid rgba(12,42,87,.42);
-  border-bottom: 1px solid rgba(12,42,87,.3);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 13%;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+}
+.ref-talavera__lockup {
+  position: absolute;
+  z-index: 2;
+  top: 56%;
+  left: 8%;
+  right: 8%;
+  text-align: center;
+  transition: opacity .4s ease, transform .5s var(--ease);
+}
+.ref-talavera__kicker {
+  margin: 0 0 .9rem;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .34em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #4C6582;
+}
+.ref-talavera__names {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.35rem, 3.9vw, 3.8rem);
+  line-height: .94;
+  letter-spacing: -.025em;
+  color: #143A67;
+  text-wrap: balance;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, .72),
+    0 -1px 0 rgba(20, 48, 84, .14);
+}
+.ref-talavera__names em {
+  font-style: italic;
+  font-weight: 400;
+  color: #2A5B93;
+}
+.ref-talavera__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .38rem .7rem;
+  margin: 1.15rem 0 0;
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: #4C6582;
+}
+.ref-talavera__meta i {
+  width: 1.3rem;
+  height: 1px;
+  background: currentColor;
+  opacity: .4;
 }
 .ref-talavera__seal {
-  position: absolute; z-index: 5; left: 50%; top: 47.5%;
-  width: clamp(6.4rem, 9vw, 9rem); height: clamp(6.4rem, 9vw, 9rem);
-  padding: 0; border: 0; background: none; cursor: pointer;
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 45%;
+  width: clamp(7rem, 10.6vw, 9.6rem);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   transform: translate(-50%, -50%);
-  filter: drop-shadow(0 .8rem 1.2rem rgba(10,30,58,.35));
-  transition: transform .28s var(--ease), filter .28s var(--ease), opacity .3s var(--ease);
+  transition: transform .3s var(--ease), opacity .4s ease;
 }
-.ref-talavera__seal svg { display: block; width: 100%; height: 100%; }
-.ref-talavera__seal:hover { transform: translate(-50%, -50%) scale(1.06) rotate(-2deg); }
+.ref-talavera__seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter:
+    drop-shadow(0 .95rem 1.15rem rgba(4, 16, 34, .46))
+    drop-shadow(0 .1rem .22rem rgba(4, 16, 34, .42));
+}
+.ref-talavera__seal:hover { transform: translate(-50%, -50%) scale(1.05) rotate(-1.5deg); }
 .ref-talavera__seal:active { transform: translate(-50%, -50%) scale(.97); }
-.ref-talavera__seal:focus-visible { outline: 3px solid #F7F1E3; outline-offset: .55rem; border-radius: 50%; }
+.ref-talavera__seal:focus-visible {
+  outline: 3px solid #F6EFDF;
+  outline-offset: .7rem;
+  border-radius: 50%;
+}
 .ref-talavera__hint {
-  position: absolute; z-index: 6; left: 50%; bottom: 2.6%;
-  width: max-content; max-width: 86%;
+  position: absolute;
+  z-index: 7;
+  left: 50%;
+  bottom: calc(13% + 1.05rem);
   transform: translateX(-50%);
-  padding: .38rem .92rem; border-radius: 99px;
-  background: rgba(10, 37, 80, .58);
-  color: #F7F1E3; text-align: center;
-  text-shadow: 0 1px 2px rgba(12, 42, 87, .45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .55rem .5rem;
+  border: 0;
+  background: transparent;
+  color: #214C7C;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .4em;
+  text-decoration-color: rgba(33, 76, 124, .38);
+  cursor: pointer;
+  transition: color .25s ease, opacity .3s ease;
 }
+.ref-talavera__hint:hover { color: #123A67; text-decoration-color: rgba(18, 58, 103, .7); }
+.ref-talavera__hint:focus-visible { outline: 2px solid #214C7C; outline-offset: .2rem; }
+
 .gate.is-open .ref-talavera__seal {
-  transform: translate(-50%, -50%) scale(.72) rotate(7deg);
+  transform: translate(-50%, -50%) scale(.72) rotate(8deg);
   opacity: 0;
+  transition: transform .4s var(--ease), opacity .3s ease;
 }
-.gate.is-open .ref-talavera__envelope {
-  transform: translate(-50%, -50%) scale(1.018);
-  box-shadow: 0 3rem 6rem rgba(31,43,66,.22);
+.gate.is-open .ref-talavera__paper {
+  transform: translate(calc(-50% + .8rem), calc(-50% - 100svh)) rotate(-1.1deg) scale(1.02);
+  box-shadow: 0 4rem 7rem rgba(2, 9, 20, .46);
+  transition: transform .9s cubic-bezier(.5, .05, .2, 1) .04s, box-shadow .7s var(--ease);
 }
-.reveal .ref-talavera__seal { animation: none; }
+.gate.is-open .ref-talavera__band--left { transform: rotate(22deg) translateY(-3%); }
+.gate.is-open .ref-talavera__band--right { transform: rotate(-22deg) translateY(-3%); }
+.gate.is-open .ref-talavera__band { transition: transform .9s var(--ease) .05s; }
+.gate.is-open .ref-talavera__lockup { transition: transform .9s var(--ease) .05s; }
+.gate.is-open .ref-talavera__hint { opacity: 0; transition: opacity .25s ease; }
+.gate.is-open .ref-talavera__sheen { opacity: 0; transition: opacity .3s ease; }
+.gate.is-open .ref-talavera__scene {
+  opacity: 0;
+  transition: opacity .5s ease .04s;
+}
+.gate.is-open .ref-talavera__shade {
+  opacity: 0;
+  transition: opacity .5s ease .04s;
+}
+.gate.is-open .ref-cover--talavera {
+  background-color: transparent;
+  transition: background-color .5s ease .04s;
+}
+.ev-gate.is-open { background-color: transparent; transition: background-color .5s ease .04s; }
+
+@keyframes talavera-scene {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.075); }
+}
+@keyframes talavera-sheen {
+  0%, 58% { transform: translateX(-38%); }
+  82%, 100% { transform: translateX(34%); }
+}
 
 @media (max-width: 760px) {
-  .ref-talavera__envelope { width: min(72vw, 26rem); height: min(82vh, 48rem); }
-  .ref-talavera__envelope { width: 78vw; height: 84vh; }
-  .ref-talavera__band { background-size: 3.2rem auto; }
-  .ref-talavera__band--left, .ref-talavera__band--right { width: 10.6%; height: 48%; }
-  .ref-talavera__band--left { transform: rotate(-12deg); }
-  .ref-talavera__band--right { transform: rotate(12deg); }
-  .ref-talavera__band--bottom { height: 13%; background-size: 3.2rem auto; }
-  .ref-talavera__seal { width: 6.2rem; height: 6.2rem; top: 48%; }
-  .ref-talavera__hint { font-size: .5rem; letter-spacing: .14em; bottom: 2.2%; }
+  .ref-talavera__scene { display: none; }
+  .ref-talavera__paper {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    box-shadow: none;
+    background-position: 50% 42%;
+  }
+  .ref-talavera__paper::after {
+    box-shadow:
+      inset 0 1.8rem 2rem -1.7rem rgba(44, 32, 16, .18),
+      inset 0 -1.6rem 1.8rem -1.5rem rgba(44, 32, 16, .14);
+  }
+  .ref-talavera__band { background-size: 140% auto; }
+  .ref-talavera__band--left {
+    left: 6%;
+    width: 19%;
+    height: 54%;
+    transform: rotate(17deg);
+  }
+  .ref-talavera__band--right {
+    right: 6%;
+    width: 19%;
+    height: 54%;
+    transform: rotate(-17deg);
+  }
+  .ref-talavera__band--bottom { height: 14%; background-size: auto 100%; }
+  .ref-talavera__lockup { top: 55%; left: 7%; right: 7%; }
+  .ref-talavera__names { font-size: clamp(2.15rem, 9.6vw, 2.9rem); }
+  .ref-talavera__kicker { margin-bottom: .8rem; font-size: .54rem; }
+  .ref-talavera__meta { margin-top: 1rem; font-size: .56rem; letter-spacing: .14em; }
+  .ref-talavera__seal { top: 44%; width: 7.6rem; }
+  .ref-talavera__hint {
+    bottom: calc(14% + .85rem + env(safe-area-inset-bottom, 0px));
+    font-size: .54rem;
+    letter-spacing: .17em;
+  }
+  .gate.is-open .ref-talavera__paper { transform: translateY(-100svh) rotate(-1.1deg) scale(1.02); }
+}
+
+@media (max-width: 390px) {
+  .ref-talavera__names { font-size: clamp(2rem, 9.3vw, 2.4rem); }
+  .ref-talavera__seal { width: 7.1rem; }
+  .ref-talavera__hint { font-size: .47rem; letter-spacing: .14em; }
+}
+
+@media (max-height: 700px) and (min-width: 761px) {
+  .ref-talavera__paper { height: 96svh; }
+  .ref-talavera__seal { width: 6.4rem; }
+  .ref-talavera__lockup { top: 55%; }
+  .ref-talavera__names { font-size: clamp(2rem, 2.8vw, 2.6rem); }
+  .ref-talavera__meta { margin-top: .8rem; }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .ref-talavera__paper { height: 100%; }
+  .ref-talavera__band--left,
+  .ref-talavera__band--right { width: 12%; height: 58%; }
+  .ref-talavera__band--left { left: 10%; transform: rotate(24deg); }
+  .ref-talavera__band--right { right: 10%; transform: rotate(-24deg); }
+  .ref-talavera__band--bottom { height: 17%; }
+  .ref-talavera__seal { width: 5.4rem; top: 46%; }
+  .ref-talavera__lockup { top: 58%; }
+  .ref-talavera__names { font-size: 1.9rem; }
+  .ref-talavera__meta { margin-top: .6rem; font-size: .5rem; }
+  .ref-talavera__hint { bottom: 3%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ref-talavera__scene img,
+  .ref-talavera__sheen { animation: none; }
+  .ref-talavera__paper,
+  .ref-talavera__band,
+  .ref-talavera__lockup,
+  .ref-talavera__seal { transition-duration: .01ms; }
 }
 
 /* ---------- XV Valentina · Invitafy ---------- */

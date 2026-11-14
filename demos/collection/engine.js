@@ -40,11 +40,13 @@
   }
   if (table) {
     $$("[data-table]").forEach(function (el) { el.textContent = table; });
+    $$("[data-table-wrap]").forEach(function (el) { el.hidden = false; });
   }
 
   /* ---------- puerta ---------- */
   var gate = $("[data-gate]");
-  var openBtn = $("[data-open]");
+  var openBtns = $$("[data-open]");
+  var openBtn = openBtns[0] || null;
   var skipBtn = $("[data-skip]");
   var main = $("main");
   var gateVideo = $("[data-gate-video]");
@@ -122,13 +124,13 @@
 
   if (gate) {
     body.classList.add("is-locked");
-    if (openBtn) openBtn.addEventListener("click", openGate);
+    openBtns.forEach(function (btn) { btn.addEventListener("click", openGate); });
     gate.addEventListener("click", function (event) {
       if (event.target === gate && !gateVideo) openGate();
     });
     gate.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
-        if (event.target === gate || event.target === openBtn) {
+        if (event.target === gate || event.target.hasAttribute("data-open")) {
           event.preventDefault();
           openGate();
         }
@@ -695,6 +697,7 @@
     setText("song", data.song || "");
     setText("date", body.getAttribute("data-date-label") || "");
     setText("venue", body.getAttribute("data-venue-label") || data.venue || "");
+    setText("table", table || "Por asignar");
     var declined = data.attendance === "no";
     pass.classList.toggle("is-declined", declined);
     if (!declined) renderQr(data);

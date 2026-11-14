@@ -1121,3 +1121,1086 @@
   .ev-butterfly { animation: none; }
   .ev-surprise__card { transition: none; }
 }
+
+/* ============================================================
+   TALAVERA · AZUL Y BARRO
+   Objetos de papelería: carta, programa, sobre, pase y fotos.
+   ============================================================ */
+.ev--talavera {
+  --tal-cream: #F6EFDF;
+  --tal-card: #FBF6EA;
+  --tal-ink: #1B2B42;
+  --tal-blue: #1F4E8C;
+  --tal-deep: #123A63;
+  --tal-terra: #A9502F;
+  --tal-muted: #526982;
+  --tal-line: rgba(27, 43, 66, .2);
+  --tal-paper: url("../../assets/img/eventos/talavera-cover/paper-cream.jpg");
+  --tal-tile: url("../../assets/img/eventos/talavera-cover/tile-surface.jpg");
+  --tal-trim: url("../../assets/img/eventos/talavera/talavera-trim.svg");
+  --tal-wax: url("../../assets/img/eventos/talavera-cover/wax-seal.webp");
+  --tal-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.028'/%3E%3C/svg%3E");
+  --tal-shadow: 0 1.5rem 3rem rgba(7, 25, 48, .16), 0 .35rem .8rem rgba(7, 25, 48, .08), inset 0 1px 0 rgba(255, 255, 255, .7);
+  --paper: #F6EFDF;
+  --band-bg: #F4EFE3;
+  --gift-bg: #F4EFE3;
+  --footer-bg: #F4EFE3;
+  --plan-accent: #E4A484;
+  --rsvp-accent: #E4A484;
+  --rsvp-accent-ink: #123A63;
+  --vinyl-accent: #F6EFDF;
+  background-color: #F4EFE3;
+}
+.ev--talavera :focus-visible { outline-color: currentColor; }
+
+/* --- superficies de papel --- */
+.ev--talavera .ev-intro,
+.ev--talavera .ev-details,
+.ev--talavera .ev-scratch,
+.ev--talavera .ev-gift,
+.ev--talavera .ev-footer {
+  background-color: #F4EFE3;
+  background-image: var(--tal-grain);
+}
+.ev--talavera .ev-count,
+.ev--talavera .ev-plan,
+.ev--talavera .ev-gallery,
+.ev--talavera .ev-rsvp,
+.ev--talavera .ev-vinyl {
+  background-color: #0D2E53;
+  background-image:
+    linear-gradient(180deg, rgba(8, 27, 51, .82), rgba(8, 27, 51, .9)),
+    var(--tal-tile);
+  background-size: auto, cover;
+  background-position: center, center;
+}
+
+/* --- héroe: la foto y la carta --- */
+.ev--talavera.layout-split .ev-hero__content {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-left: calc(clamp(1.5rem, 5vw, 4.5rem) + 15px);
+}
+/* Mientras la tarjeta de portada se levanta, el héroe enseña papel y foto
+   pero no su texto: así los dos títulos no se enciman a media transición. */
+.ev--talavera.is-locked .ev-hero__title,
+.ev--talavera.is-locked .ev-hero__sub,
+.ev--talavera.is-locked .ev-hero__meta,
+.ev--talavera.is-locked .ev-hero__actions,
+.ev--talavera.is-locked .ev-hero__marks,
+.ev--talavera.is-locked .ev-hero__caption { opacity: 0; }
+.ev--talavera.layout-split .ev-hero__content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(180deg, transparent 0 9px, rgba(246, 239, 223, .62) 9px 10px);
+  box-shadow: inset -1px 0 0 rgba(11, 37, 69, .3);
+}
+.ev--talavera.layout-split .ev-hero__content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-hero__media img {
+  filter: saturate(.92) contrast(1.03) brightness(.98);
+}
+.ev--talavera .ev-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 24, 44, .06), transparent 35%, rgba(8, 24, 44, .34));
+}
+.ev-hero__caption {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.1rem, 3vw, 2rem);
+  bottom: clamp(1.1rem, 3vw, 2rem);
+  max-width: calc(100% - 2.2rem);
+  padding: .7rem .9rem .65rem;
+  background-color: var(--tal-cream);
+  background-image: var(--tal-grain);
+  color: var(--tal-blue);
+  border-top: 3px solid var(--tal-blue);
+  box-shadow: 0 .7rem 1.4rem rgba(4, 16, 34, .28);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  transform: rotate(-1.2deg);
+}
+.ev--talavera .ev-hero__marks {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  margin-bottom: 1.15rem;
+}
+.ev--talavera .ev-hero__seal {
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 .3rem .4rem rgba(4, 16, 34, .26));
+}
+.ev--talavera .ev-hero__label {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--tal-muted);
+}
+.ev--talavera .ev-hero__title { color: var(--tal-ink); }
+.ev--talavera .ev-hero__title em { color: var(--tal-terra); }
+.ev--talavera .ev-hero__sub { color: #35506E; }
+.ev--talavera .ev-hero__meta { color: #4C6582; }
+.ev--talavera .ev-hero__guest {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: 1.1rem;
+  padding: .35rem .7rem;
+  border: 1px solid rgba(31, 78, 140, .28);
+  color: var(--tal-blue);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+.ev--talavera .ev-hero__guest strong { letter-spacing: .12em; }
+.ev--talavera .ev-hero__actions .link-line { color: var(--tal-blue); }
+.ev--talavera .ev-hero__actions .btn:not(.btn--ghost) {
+  background: var(--tal-blue);
+  border-color: var(--tal-blue);
+  color: var(--tal-cream);
+}
+
+/* --- banda de azulejo entre el héroe y la cuenta --- */
+.ev--talavera .ev-tile-band {
+  height: clamp(48px, 6vw, 74px);
+  border: 0;
+  background-color: #1B4A86;
+  background-image: var(--tal-trim);
+  background-size: clamp(130px, 15vw, 180px) 100%;
+  background-repeat: repeat-x;
+}
+
+/* --- cuenta regresiva: tarjeta con lacre --- */
+.ev--talavera .ev-count {
+  position: relative;
+  border: 0;
+  padding: clamp(4.6rem, 8vw, 7rem) 0 clamp(4rem, 7vw, 6rem);
+}
+.ev--talavera .ev-count::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-count__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.2rem;
+  width: min(100% - 2.5rem, 58rem);
+  padding: clamp(3rem, 5vw, 3.8rem) clamp(1.2rem, 4vw, 3rem) clamp(1.8rem, 3vw, 2.4rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .22);
+  box-shadow: 0 2.2rem 4.4rem rgba(2, 12, 27, .42), 0 .5rem 1.2rem rgba(2, 12, 27, .24), inset 0 1px 0 rgba(255, 255, 255, .7);
+  text-align: center;
+}
+.ev--talavera .ev-count__inner::before {
+  content: "";
+  position: absolute;
+  top: -2.15rem;
+  left: 50%;
+  width: 4.3rem;
+  height: 4.3rem;
+  transform: translateX(-50%) rotate(-6deg);
+  background: var(--tal-wax) center / contain no-repeat;
+  filter: drop-shadow(0 .45rem .55rem rgba(2, 12, 27, .42));
+}
+.ev--talavera .ev-count__label {
+  color: var(--tal-blue);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .26em;
+}
+.ev--talavera .ev-count .countdown {
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.5rem, 1.8vw, 1.3rem);
+}
+.ev--talavera .ev-count .countdown div { border-top-color: rgba(27, 43, 66, .26); }
+.ev--talavera .ev-count .countdown strong {
+  color: var(--tal-blue);
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+}
+.ev--talavera .ev-count .countdown span { color: var(--tal-muted); }
+.ev--talavera .ev-count .link-line { color: var(--tal-blue); margin-bottom: 0; }
+
+/* --- rascar la fecha --- */
+.ev--talavera .ev-scratch {
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+  border-bottom: 1px solid var(--tal-line);
+}
+.ev--talavera .ev-scratch__inner {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.ev--talavera .ev-scratch__copy p {
+  max-width: 30rem;
+  margin-top: 1rem;
+  color: var(--tal-muted);
+}
+.ev--talavera .ev-scratch__copy .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-scratch__copy .ev-h2 em { color: var(--tal-terra); }
+.ev--talavera .ev-scratch__card {
+  position: relative;
+  width: min(100%, 26rem);
+  aspect-ratio: 4 / 3;
+  justify-self: end;
+  overflow: hidden;
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  border: 1px solid rgba(27, 43, 66, .24);
+  box-shadow: 0 2rem 4rem rgba(7, 25, 48, .24), 0 .4rem 1rem rgba(7, 25, 48, .12);
+  transform: rotate(-1deg);
+}
+.ev--talavera .ev-scratch__card::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-scratch__reveal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: .55rem;
+  padding: 2rem 1.4rem 3rem;
+  text-align: center;
+}
+.ev--talavera .ev-scratch__reveal span {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.6vw, 3.5rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+  color: var(--tal-blue);
+}
+.ev--talavera .ev-scratch__reveal strong {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--tal-terra);
+}
+.ev--talavera .ev-scratch__reveal small {
+  font-size: .68rem;
+  line-height: 1.5;
+  color: var(--tal-muted);
+}
+.ev--talavera .ev-scratch__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+.ev--talavera .ev-scratch__card.is-ready .ev-scratch__canvas { display: block; }
+.ev--talavera .ev-scratch__button {
+  position: absolute;
+  z-index: 3;
+  right: .7rem;
+  bottom: .7rem;
+  display: none;
+  min-height: 44px;
+  padding: .45rem .7rem;
+  border: 1px solid var(--tal-blue);
+  background: var(--tal-cream);
+  color: var(--tal-blue);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ev--talavera .ev-scratch__card.is-ready .ev-scratch__button { display: inline-flex; align-items: center; }
+.ev--talavera .ev-scratch__card.is-revealed .ev-scratch__canvas {
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.ev--talavera .ev-scratch__card.is-revealed .ev-scratch__button { display: none; }
+
+/* --- carta de la historia --- */
+.ev--talavera .ev-intro { padding: clamp(4rem, 8vw, 7rem) 0; }
+.ev--talavera .ev-intro__grid {
+  position: relative;
+  width: min(100% - 2.5rem, 64rem);
+  padding: clamp(2.2rem, 5vw, 4.2rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  border: 1px solid rgba(27, 43, 66, .2);
+  box-shadow: var(--tal-shadow);
+  transform: rotate(-.25deg);
+}
+.ev--talavera .ev-intro__grid::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 9px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-intro__grid::after {
+  content: "";
+  position: absolute;
+  top: -1.85rem;
+  right: clamp(1.2rem, 4vw, 2.6rem);
+  width: 4.4rem;
+  height: 4.4rem;
+  background: var(--tal-wax) center / contain no-repeat;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 .4rem .5rem rgba(7, 25, 48, .3));
+}
+.ev--talavera .ev-intro .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-intro .ev-h2 em { color: var(--tal-terra); }
+.ev--talavera .ev-intro__text .lede { color: var(--tal-ink); }
+.ev--talavera .ev-intro__text p { color: var(--tal-muted); }
+.ev--talavera .ev-intro__text .lede { color: var(--tal-ink); }
+.ev--talavera .ev-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top-color: rgba(27, 43, 66, .22);
+}
+.ev--talavera .ev-facts dt { color: var(--tal-muted); }
+.ev--talavera .ev-facts dd { color: var(--tal-blue); }
+
+/* --- detalles: portavasos de papel --- */
+.ev--talavera .ev-details { padding: clamp(4rem, 8vw, 6.5rem) 0; }
+.ev--talavera .ev-details .ev-section-head h2 { color: var(--tal-ink); }
+.ev--talavera .ev-details .ev-section-head h2 em { color: var(--tal-terra); }
+.ev--talavera .ev-details .ev-section-head p { color: var(--tal-muted); }
+.ev--talavera .ev-details__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  border-top: 0;
+}
+.ev--talavera .ev-detail {
+  position: relative;
+  padding: 1.55rem 1.25rem 1.35rem;
+  border: 1px solid rgba(27, 43, 66, .18);
+  background-color: var(--tal-card);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  box-shadow: 0 1rem 2rem rgba(7, 25, 48, .14), inset 0 1px 0 rgba(255, 255, 255, .65);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.ev--talavera .ev-detail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 9px, rgba(246, 239, 223, .6) 9px 10px);
+}
+.ev--talavera .ev-detail:nth-child(1) { transform: rotate(-.5deg); }
+.ev--talavera .ev-detail:nth-child(2) { transform: rotate(.35deg); }
+.ev--talavera .ev-detail:nth-child(3) { transform: rotate(-.25deg); }
+.ev--talavera .ev-detail:nth-child(4) { transform: rotate(.45deg); }
+.ev--talavera .ev-detail:hover {
+  transform: translateY(-4px) rotate(0);
+  box-shadow: 0 1.5rem 2.6rem rgba(7, 25, 48, .18), inset 0 1px 0 rgba(255, 255, 255, .65);
+}
+.ev--talavera .ev-detail__icon {
+  width: 2.65rem;
+  height: 2.65rem;
+  padding: .64rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(31, 78, 140, .3);
+  border-radius: 50%;
+  background: rgba(255, 251, 240, .62);
+  color: var(--tal-blue);
+}
+.ev--talavera .ev-detail__label { color: var(--tal-blue); }
+.ev--talavera .ev-detail__value { color: var(--tal-ink); font-size: 1.28rem; }
+.ev--talavera .ev-detail__note { color: var(--tal-muted); }
+.ev--talavera .ev-detail__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  margin-top: .55rem;
+}
+.ev--talavera .ev-detail__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--tal-blue);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-underline-offset: .35em;
+}
+.ev--talavera .ev-palette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 1.8rem;
+  padding: 1.15rem 1.35rem;
+  border: 1px solid rgba(27, 43, 66, .18);
+  background: rgba(251, 246, 234, .55);
+}
+.ev--talavera .ev-palette__swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem 1.5rem;
+}
+.ev--talavera .ev-palette__swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--tal-ink);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.ev--talavera .ev-palette__swatch i {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 1px rgba(15, 30, 48, .16), 0 .35rem .6rem rgba(7, 25, 48, .18);
+}
+.ev--talavera .ev-palette__swatch i::after {
+  content: "";
+  position: absolute;
+  inset: .25rem;
+  border: 1px solid var(--swatch-ink);
+  border-radius: 50%;
+  opacity: .34;
+}
+.ev--talavera .ev-palette__note {
+  max-width: 25rem;
+  color: var(--tal-muted);
+  font-size: .76rem;
+}
+
+/* --- programa: tarjeta de mesa --- */
+.ev--talavera .ev-plan { padding: clamp(4rem, 8vw, 7rem) 0; }
+.ev--talavera .ev-plan__grid {
+  position: relative;
+  width: min(100% - 2.5rem, 64rem);
+  padding: clamp(2.2rem, 5vw, 4rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .2);
+  box-shadow: 0 2.2rem 4.4rem rgba(2, 12, 27, .42), 0 .5rem 1.2rem rgba(2, 12, 27, .24);
+  transform: rotate(.2deg);
+}
+.ev--talavera .ev-plan__grid::before,
+.ev--talavera .ev-plan__grid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-plan__grid::before { top: 0; }
+.ev--talavera .ev-plan__grid::after { bottom: 0; }
+.ev--talavera .ev-plan .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-plan .ev-h2 em { color: var(--tal-terra); }
+.ev--talavera .ev-plan__head p { color: var(--tal-muted); opacity: 1; }
+.ev--talavera .ev-plan__list { border-top-color: rgba(27, 43, 66, .22); }
+.ev--talavera .ev-plan__row { border-bottom-color: rgba(27, 43, 66, .18); }
+.ev--talavera .ev-plan__time { color: var(--tal-terra); }
+.ev--talavera .ev-plan__title { color: var(--tal-ink); }
+.ev--talavera .ev-plan__desc { color: var(--tal-muted); opacity: 1; }
+
+/* --- vinilo --- */
+.ev--talavera .ev-vinyl { padding: clamp(4rem, 8vw, 7rem) 0; }
+.ev--talavera .ev-vinyl__grid {
+  position: relative;
+  width: min(100% - 2.5rem, 64rem);
+  padding: clamp(2rem, 4.5vw, 3.6rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .2);
+  box-shadow: 0 2.2rem 4.4rem rgba(2, 12, 27, .42), 0 .5rem 1.2rem rgba(2, 12, 27, .24);
+  transform: rotate(-.2deg);
+}
+.ev--talavera .ev-vinyl__grid::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-vinyl__grid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-vinyl .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-vinyl .ev-h2 em { color: var(--tal-terra); }
+.ev--talavera .ev-vinyl__copy p { color: var(--tal-muted); }
+.ev--talavera .ev-vinyl__note { color: var(--tal-terra); }
+.ev--talavera .ev-vinyl .btn--ghost {
+  color: var(--tal-blue);
+  border-color: rgba(31, 78, 140, .4);
+}
+.ev--talavera .ev-vinyl__label {
+  background: var(--tal-blue);
+  color: var(--tal-cream);
+}
+.ev--talavera .ev-vinyl__stage { overflow: visible; }
+.ev--talavera .ev-vinyl__disc::after { display: none; }
+
+/* --- galería: copias impresas --- */
+.ev--talavera .ev-gallery { padding: clamp(4rem, 8vw, 7rem) 0; }
+.ev--talavera .ev-gallery__head {
+  display: block;
+  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+}
+.ev--talavera .ev-gallery .ev-h2 { color: var(--tal-cream); }
+.ev--talavera .ev-gallery .ev-h2 em { color: #E9B79C; }
+.ev--talavera .ev-gallery__head p { color: rgba(246, 239, 223, .78); }
+.ev--talavera .ev-gallery__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.9rem, 2vw, 1.5rem);
+}
+.ev--talavera .ev-print {
+  margin: 0;
+  padding: .5rem .5rem 0;
+  background-color: var(--tal-card);
+  background-image: var(--tal-grain);
+  box-shadow: 0 1.4rem 2.8rem rgba(2, 12, 27, .42), inset 0 1px 0 rgba(255, 255, 255, .6);
+  transform: rotate(var(--rot, 0deg));
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.ev--talavera .ev-print:hover {
+  transform: rotate(0) translateY(-4px);
+  box-shadow: 0 1.8rem 3.2rem rgba(2, 12, 27, .48), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+.ev--talavera .ev-print button {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.ev--talavera .ev-print img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  filter: saturate(.9) contrast(1.02);
+}
+.ev--talavera .ev-print figcaption {
+  padding: .55rem 0 .6rem;
+  color: var(--tal-blue);
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1;
+  text-align: center;
+}
+.ev--talavera .ev-gallery__caption {
+  color: rgba(246, 239, 223, .72);
+  text-align: center;
+}
+
+/* --- regalos: sobre --- */
+.ev--talavera .ev-gift { padding: clamp(4rem, 8vw, 6.5rem) 0; }
+.ev--talavera .ev-gift__inner {
+  position: relative;
+  width: min(100% - 2.5rem, 58rem);
+  padding: clamp(2.2rem, 5vw, 3.8rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  border: 1px solid rgba(27, 43, 66, .2);
+  border-top: 0;
+  box-shadow: var(--tal-shadow);
+  transform: rotate(-.2deg);
+}
+.ev--talavera .ev-gift__inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 9px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-gift__inner::after {
+  content: "";
+  position: absolute;
+  top: -1.7rem;
+  right: 2rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  background: var(--tal-wax) center / contain no-repeat;
+  transform: rotate(6deg);
+  filter: drop-shadow(0 .35rem .45rem rgba(7, 25, 48, .28));
+}
+.ev--talavera .ev-gift .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-gift p { color: var(--tal-muted); }
+
+/* --- compartir --- */
+.ev--talavera .ev-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem 1.5rem;
+  width: min(100% - 2.5rem, 58rem);
+  margin: 0 auto;
+  padding: 1.4rem 0 2.6rem;
+  border-top: 1px solid var(--tal-line);
+}
+.ev--talavera .ev-share__label {
+  color: var(--tal-muted);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.ev--talavera .ev-share__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+}
+.ev--talavera .ev-share__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--tal-blue);
+  font-size: .76rem;
+  font-weight: 600;
+  text-underline-offset: .35em;
+}
+
+/* --- rsvp: tarjeta de respuesta --- */
+.ev--talavera .ev-rsvp { padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4rem); }
+.ev--talavera .ev-rsvp__head .ev-h2 em { color: #E9B79C; }
+.ev--talavera .ev-rsvp__head p { color: rgba(246, 239, 223, .8); }
+.ev--talavera .ev-rsvp__head .small { color: rgba(246, 239, 223, .64); }
+.ev--talavera [data-rsvp-form-wrap] {
+  position: relative;
+  padding: clamp(1.6rem, 3.5vw, 2.4rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .22);
+  box-shadow: 0 2rem 4rem rgba(2, 12, 27, .42), 0 .4rem 1rem rgba(2, 12, 27, .2);
+  transform: rotate(-.15deg);
+}
+.ev--talavera [data-rsvp-form-wrap]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .rsvp { max-width: none; gap: 1.15rem; }
+.ev--talavera .ev-rsvp .field label { color: #35506E; }
+.ev--talavera .ev-rsvp .field input,
+.ev--talavera .ev-rsvp .field select,
+.ev--talavera .ev-rsvp .field textarea {
+  min-height: 46px;
+  padding: .5rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(27, 43, 66, .34);
+  background: transparent;
+  color: var(--tal-ink);
+  border-radius: 0;
+}
+.ev--talavera .ev-rsvp .field textarea { min-height: 88px; }
+.ev--talavera .ev-rsvp .field input::placeholder,
+.ev--talavera .ev-rsvp .field textarea::placeholder { color: #5F6E80; }
+.ev--talavera .ev-rsvp .field input:focus,
+.ev--talavera .ev-rsvp .field select:focus,
+.ev--talavera .ev-rsvp .field textarea:focus {
+  border-bottom-color: var(--tal-blue);
+  box-shadow: 0 1px 0 var(--tal-blue);
+}
+.ev--talavera .ev-rsvp .field select option {
+  background: var(--tal-cream);
+  color: var(--tal-ink);
+}
+.ev--talavera .ev-rsvp .ev-choice label { color: var(--tal-ink); }
+.ev--talavera .ev-rsvp .ev-choice input { accent-color: var(--tal-blue); }
+.ev--talavera .ev-rsvp .rsvp__actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+  padding-top: .3rem;
+}
+.ev--talavera .ev-rsvp .rsvp__actions .btn {
+  width: 100%;
+  background: var(--tal-blue);
+  border-color: var(--tal-blue);
+  color: var(--tal-cream);
+}
+.ev--talavera .ev-rsvp .rsvp__actions .btn:hover {
+  background: #163E72;
+  border-color: #163E72;
+}
+.ev--talavera .ev-rsvp .form__note { color: var(--tal-muted); }
+.ev--talavera .ev-rsvp .rsvp__success .display { color: var(--tal-cream); }
+.ev--talavera .ev-rsvp .rsvp__success p { color: rgba(246, 239, 223, .74); }
+
+/* --- pase físico --- */
+.ev--talavera .pass {
+  position: relative;
+  width: min(100%, 30rem);
+  margin: 1.5rem auto 0;
+  padding: 1.55rem 1.4rem 1.3rem;
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .26);
+  box-shadow: 0 1.4rem 2.8rem rgba(2, 12, 27, .34);
+  transform: rotate(-.35deg);
+}
+.ev--talavera .pass::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .pass__label { color: var(--tal-blue); font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.ev--talavera .pass__name { color: var(--tal-blue); }
+.ev--talavera .pass__seats { color: var(--tal-terra); }
+.ev--talavera .pass__seats span { color: var(--tal-muted); }
+.ev--talavera .pass__qr {
+  width: 9.4rem;
+  height: 9.4rem;
+  margin: 1.4rem auto .45rem;
+  padding: .5rem;
+  background: #FFFDF8;
+  border: 1px solid rgba(27, 43, 66, .28);
+  box-shadow: 0 0 0 4px rgba(255, 253, 248, .6);
+}
+.ev--talavera .pass__qr-label {
+  margin-bottom: 1rem;
+  color: var(--tal-muted);
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ev--talavera .pass__meta {
+  border-top: 1px dashed rgba(27, 43, 66, .34);
+  color: var(--tal-ink);
+}
+.ev--talavera .pass__meta span { color: var(--tal-muted); }
+.ev--talavera .pass__declined { color: var(--tal-muted); border-top-color: rgba(27, 43, 66, .3); }
+.ev--talavera .pass__actions {
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(27, 43, 66, .34);
+}
+.ev--talavera .pass__actions .btn--ghost {
+  color: var(--tal-blue);
+  border-color: rgba(31, 78, 140, .34);
+}
+.ev--talavera .pass__actions .btn--ghost:hover { border-color: var(--tal-blue); }
+
+/* --- muro de deseos: libro de visitas --- */
+.ev--talavera .ev-wall {
+  position: relative;
+  width: min(100%, 64rem);
+  margin: clamp(2.8rem, 5vw, 4.2rem) auto 0;
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: var(--tal-ink);
+  border: 1px solid rgba(27, 43, 66, .2);
+  box-shadow: 0 2rem 4rem rgba(2, 12, 27, .38);
+  transform: rotate(.15deg);
+}
+.ev--talavera .ev-wall::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+.ev--talavera .ev-wall__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(27, 43, 66, .2);
+}
+.ev--talavera .ev-wall__title {
+  color: var(--tal-blue);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: .98;
+  letter-spacing: -.025em;
+}
+.ev--talavera .ev-wall__title em { color: var(--tal-terra); font-style: italic; }
+.ev--talavera .ev-wall__head p {
+  max-width: 27rem;
+  color: var(--tal-muted);
+  font-size: .8rem;
+  line-height: 1.55;
+}
+.ev--talavera .ev-wall__user {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0 2rem;
+}
+.ev--talavera .ev-wall__user:empty { display: none; }
+.ev--talavera .ev-wall__empty { margin-top: 1rem; color: var(--tal-muted); font-size: .82rem; }
+.ev--talavera .ev-wall__label {
+  margin-top: 1.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(27, 43, 66, .18);
+  color: var(--tal-muted);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.ev--talavera .ev-wall__examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0 2rem;
+}
+.ev--talavera .ev-wall .wish { border-bottom-color: rgba(27, 43, 66, .18); }
+.ev--talavera .ev-wall .wish__head strong { color: var(--tal-blue); }
+.ev--talavera .ev-wall .wish__head span { color: var(--tal-muted); }
+.ev--talavera .ev-wall .wish__tag { color: var(--tal-terra); }
+.ev--talavera .ev-wall .wish__text { color: var(--tal-ink); }
+.ev--talavera .ev-wall .wish__foot span { color: var(--tal-muted); }
+
+/* --- pie --- */
+.ev--talavera .ev-footer {
+  position: relative;
+  border-top: 0;
+  padding-top: 3.2rem;
+}
+.ev--talavera .ev-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 8px;
+  background-color: var(--tal-blue);
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(246, 239, 223, .62) 10px 11px);
+}
+
+@media (max-width: 980px) {
+  .ev--talavera .ev-details__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ev--talavera .ev-detail:nth-child(2) { border-right: 1px solid rgba(27, 43, 66, .18); }
+  .ev--talavera .ev-print figcaption { font-size: .92rem; }
+  .ev--talavera .ev-vinyl__stage { max-width: 24rem; }
+}
+
+@media (max-width: 820px) {
+  .ev--talavera.layout-split .ev-hero__content {
+    padding: 2.3rem 1.25rem 3.4rem calc(1.25rem + 15px);
+  }
+  .ev--talavera .ev-hero__seal { width: 3rem; height: 3rem; }
+  .ev--talavera .ev-scratch__inner { grid-template-columns: 1fr; gap: 1.8rem; }
+  .ev--talavera .ev-scratch__card { justify-self: center; }
+  .ev--talavera .ev-intro__grid,
+  .ev--talavera .ev-plan__grid,
+  .ev--talavera .ev-vinyl__grid,
+  .ev--talavera .ev-gift__inner { width: min(100% - 1.7rem, 64rem); }
+  .ev--talavera .ev-wall { width: 100%; }
+  .ev--talavera .ev-rsvp__grid { gap: 2rem; }
+  .ev--talavera .ev-rsvp__head p { max-width: none; }
+}
+
+@media (max-width: 620px) {
+  .ev--talavera .ev-hero__title { font-size: clamp(2.7rem, 11.5vw, 4.2rem); }
+  .ev--talavera .ev-hero__meta { font-size: .72rem; }
+  .ev--talavera .ev-hero__caption {
+    left: .9rem;
+    bottom: .9rem;
+    padding: .55rem .7rem .5rem;
+    font-size: .56rem;
+    letter-spacing: .12em;
+  }
+  .ev--talavera .ev-tile-band { height: 50px; background-size: 120px 100%; }
+  .ev--talavera .ev-count { padding: 4.2rem 0 3.6rem; }
+  .ev--talavera .ev-count__inner {
+    width: min(100% - 1.7rem, 58rem);
+    padding: 2.7rem 1rem 1.6rem;
+    gap: .9rem;
+  }
+  .ev--talavera .ev-count__inner::before { top: -1.75rem; width: 3.5rem; height: 3.5rem; }
+  .ev--talavera .ev-count .countdown { gap: .35rem; }
+  .ev--talavera .ev-count .countdown strong { font-size: 1.55rem; }
+  .ev--talavera .ev-count .countdown span { font-size: .58rem; }
+  .ev--talavera .ev-count .link-line { font-size: .66rem; white-space: normal; text-align: center; }
+  .ev--talavera .ev-scratch { padding: 3.4rem 0; }
+  .ev--talavera .ev-scratch__copy p { font-size: .92rem; }
+  .ev--talavera .ev-scratch__card { width: 100%; max-width: 25rem; aspect-ratio: 4 / 3.2; }
+  .ev--talavera .ev-scratch__reveal { padding: 1.6rem 1.1rem 3.2rem; }
+  .ev--talavera .ev-scratch__reveal span { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .ev--talavera .ev-intro { padding: 3.4rem 0; }
+  .ev--talavera .ev-intro__grid {
+    padding: 2rem 1.25rem 1.7rem;
+    transform: none;
+  }
+  .ev--talavera .ev-intro__grid::after { top: -1.45rem; right: 1rem; width: 3.3rem; height: 3.3rem; }
+  .ev--talavera .ev-intro__grid { gap: 1.4rem; }
+  .ev--talavera .ev-intro .ev-h2 { font-size: clamp(2rem, 8.5vw, 2.8rem); }
+  .ev--talavera .ev-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin-top: 1.5rem; }
+  .ev--talavera .ev-facts dd { font-size: 1rem; }
+  .ev--talavera .ev-details { padding: 3.4rem 0; }
+  .ev--talavera .ev-details__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+  .ev--talavera .ev-detail { padding: 1.25rem .95rem 1.1rem; }
+  .ev--talavera .ev-detail__icon { width: 2.35rem; height: 2.35rem; padding: .55rem; margin-bottom: .8rem; }
+  .ev--talavera .ev-detail__value { font-size: 1.12rem; }
+  .ev--talavera .ev-detail__note { font-size: .73rem; }
+  .ev--talavera .ev-palette { margin-top: 1.2rem; padding: 1rem; }
+  .ev--talavera .ev-palette__swatches { gap: .65rem 1rem; }
+  .ev--talavera .ev-palette__swatch { font-size: .58rem; }
+  .ev--talavera .ev-palette__note { font-size: .72rem; }
+  .ev--talavera .ev-plan { padding: 3.4rem 0; }
+  .ev--talavera .ev-plan__grid {
+    padding: 1.8rem 1.15rem 1.6rem;
+    transform: none;
+    gap: 1.4rem;
+  }
+  .ev--talavera .ev-plan__row { grid-template-columns: 4rem 1fr; gap: .7rem; padding: .9rem 0; }
+  .ev--talavera .ev-plan__title { font-size: 1.1rem; }
+  .ev--talavera .ev-vinyl { padding: 3.4rem 0; }
+  .ev--talavera .ev-vinyl__grid { padding: 1.8rem 1.15rem 1.6rem; transform: none; gap: 1.6rem; }
+  .ev--talavera .ev-vinyl__stage { max-width: 18rem; }
+  .ev--talavera .ev-gallery { padding: 3.4rem 0; }
+  .ev--talavera .ev-gallery__grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .ev--talavera .ev-gallery button:last-child { display: block; }
+  .ev--talavera .ev-print { padding: .35rem .35rem 0; }
+  .ev--talavera .ev-print figcaption { font-size: .8rem; padding: .4rem 0 .45rem; }
+  .ev--talavera .ev-gift { padding: 3.4rem 0; }
+  .ev--talavera .ev-gift__inner {
+    padding: 1.9rem 1.2rem 1.6rem;
+    transform: none;
+    gap: 1.2rem;
+  }
+  .ev--talavera .ev-gift__inner::after { top: -1.35rem; right: 1rem; width: 3rem; height: 3rem; }
+  .ev--talavera .ev-share {
+    width: min(100% - 1.7rem, 58rem);
+    display: block;
+    padding: 1.2rem 0 2rem;
+  }
+  .ev--talavera .ev-share__links { margin-top: .35rem; }
+  .ev--talavera .ev-rsvp { padding: 3.4rem 0 2.8rem; }
+  .ev--talavera [data-rsvp-form-wrap] { padding: 1.5rem 1.1rem 1.3rem; transform: none; }
+  .ev--talavera .ev-rsvp .field input,
+  .ev--talavera .ev-rsvp .field select,
+  .ev--talavera .ev-rsvp .field textarea { font-size: .92rem; }
+  .ev--talavera .pass { width: 100%; padding: 1.3rem 1.1rem 1.15rem; transform: none; }
+  .ev--talavera .pass__qr { width: 8.4rem; height: 8.4rem; }
+  .ev--talavera .ev-wall { padding: 1.5rem 1.1rem 1.3rem; transform: none; }
+  .ev--talavera .ev-wall__head { display: block; }
+  .ev--talavera .ev-wall__head p { margin-top: .55rem; }
+  .ev--talavera .ev-wall__user,
+  .ev--talavera .ev-wall__examples { grid-template-columns: 1fr; }
+  .ev--talavera .ev-wall__title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .ev--talavera .ev-footer { padding-top: 2.6rem; }
+}
+
+@media (max-width: 390px) {
+  .ev--talavera .ev-count .countdown strong { font-size: 1.38rem; }
+  .ev--talavera .ev-count .countdown span { font-size: .52rem; }
+  .ev--talavera .ev-detail { padding: 1.1rem .8rem .95rem; }
+  .ev--talavera .ev-detail__value { font-size: 1.02rem; }
+  .ev--talavera .ev-detail__note { font-size: .7rem; }
+  .ev--talavera .ev-detail__links { gap: .1rem .55rem; }
+  .ev--talavera .ev-detail__links a { font-size: .58rem; letter-spacing: .06em; }
+  .ev--talavera .ev-palette__swatch i { width: 1.7rem; height: 1.7rem; }
+  .ev--talavera .ev-print figcaption { font-size: .74rem; }
+  .ev--talavera .ev-scratch__button { font-size: .52rem; letter-spacing: .1em; }
+}
+

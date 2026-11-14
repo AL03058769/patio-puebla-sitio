@@ -102,11 +102,14 @@
   function initHero() {
     var hero = safe(".ev-hero");
     if (!hero) return;
+    var talavera = body.classList.contains("ev--talavera");
     var title = safe(".ev-hero__title", hero);
-    var rest = hero.querySelectorAll(".ev-hero__sub, .ev-hero__meta, .ev-hero__actions");
-    var tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: 0.05 });
-    if (title) tl.fromTo(title, { y: 38, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1 }, 0);
-    if (rest.length) tl.fromTo(rest, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, stagger: 0.1 }, 0.25);
+    var restSelector = ".ev-hero__sub, .ev-hero__meta, .ev-hero__actions";
+    if (talavera) restSelector += ", .ev-hero__marks, .ev-hero__caption";
+    var rest = hero.querySelectorAll(restSelector);
+    var tl = gsap.timeline({ defaults: { ease: "power3.out" }, delay: talavera ? 0.02 : 0.05 });
+    if (title) tl.fromTo(title, { y: 38, opacity: 0 }, { y: 0, opacity: 1, duration: talavera ? 0.85 : 1.1 }, 0);
+    if (rest.length) tl.fromTo(rest, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: talavera ? 0.6 : 0.75, stagger: talavera ? 0.08 : 0.1 }, talavera ? 0.18 : 0.25);
   }
 
   function initScroll() {
