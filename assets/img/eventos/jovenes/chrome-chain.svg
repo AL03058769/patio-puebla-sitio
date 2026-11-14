@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".16" stop-color="#E9ECF1"/>
+      <stop offset=".34" stop-color="#8C929B"/><stop offset=".48" stop-color="#FAFBFD"/>
+      <stop offset=".62" stop-color="#6A6F77"/><stop offset=".78" stop-color="#DDE1E7"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="chromeEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#AEB4BC"/><stop offset="1" stop-color="#5E636B"/>
+    </linearGradient>
+    <filter id="chainShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#1A1A1A" flood-opacity=".26"/>
+    </filter>
+  </defs>
+  <g filter="url(#chainShadow)">
+    <g transform="rotate(-18 320 180)">
+      <ellipse cx="120" cy="214" rx="118" ry="55" fill="none" stroke="#5C6169" stroke-width="30"/>
+      <ellipse cx="120" cy="214" rx="118" ry="55" fill="none" stroke="url(#chrome)" stroke-width="24"/>
+      <ellipse cx="120" cy="214" rx="118" ry="55" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".65"/>
+      <ellipse cx="250" cy="202" rx="118" ry="55" fill="none" stroke="#5C6169" stroke-width="30" transform="rotate(76 250 202)"/>
+      <ellipse cx="250" cy="202" rx="118" ry="55" fill="none" stroke="url(#chrome)" stroke-width="24" transform="rotate(76 250 202)"/>
+      <ellipse cx="250" cy="202" rx="118" ry="55" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".55" transform="rotate(76 250 202)"/>
+      <ellipse cx="380" cy="190" rx="118" ry="55" fill="none" stroke="#5C6169" stroke-width="30"/>
+      <ellipse cx="380" cy="190" rx="118" ry="55" fill="none" stroke="url(#chrome)" stroke-width="24"/>
+      <ellipse cx="380" cy="190" rx="118" ry="55" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".65"/>
+      <ellipse cx="510" cy="178" rx="118" ry="55" fill="none" stroke="#5C6169" stroke-width="30" transform="rotate(76 510 178)"/>
+      <ellipse cx="510" cy="178" rx="118" ry="55" fill="none" stroke="url(#chrome)" stroke-width="24" transform="rotate(76 510 178)"/>
+      <ellipse cx="510" cy="178" rx="118" ry="55" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".55" transform="rotate(76 510 178)"/>
+    </g>
+  </g>
+</svg>

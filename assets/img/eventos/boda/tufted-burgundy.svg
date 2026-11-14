@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120">
+  <defs>
+    <linearGradient id="tuft" x1=".18" y1=".08" x2=".82" y2=".95">
+      <stop offset="0" stop-color="#651A29"/>
+      <stop offset=".42" stop-color="#52111E"/>
+      <stop offset=".78" stop-color="#400A15"/>
+      <stop offset="1" stop-color="#30060E"/>
+    </linearGradient>
+    <linearGradient id="tuftSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9A3D51" stop-opacity=".32"/>
+      <stop offset=".48" stop-color="#7A2438" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#1E0309" stop-opacity=".34"/>
+    </linearGradient>
+    <filter id="tuftSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.6"/>
+    </filter>
+  </defs>
+
+  <rect width="320" height="120" fill="#390812"/>
+  <g>
+    <rect x="10" y="11" width="150" height="108" rx="34" fill="#24040B" filter="url(#tuftSoft)" opacity=".85"/>
+    <rect x="168" y="11" width="150" height="108" rx="34" fill="#24040B" filter="url(#tuftSoft)" opacity=".85"/>
+    <rect x="-158" y="11" width="150" height="108" rx="34" fill="#24040B" filter="url(#tuftSoft)" opacity=".85"/>
+    <rect x="326" y="11" width="150" height="108" rx="34" fill="#24040B" filter="url(#tuftSoft)" opacity=".85"/>
+
+    <rect x="6" y="5" width="150" height="108" rx="34" fill="url(#tuft)" stroke="#2A050C" stroke-width="2.4"/>
+    <rect x="164" y="5" width="150" height="108" rx="34" fill="url(#tuft)" stroke="#2A050C" stroke-width="2.4"/>
+    <rect x="-162" y="5" width="150" height="108" rx="34" fill="url(#tuft)" stroke="#2A050C" stroke-width="2.4"/>
+    <rect x="322" y="5" width="150" height="108" rx="34" fill="url(#tuft)" stroke="#2A050C" stroke-width="2.4"/>
+
+    <rect x="15" y="14" width="132" height="90" rx="27" fill="url(#tuftSheen)" opacity=".6"/>
+    <rect x="173" y="14" width="132" height="90" rx="27" fill="url(#tuftSheen)" opacity=".6"/>
+    <rect x="-153" y="14" width="132" height="90" rx="27" fill="url(#tuftSheen)" opacity=".6"/>
+    <rect x="331" y="14" width="132" height="90" rx="27" fill="url(#tuftSheen)" opacity=".6"/>
+
+    <path d="M28 44c9-19 27-29 48-31" fill="none" stroke="#B05B6E" stroke-opacity=".2" stroke-width="2" stroke-linecap="round"/>
+    <path d="M186 44c9-19 27-29 48-31" fill="none" stroke="#B05B6E" stroke-opacity=".2" stroke-width="2" stroke-linecap="round"/>
+    <path d="M-140 44c9-19 27-29 48-31" fill="none" stroke="#B05B6E" stroke-opacity=".2" stroke-width="2" stroke-linecap="round"/>
+    <path d="M344 44c9-19 27-29 48-31" fill="none" stroke="#B05B6E" stroke-opacity=".2" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

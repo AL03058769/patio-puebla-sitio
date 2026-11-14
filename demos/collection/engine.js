@@ -107,7 +107,7 @@
       startVideoGate();
       return;
     }
-    var envelope = $(".envelope", gate);
+    var envelope = $(".envelope, [data-envelope]", gate);
     if (envelope) {
       gateHideDelay = 400;
       gate.classList.add("is-envelope", "is-opening", "is-open");

@@ -23,31 +23,48 @@
 <div class="progress" data-progress aria-hidden="true"><span></span></div>
 
 <div class="gate ev-gate" data-gate role="dialog" aria-modal="true" aria-label="Abrir la invitación de Mariana & Emilio · 16.10.2027">
-  <div class="cover cover--video cover--talavera" data-cover="video">
-  <picture class="cover__media">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/talavera-m.webp" type="image/webp">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/talavera-m.jpg" type="image/jpeg">
-  <source srcset="../../assets/covers/talavera.webp" type="image/webp">
-  <img src="../../assets/covers/talavera.jpg" alt="" aria-hidden="true" fetchpriority="high">
-</picture>
-  <div class="cover__tone" aria-hidden="true"></div>
-  <div class="cover__decor cover__tiles" aria-hidden="true"></div>
-  <video class="cover__video" data-gate-video data-rate="1.1" hidden muted playsinline preload="auto" poster="../../assets/envelope-talavera.jpg" aria-hidden="true"><source src="../../assets/envelope-talavera.mp4" type="video/mp4"></video>
-  <button class="gate__skip" data-skip type="button" hidden>Saltar video</button>
-  <div class="gate__content cover__content">
-    <div class="cover__panel">
-      <div class="cover__copy">
-        <p class="cover__names">Mariana <em>&amp;</em> Emilio</p>
-        <p class="cover__meta"><span>16 · 10 · 2027</span><i></i><span>Atlixco</span><i></i><span>17:00</span></p>
-        <p class="cover__note">Una boda de azul y barro.</p>
-      </div>
-      <div class="cover__action">
-  <button class="cover__seal" type="button" data-open aria-label="Abrir la invitación de Mariana &amp; Emilio">
-    <span class="cover__seal-mark">M&amp;E</span>
-  </button>
-  <span class="cover__hint">Toca el sello</span>
-</div>
-    </div>
+  <div class="cover ref-cover ref-cover--talavera" data-cover="talavera-ref">
+  <div class="ref-talavera__grain" aria-hidden="true"></div>
+  <div class="ref-talavera__envelope">
+    <span class="ref-talavera__band ref-talavera__band--left" aria-hidden="true"></span>
+    <span class="ref-talavera__band ref-talavera__band--right" aria-hidden="true"></span>
+    <span class="ref-talavera__band ref-talavera__band--bottom" aria-hidden="true"></span>
+    <button class="ref-talavera__seal" type="button" data-open aria-label="Abrir la invitación de Mariana &amp; Emilio">
+      <svg viewBox="0 0 220 220" aria-hidden="true">
+        <defs>
+          <radialGradient id="talavera-wax" cx="34%" cy="26%" r="78%">
+            <stop offset="0" stop-color="#5A90CC"/><stop offset=".35" stop-color="#2A63A6"/>
+            <stop offset=".7" stop-color="#153F78"/><stop offset="1" stop-color="#0A2550"/>
+          </radialGradient>
+          <radialGradient id="talavera-wax-inner" cx="42%" cy="34%" r="72%">
+            <stop offset="0" stop-color="#3C74B6"/><stop offset=".58" stop-color="#1D4F8D"/>
+            <stop offset="1" stop-color="#0E3060"/>
+          </radialGradient>
+          <filter id="talavera-wax-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#0A1E3A" flood-opacity=".55"/>
+          </filter>
+        </defs>
+        <path d="M110 8c15 0 23 6 35 8 12 2 22 9 25 21 3 12 9 20 7 32-2 12-7 20-12 30-5 10-11 18-22 23-11 5-21 9-33 8-12-1-22-6-31-13-9-7-16-15-19-26-3-11-8-19-6-31 2-12 9-20 17-27 8-7 18-13 29-16 4-1 7-9 10-9Z" fill="url(#talavera-wax)" filter="url(#talavera-wax-shadow)"/>
+        <ellipse cx="110" cy="110" rx="70" ry="69" fill="url(#talavera-wax-inner)" stroke="#08224A" stroke-width="2.6"/>
+        <ellipse cx="110" cy="110" rx="60" ry="59" fill="none" stroke="#8FB6E2" stroke-width="1.6" opacity=".5"/>
+        <g fill="#0A2A58" opacity=".55">
+          <ellipse cx="110" cy="82" rx="8" ry="19"/><ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(45 110 110)"/>
+          <ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(90 110 110)"/><ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(135 110 110)"/>
+          <ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(180 110 110)"/><ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(225 110 110)"/>
+          <ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(270 110 110)"/><ellipse cx="110" cy="82" rx="8" ry="19" transform="rotate(315 110 110)"/>
+        </g>
+        <g fill="#9CC0E6" opacity=".92">
+          <ellipse cx="110" cy="84" rx="6.6" ry="17"/><ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(45 110 110)"/>
+          <ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(90 110 110)"/><ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(135 110 110)"/>
+          <ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(180 110 110)"/><ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(225 110 110)"/>
+          <ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(270 110 110)"/><ellipse cx="110" cy="84" rx="6.6" ry="17" transform="rotate(315 110 110)"/>
+        </g>
+        <circle cx="110" cy="110" r="11" fill="#0A2A58"/>
+        <circle cx="110" cy="110" r="5" fill="#B7D4F0" opacity=".8"/>
+        <path d="M44 70c13-23 38-38 66-39" fill="none" stroke="#C6DDF5" stroke-width="2.6" opacity=".28" stroke-linecap="round"/>
+      </svg>      </svg>
+    </button>
+    <span class="ref-talavera__hint">Toca para abrir</span>
   </div>
 </div>
 </div>

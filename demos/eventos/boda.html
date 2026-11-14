@@ -23,54 +23,56 @@
 <div class="progress" data-progress aria-hidden="true"><span></span></div>
 
 <div class="gate ev-gate" data-gate role="dialog" aria-modal="true" aria-label="Abrir la invitación de Renata & Alonso · 22.05.2027">
-  <div class="cover cover--photo cover--boda" data-cover="photo">
-  <picture class="cover__media">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/boda-m.webp" type="image/webp">
-  <source media="(max-width: 620px)" srcset="../../assets/covers/boda-m.jpg" type="image/jpeg">
-  <source srcset="../../assets/covers/boda.webp" type="image/webp">
-  <img src="../../assets/covers/boda.jpg" alt="" aria-hidden="true" fetchpriority="high">
-</picture>
-  <div class="cover__tone" aria-hidden="true"></div>
-  <div class="cover__decor cover__decor--flora" aria-hidden="true">
-  <svg class="cover__sprig cover__sprig--left" viewBox="0 0 120 220" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-  <path d="M60 215C60 150 62 80 70 10"/>
-  <path d="M62 174c-24-6-35-22-39-43 19 5 34 19 39 43Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M64 142c22-4 35-18 41-37-19 3-35 15-41 37Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M66 110c-20-4-31-17-35-33 16 3 30 14 35 33Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M68 80c18-3 29-14 34-29-15 2-29 12-34 29Z" fill="currentColor" fill-opacity=".12"/>
-</svg>
-  <svg class="cover__sprig cover__sprig--right" viewBox="0 0 120 220" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-  <path d="M60 215C60 150 62 80 70 10"/>
-  <path d="M62 174c-24-6-35-22-39-43 19 5 34 19 39 43Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M64 142c22-4 35-18 41-37-19 3-35 15-41 37Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M66 110c-20-4-31-17-35-33 16 3 30 14 35 33Z" fill="currentColor" fill-opacity=".12"/>
-  <path d="M68 80c18-3 29-14 34-29-15 2-29 12-34 29Z" fill="currentColor" fill-opacity=".12"/>
-</svg>
-</div>
-  
-  
-  <div class="gate__content cover__content">
-    <div class="cover__panel">
-      <div class="cover__copy">
-        <p class="cover__names">Renata <em>&amp;</em> Alonso</p>
-        <p class="cover__meta"><span>22 · 05 · 2027</span><i></i><span>Atlixco, Puebla</span><i></i><span>17:00</span></p>
-        <p class="cover__note">Una boda de día entre jardines.</p>
-      </div>
-      <div class="cover__action">
-  <button class="cover__seal" type="button" data-open aria-label="Abrir la invitación de Renata &amp; Alonso">
-    <span class="cover__seal-mark">R&amp;A</span>
-  </button>
-  <span class="cover__hint">Toca el sello</span>
-</div>
+  <div class="cover ref-cover ref-cover--lirio-boda" data-cover="lirio-boda">
+  <div class="ref-boda__quilt" aria-hidden="true"></div>
+  <div class="ref-boda__stage">
+    <div class="ref-boda__card">
+      <span class="ref-boda__card-names">Renata <em>&amp;</em> Alonso</span>
+      <span class="ref-boda__card-date">22 · 05 · 2027</span>
+      <img src="../../assets/img/aurora-hands.jpg" alt="" loading="eager">
     </div>
+    <div class="ref-boda__envelope" data-envelope>
+      <span class="ref-boda__back" aria-hidden="true"></span>
+      <span class="ref-boda__pocket" aria-hidden="true"></span>
+      <span class="ref-boda__fold ref-boda__fold--left" aria-hidden="true"></span>
+      <span class="ref-boda__fold ref-boda__fold--right" aria-hidden="true"></span>
+    </div>
+    <img class="ref-boda__rose" src="../../assets/img/eventos/boda/white-rose-greenery.svg" alt="" aria-hidden="true">
+    <img class="ref-boda__hydrangea" src="../../assets/img/eventos/boda/burgundy-hydrangea.svg" alt="" aria-hidden="true">
+    <button class="ref-boda__seal" type="button" data-open aria-label="Abrir la invitación de Renata &amp; Alonso">
+      <svg viewBox="0 0 190 190" aria-hidden="true">
+        <defs>
+          <radialGradient id="boda-gold" cx="34%" cy="26%" r="78%">
+            <stop offset="0" stop-color="#FBE7AE"/><stop offset=".28" stop-color="#E7C273"/>
+            <stop offset=".58" stop-color="#C99A43"/><stop offset=".82" stop-color="#9C6B22"/>
+            <stop offset="1" stop-color="#6E4712"/>
+          </radialGradient>
+          <radialGradient id="boda-gold-inner" cx="42%" cy="34%" r="70%">
+            <stop offset="0" stop-color="#F0CF87"/><stop offset=".45" stop-color="#D7AA55"/>
+            <stop offset=".78" stop-color="#B27E2C"/><stop offset="1" stop-color="#855817"/>
+          </radialGradient>
+          <filter id="boda-seal-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#2A050C" flood-opacity=".55"/>
+          </filter>
+        </defs>
+        <path d="M95 7c12 0 18 5 29 6s18 8 19 19 7 16 6 27-5 18-8 27-7 17-17 22-18 10-29 9-19-3-28-8-16-10-20-20-4-17-7-26-4-17 0-28 8-17 16-23 16-10 27-12 8-3 12-3Z" fill="url(#boda-gold)" filter="url(#boda-seal-shadow)"/>
+        <ellipse cx="95" cy="95" rx="62" ry="61" fill="url(#boda-gold-inner)" stroke="#7A4F13" stroke-width="2.2"/>
+        <ellipse cx="95" cy="95" rx="53" ry="52" fill="none" stroke="#F3D89B" stroke-width="1.4" opacity=".65"/>
+        <ellipse cx="95" cy="95" rx="46" ry="45" fill="none" stroke="#8C5D1A" stroke-width="1" opacity=".55"/>
+        <text x="95" y="109" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36" letter-spacing="3" fill="#7A4B10" opacity=".55">R &amp; A</text>
+        <text x="94" y="106" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36" letter-spacing="3" fill="#F8DFA6" opacity=".5">R &amp; A</text>
+        <path d="M46 62c14-22 38-34 62-32" fill="none" stroke="#FBE8B4" stroke-width="2" opacity=".32" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
+  <span class="ref-boda__hint">Toca el sello</span>
 </div>
 </div>
 
 <header class="ev-topbar" data-topbar>
   <div class="ev-wrap ev-topbar__inner">
     <a class="ev-brand" href="#inicio">R <span>&amp;</span> A <span>22.05.27</span></a>
-    <nav class="ev-nav" aria-label="Secciones"><a href="#historia" data-nav-link>Historia</a><a href="#detalles" data-nav-link>El día</a><a href="#plan" data-nav-link>La hacienda</a><a href="#confirma" data-nav-link>Confirma</a><a href="#deseos" data-nav-link>Deseos</a></nav>
+    <nav class="ev-nav" aria-label="Secciones"><a href="#historia" data-nav-link>Historia</a><a href="#detalles" data-nav-link>El día</a><a href="#plan" data-nav-link>La hacienda</a><a href="#cancion" data-nav-link>Canción</a><a href="#confirma" data-nav-link>Confirma</a><a href="#deseos" data-nav-link>Deseos</a></nav>
     <div class="ev-tools">
       <button class="ev-icon" type="button" data-music="jardin" aria-label="Música" aria-pressed="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
@@ -86,7 +88,7 @@
 </header>
 
 <nav class="ev-mobile" data-mobile-menu aria-label="Menú móvil">
-  <a href="#historia">Historia</a><a href="#detalles">El día</a><a href="#plan">La hacienda</a><a href="#confirma">Confirma</a><a href="#deseos">Deseos</a>
+  <a href="#historia">Historia</a><a href="#detalles">El día</a><a href="#plan">La hacienda</a><a href="#cancion">Canción</a><a href="#confirma">Confirma</a><a href="#deseos">Deseos</a>
   <small>Patio · Estudio de invitaciones</small>
 </nav>
 
@@ -165,6 +167,24 @@
   
   
   
+<section class="ev-section ev-vinyl" id="cancion">
+  <div class="ev-wrap ev-vinyl__grid">
+    <div class="ev-vinyl__copy">
+      <h2 class="ev-h2">Nuestra <em>canción.</em></h2>
+      <p>La canción que nos hizo bailar en la cocina. La que va a sonar cuando la pista esté vacía.</p>
+      <p class="ev-vinyl__note">Lado A · 04:12 · Para abrir la pista</p>
+      <button class="btn btn--ghost" type="button" data-vinyl-toggle aria-pressed="true">
+        <span data-vinyl-label>Pausar</span>
+      </button>
+    </div>
+    <div class="ev-vinyl__stage" aria-hidden="true">
+      <div class="ev-vinyl__disc" data-vinyl>
+        <div class="ev-vinyl__label"><span>Nuestra</span><strong>canción</strong><small>Lado A</small></div>
+      </div>
+      <div class="ev-vinyl__arm"></div>
+    </div>
+  </div>
+</section>
   
 
   <section class="ev-section ev-gallery" id="galeria">

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="150" viewBox="0 0 240 150">
+  <defs>
+    <mask id="fanCut">
+      <rect width="240" height="150" fill="#fff"/>
+      <g fill="#000">
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(-60 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(-40 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(-20 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(0 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(20 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(40 120 120)"/>
+        <ellipse cx="120" cy="82" rx="8" ry="40" transform="rotate(60 120 120)"/>
+        <circle cx="120" cy="120" r="7"/>
+        <circle cx="54" cy="50" r="7"/><circle cx="78" cy="36" r="7"/><circle cx="102" cy="28" r="7"/>
+        <circle cx="126" cy="26" r="7"/><circle cx="150" cy="30" r="7"/><circle cx="174" cy="42" r="7"/><circle cx="196" cy="58" r="7"/>
+      </g>
+    </mask>
+  </defs>
+  <path d="M10 140C10 72 58 18 120 18s110 54 110 122c0 6-4 10-10 10H20c-6 0-10-4-10-10Z" fill="#FFFDF5" mask="url(#fanCut)"/>
+</svg>
