@@ -327,6 +327,10 @@
     }
     var next = ["día", "mes", "año"][done] || "";
     scratchStatus.textContent = done + " de " + total + " reveladas · " + (done ? "Ahora el " + next : "Empieza por el día");
+    if (revealAllBtn) {
+      revealAllBtn.textContent = "Revelar el " + next;
+      revealAllBtn.hidden = false;
+    }
   }
 
   scratchNodes.forEach(function (node) {
@@ -336,7 +340,12 @@
 
   if (revealAllBtn) {
     revealAllBtn.addEventListener("click", function () {
-      controllers.forEach(function (controller) { controller.reveal(); });
+      for (var i = 0; i < controllers.length; i += 1) {
+        if (!controllers[i].isRevealed()) {
+          controllers[i].reveal();
+          break;
+        }
+      }
     });
     if (controllers.length) revealAllBtn.hidden = false;
   }
