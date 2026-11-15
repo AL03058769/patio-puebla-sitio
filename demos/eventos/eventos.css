@@ -1597,8 +1597,10 @@
   gap: 1rem 2rem;
   margin-top: 1.8rem;
   padding: 1.15rem 1.35rem;
-  border: 1px solid rgba(27, 43, 66, .18);
-  background: rgba(251, 246, 234, .55);
+  border: 1px solid rgba(31, 78, 140, .22);
+  border-left: 4px solid var(--tal-blue);
+  background: rgba(251, 247, 238, .96);
+  box-shadow: 0 .6rem 1.4rem rgba(18, 58, 99, .1);
 }
 .ev--talavera .ev-palette__swatches {
   display: flex;
@@ -1633,7 +1635,7 @@
 }
 .ev--talavera .ev-palette__note {
   max-width: 25rem;
-  color: var(--tal-muted);
+  color: #35506E;
   font-size: .76rem;
 }
 
@@ -3140,8 +3142,8 @@
 @media (max-width: 640px) {
   .ev--talavera .ev-topbar__inner { gap: .45rem; }
   .ev--talavera .ev-tools { gap: .3rem; }
-  .ev--talavera .ev-icon { width: 40px; height: 40px; }
-  .ev--talavera .ev-icon.ev-music { width: 40px; min-width: 40px; }
+  .ev--talavera .ev-icon { width: 44px; height: 44px; }
+  .ev--talavera .ev-icon.ev-music { width: 44px; min-width: 44px; }
   .ev--talavera .ev-icon svg { width: 19px; height: 19px; }
   .ev--talavera.layout-split .ev-hero__content { margin-top: 46svh; }
   .ev--talavera .ev-count__inner {
@@ -3286,4 +3288,636 @@
   .ref-tal__meta span:nth-child(2)::after { content: " · "; }
   .ev--talavera .ev-details__grid { grid-template-columns: 1fr; max-width: 21rem; margin-inline: auto; }
   .ev--talavera .ev-detail:nth-child(2n) { margin-top: 0; }
+}
+
+/* ============================================================
+   TALAVERA V5 · PAPEL, FOTO Y MONEDA
+   Portada crema, rasca en tres monedas, detalles con foto,
+   galería de los novios y separadores vectoriales.
+   ============================================================ */
+.ev--talavera {
+  --tal-gold-ink: #8A5A12;
+  --tal-paper-pattern: url("../../assets/img/eventos/talavera/talavera-pattern.svg");
+}
+.ev--talavera .ev-hero__title em,
+.ev--talavera .ev-intro .ev-h2 em,
+.ev--talavera .ev-details .ev-section-head h2 em,
+.ev--talavera .ev-scratch__copy .ev-h2 em,
+.ev--talavera .ev-plan .ev-h2 em,
+.ev--talavera .ev-vinyl .ev-h2 em,
+.ev--talavera .ev-gift .ev-h2 em,
+.ev--talavera .ev-wall__title em {
+  color: var(--tal-gold-ink);
+}
+.ev--talavera .ev-hero__title em { color: #A66B0E; }
+
+/* --- separadores vectoriales --- */
+.tal-divider {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(.9rem, 2vw, 1.4rem) clamp(1rem, 4vw, 2.5rem);
+  background-color: #FBF7EE;
+  border-block: 1px solid rgba(31, 78, 140, .16);
+  overflow: hidden;
+}
+.tal-divider img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.tal-divider--arco img { width: min(100%, 46rem); }
+.tal-divider--rombo img { width: min(100%, 34rem); }
+.tal-divider--azulejo {
+  height: clamp(4.4rem, 7vw, 6.4rem);
+  padding: 0;
+  border-block: 0;
+  background-color: #FBF7EE;
+  background-image:
+    linear-gradient(180deg, rgba(251, 247, 238, .1), rgba(251, 247, 238, .1)),
+    var(--tal-paper-pattern);
+  background-size: auto, clamp(7rem, 9vw, 9rem) auto;
+  background-position: center, center;
+  box-shadow: inset 0 0 0 1px rgba(31, 78, 140, .16);
+}
+.tal-divider--azulejo::before,
+.tal-divider--azulejo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background-color: #1F4E8C;
+  background-image: repeating-linear-gradient(90deg, transparent 0 10px, rgba(251, 247, 238, .62) 10px 11px);
+}
+.tal-divider--azulejo::before { top: 0; }
+.tal-divider--azulejo::after { bottom: 0; }
+
+/* --- portada: el papel manda --- */
+.ev--talavera .ev-hero__media img {
+  object-position: 28% 42%;
+  filter: saturate(.92) contrast(1.03) brightness(1.02);
+}
+.ev--talavera .ev-hero__media::after {
+  background:
+    linear-gradient(90deg, rgba(18, 58, 99, .18), transparent 42%, rgba(18, 58, 99, .08)),
+    linear-gradient(180deg, rgba(18, 58, 99, .24), transparent 32%, rgba(18, 58, 99, .08));
+}
+.ev--talavera.layout-split .ev-hero__scrim {
+  background: radial-gradient(ellipse at 38% 46%, transparent 0 38%, rgba(18, 58, 99, .08) 72%, rgba(18, 58, 99, .18) 100%);
+}
+.ev--talavera.layout-split .ev-hero__content {
+  background-color: #FBF7EE;
+  background-image: url("../../assets/img/eventos/talavera-cover/paper-cream.jpg");
+  border-radius: 50% 50% 1.4rem 1.4rem / 13% 13% 1.4rem 1.4rem;
+  box-shadow:
+    0 0 0 1px rgba(251, 247, 238, .9),
+    0 0 0 9px rgba(31, 78, 140, .26),
+    0 2rem 4.2rem rgba(18, 58, 99, .28);
+}
+.ev--talavera.layout-split .ev-hero__content::before {
+  border-color: rgba(31, 78, 140, .32);
+  border-radius: 50% 50% 1rem 1rem / 13% 13% 1rem 1rem;
+}
+.ev--talavera .ev-hero__sub { color: #35506E; }
+.ev--talavera .ev-hero__meta { color: #4C6582; }
+.ev--talavera .ev-hero__seal {
+  filter: drop-shadow(0 .4rem .7rem rgba(18, 58, 99, .28));
+}
+.ev--talavera .tal-hero-decor figure {
+  border-color: #FBF7EE;
+  box-shadow:
+    0 0 0 1px rgba(31, 78, 140, .22),
+    0 1rem 2rem rgba(18, 58, 99, .22);
+}
+
+/* --- rasca: tres monedas en fila --- */
+.ev--talavera .ev-scratch {
+  background-color: #FBF7EE;
+  background-image:
+    linear-gradient(180deg, rgba(251, 247, 238, .4), rgba(251, 247, 238, .8)),
+    var(--tal-paper-pattern);
+  background-size: auto, clamp(6.5rem, 9vw, 8.5rem) auto;
+  background-position: center, center top;
+  border-bottom: 1px solid rgba(31, 78, 140, .18);
+}
+.ev--talavera .ev-scratch__inner {
+  display: block;
+  width: min(100% - 2.5rem, 64rem);
+}
+.ev--talavera .ev-scratch__copy {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: clamp(1.15rem, 2.4vw, 1.75rem) clamp(1.15rem, 3vw, 2rem) clamp(1.25rem, 2.6vw, 1.9rem);
+  background: #FBF7EE;
+  border-top: 4px solid var(--tal-blue);
+  box-shadow:
+    0 0 0 1px rgba(31, 78, 140, .12),
+    0 .7rem 1.6rem rgba(18, 58, 99, .12);
+  text-align: center;
+}
+.ev--talavera .ev-scratch__copy::after { display: none; }
+.ev--talavera .ev-scratch__copy .ev-h2 { margin: 0 0 .45rem; }
+.ev--talavera .ev-scratch__copy p {
+  max-width: 28rem;
+  margin: 0 auto;
+  color: var(--tal-muted);
+}
+.ev--talavera .ev-scratch__coins {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.7rem, 2.4vw, 1.6rem);
+  width: min(100%, 36rem);
+  margin: clamp(1.8rem, 4vw, 2.8rem) auto 0;
+  padding-inline: clamp(.35rem, 1.5vw, .6rem);
+}
+.ev--talavera .ev-scratch__coin {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--tal-cream);
+  background-image: var(--tal-paper);
+  background-size: cover;
+  box-shadow:
+    0 0 0 1px rgba(31, 78, 140, .3),
+    0 0 0 7px #FBF7EE,
+    0 0 0 8px rgba(31, 78, 140, .2),
+    0 1rem 2rem rgba(18, 58, 99, .18);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.ev--talavera .ev-scratch__coin:nth-child(2) { transform: none; }
+.ev--talavera .ev-scratch__coin.is-next {
+  box-shadow:
+    0 0 0 1px rgba(217, 164, 65, .72),
+    0 0 0 7px #FBF7EE,
+    0 0 0 8px rgba(217, 164, 65, .42),
+    0 1.1rem 2.2rem rgba(18, 58, 99, .22);
+}
+.ev--talavera .ev-scratch__coin.is-locked {
+  opacity: .58;
+  filter: saturate(.78);
+  transition: opacity .25s ease, filter .25s ease;
+}
+.ev--talavera .ev-scratch__coin.is-locked .ev-scratch__canvas { cursor: default; }
+.ev--talavera .ev-scratch__coin::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  z-index: 3;
+  border: 1px solid rgba(31, 78, 140, .28);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ev--talavera .ev-scratch__coin::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 21%;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 164, 65, .45);
+  pointer-events: none;
+}
+.ev--talavera .ev-scratch__coin .ev-scratch__reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .12rem;
+  padding: 1.2rem;
+  background: #FBF7EE;
+  border-radius: 50%;
+  text-align: center;
+}
+.ev--talavera .ev-scratch__coin .ev-scratch__reveal::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(217, 164, 65, .55);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ev--talavera .ev-scratch__coin .ev-scratch__reveal span {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5.2vw, 3.2rem);
+  line-height: .9;
+  color: var(--tal-blue);
+}
+.ev--talavera .ev-scratch__coin--word .ev-scratch__reveal span {
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  letter-spacing: .01em;
+}
+.ev--talavera .ev-scratch__coin .ev-scratch__reveal small {
+  margin-top: .25rem;
+  color: var(--tal-gold-ink);
+  font-size: clamp(.46rem, 1.3vw, .58rem);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.ev--talavera .ev-scratch__coin .ev-scratch__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  touch-action: none;
+  cursor: crosshair;
+}
+.ev--talavera .ev-scratch__coin.is-ready .ev-scratch__canvas { display: block; }
+.ev--talavera .ev-scratch__coin.is-revealed .ev-scratch__canvas {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.ev--talavera .ev-scratch__actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+.ev--talavera .ev-scratch__actions .ev-scratch__button {
+  position: static;
+  inset: auto;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .5rem 1rem;
+  border: 1px solid var(--tal-blue);
+  border-radius: 999px;
+  background: #FBF7EE;
+  color: var(--tal-blue);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ev--talavera .ev-scratch__status {
+  margin: 0;
+  color: #35506E;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+/* --- detalles: fotos como contenedores --- */
+.ev--talavera .ev-details {
+  background-color: #FBF7EE;
+  background-image:
+    linear-gradient(180deg, rgba(251, 247, 238, .12), rgba(251, 247, 238, .2)),
+    var(--tal-paper-pattern);
+  background-size: auto, clamp(6.5rem, 9vw, 8.5rem) auto;
+  background-position: center, center top;
+}
+.ev--talavera .ev-details .ev-section-head {
+  display: block;
+  width: fit-content;
+  max-width: min(100%, 38rem);
+  padding: 1.1rem 1.4rem 1.15rem;
+  background: rgba(251, 247, 238, .94);
+  border-top: 4px solid var(--tal-blue);
+  box-shadow: 0 .6rem 1.4rem rgba(18, 58, 99, .12);
+}
+.ev--talavera .ev-details .ev-section-head::after { display: none; }
+.ev--talavera .ev-details .ev-section-head p {
+  max-width: 30rem;
+  margin-top: .45rem;
+}
+.ev--talavera .ev-details__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.1rem, 2.2vw, 1.8rem);
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+  align-items: stretch;
+}
+.ev--talavera .ev-detail--photo {
+  position: relative;
+  display: block;
+  height: clamp(23rem, 30vw, 27rem);
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  transform: none;
+}
+.ev--talavera .ev-detail--photo:nth-child(2n) { margin-top: 0; }
+.ev--talavera .ev-detail--photo:hover { transform: translateY(-4px); }
+.ev--talavera .ev-detail__media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #E9DCC4;
+  box-shadow:
+    0 0 0 5px #FBF7EE,
+    0 0 0 6px rgba(31, 78, 140, .24),
+    0 1.2rem 2.2rem rgba(18, 58, 99, .18);
+}
+.ev--talavera .ev-detail__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.92) contrast(1.03);
+}
+.ev--talavera .ev-detail--arch .ev-detail__media {
+  aspect-ratio: auto;
+  border-radius: 50% 50% .7rem .7rem / 28% 28% .7rem .7rem;
+}
+.ev--talavera .ev-detail--octagon .ev-detail__media {
+  aspect-ratio: auto;
+  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+}
+.ev--talavera .ev-detail--tile .ev-detail__media {
+  aspect-ratio: auto;
+  border-radius: .8rem;
+  clip-path: polygon(0 0, calc(100% - 1.4rem) 0, 100% 1.4rem, 100% 100%, 1.4rem 100%, 0 calc(100% - 1.4rem));
+}
+.ev--talavera .ev-detail--medallion::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-color: #FBF7EE;
+  background-image:
+    linear-gradient(rgba(251, 247, 238, .58), rgba(251, 247, 238, .58)),
+    var(--tal-paper-pattern);
+  background-size: auto, 4.4rem auto;
+  background-position: center, center top;
+  border-radius: .9rem;
+  box-shadow: inset 0 0 0 1px rgba(31, 78, 140, .16);
+}
+.ev--talavera .ev-detail--medallion .ev-detail__media {
+  z-index: 1;
+  inset: 0 0 auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.ev--talavera .ev-detail__body {
+  position: absolute;
+  z-index: 2;
+  left: .7rem;
+  right: .7rem;
+  bottom: .7rem;
+  margin: 0;
+  padding: .85rem .9rem .9rem;
+  background: #FBF7EE;
+  border-top: 3px solid var(--tal-blue);
+  box-shadow: 0 .5rem 1.2rem rgba(18, 58, 99, .14);
+}
+.ev--talavera .ev-detail__icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: .43rem;
+  margin: 0 0 .35rem;
+  border: 0;
+  background: var(--tal-blue);
+  color: var(--tal-cream);
+  box-shadow: none;
+}
+.ev--talavera .ev-detail__label {
+  margin: 0;
+  color: var(--tal-blue);
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.ev--talavera .ev-detail__value {
+  margin-top: .2rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.08;
+}
+.ev--talavera .ev-detail__note {
+  margin-top: .3rem;
+  font-size: .7rem;
+  line-height: 1.45;
+}
+.ev--talavera .ev-detail__links { margin-top: .35rem; }
+.ev--talavera .ev-detail__links a { font-size: .58rem; }
+.ev--talavera .ev-detail__cut {
+  position: absolute;
+  z-index: 3;
+  right: -.75rem;
+  top: -.7rem;
+  width: clamp(3.6rem, 5.8vw, 5.2rem);
+  pointer-events: none;
+  filter: drop-shadow(0 .6rem .8rem rgba(18, 58, 99, .22));
+  transform: rotate(4deg);
+}
+.ev--talavera .ev-detail__cut img { display: block; width: 100%; height: auto; }
+.ev--talavera .ev-detail--octagon .ev-detail__cut,
+.ev--talavera .ev-detail--tile .ev-detail__cut {
+  right: -.45rem;
+  top: -.45rem;
+  width: clamp(3.1rem, 5vw, 4.4rem);
+}
+
+/* --- galería: los novios --- */
+.ev--talavera .ev-gallery {
+  background-color: #FBF7EE;
+  background-image:
+    linear-gradient(180deg, rgba(251, 247, 238, .1), rgba(251, 247, 238, .24)),
+    var(--tal-paper-pattern);
+  background-size: auto, clamp(6.5rem, 9vw, 8.5rem) auto;
+  background-position: center, center top;
+}
+.ev--talavera .ev-gallery__head {
+  width: fit-content;
+  max-width: min(100%, 36rem);
+  padding: 1rem 1.3rem 1.1rem;
+  background: rgba(251, 247, 238, .95);
+  border-top: 4px solid var(--tal-blue);
+  box-shadow: 0 .6rem 1.4rem rgba(18, 58, 99, .12);
+}
+.ev--talavera .ev-gallery .ev-h2 { color: var(--tal-ink); }
+.ev--talavera .ev-gallery .ev-h2 em { color: var(--tal-gold-ink); }
+.ev--talavera .ev-gallery__head p { color: var(--tal-muted); }
+.ev--talavera .ev-gallery__grid {
+  grid-template-rows: repeat(4, clamp(8rem, 10vw, 11rem));
+  background: #FBF7EE;
+  box-shadow:
+    inset 0 0 0 1px rgba(31, 78, 140, .16),
+    0 1.2rem 2.6rem rgba(18, 58, 99, .14);
+}
+.ev--talavera .ev-print {
+  padding: .42rem;
+  background: #FBF7EE;
+  box-shadow:
+    0 0 0 1px rgba(31, 78, 140, .2),
+    0 .7rem 1.4rem rgba(18, 58, 99, .18);
+}
+.ev--talavera .ev-print img { filter: saturate(1.02) contrast(1.04); }
+.ev--talavera .ev-print:nth-child(1) img { object-position: 50% 30%; }
+.ev--talavera .ev-print:nth-child(5) img { object-position: 50% 45%; }
+.ev--talavera .ev-print:nth-child(8) { grid-area: 4 / 1 / 5 / 3; }
+.ev--talavera .ev-print:nth-child(8) img { object-position: 50% 30%; }
+.ev--talavera .ev-print:nth-child(2),
+.ev--talavera .ev-print:nth-child(4),
+.ev--talavera .ev-print:nth-child(6) {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1;
+  justify-self: center;
+  align-self: center;
+}
+.ev--talavera .ev-gallery__grid::after {
+  content: "";
+  grid-area: 4 / 3 / 5 / 4;
+  background-color: #FBF7EE;
+  background-image: url("../../assets/img/eventos/talavera-v5/rombo-medallon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 82% auto;
+  border-radius: .7rem;
+  box-shadow: inset 0 0 0 1px rgba(31, 78, 140, .18);
+  pointer-events: none;
+}
+@media (max-width: 1100px) {
+  .ev--talavera .ev-details__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 2.4vw, 1.5rem);
+  }
+  .ev--talavera .ev-detail--photo { height: clamp(22rem, 46vw, 27rem); }
+}
+@media (max-width: 900px) {
+  .ev--talavera .ev-gallery__grid::after { display: none; }
+  .ev--talavera .ev-print:nth-child(8) { grid-area: auto / 1 / auto / 3; }
+}
+.ev--talavera .ev-print figcaption {
+  background: #FBF7EE;
+  color: var(--tal-blue);
+  border: 1px solid rgba(31, 78, 140, .18);
+}
+.ev--talavera .ev-gallery__caption {
+  width: fit-content;
+  max-width: min(100%, 42rem);
+  margin: 1.2rem auto 0;
+  padding: .5rem .95rem;
+  background: rgba(251, 247, 238, .95);
+  border-top: 2px solid rgba(31, 78, 140, .42);
+  color: #35506E;
+  font-size: .68rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.ev--talavera .confetti i { background: #1F4E8C !important; }
+.ev--talavera .confetti i:nth-child(3n) { background: #D9A441 !important; }
+.ev--talavera .confetti i:nth-child(3n + 2) { background: #FBF7EE !important; }
+
+/* --- countdown y programa: fotos de detalle, no del lugar --- */
+.ev--talavera .ev-count::after {
+  background-image: url("../../assets/img/eventos/talavera-v3/jarron-flores.webp");
+}
+.ev--talavera .ev-plan__head::after {
+  background-image: url("../../assets/img/eventos/talavera-v3/centro-mesa.webp");
+}
+.ev--talavera .ev-rsvp__head::after {
+  background-image: url("../../assets/img/eventos/talavera-v3/pareja-retrato.webp");
+}
+
+/* --- móvil: el hero fluye, no se recorta --- */
+@media (max-width: 900px) {
+  .ev--talavera.layout-split .ev-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: visible;
+    padding: 0;
+    background: #FBF7EE;
+  }
+  .ev--talavera.layout-split .ev-hero__media {
+    position: relative;
+    inset: auto;
+    order: 1;
+    width: 100%;
+    height: 50svh;
+    min-height: 20rem;
+    max-height: 34rem;
+  }
+  .ev--talavera.layout-split .ev-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-position: 50% 38%;
+  }
+  .ev--talavera.layout-split .ev-hero__content {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: calc(100% - 1.7rem);
+    max-width: 34rem;
+    margin: -2.4rem auto 0;
+    padding: 2.1rem 1.25rem 1.9rem;
+    border-radius: 50% 50% 1rem 1rem / 8% 8% 1rem 1rem;
+  }
+  .ev--talavera.layout-split .ev-hero__content::before {
+    inset: 7px;
+    border-radius: 50% 50% .7rem .7rem / 8% 8% .7rem .7rem;
+  }
+  .ev--talavera .ev-hero__scroll { display: none; }
+  .ev--talavera .ev-hero__title { font-size: clamp(2.6rem, 10.5vw, 4rem); }
+}
+
+@media (max-width: 640px) {
+  .ev--talavera .ev-scratch__inner { width: calc(100% - 1.7rem); }
+  .ev--talavera .ev-scratch__coins {
+    gap: .55rem;
+    width: 100%;
+    padding-inline: .55rem;
+  }
+  .ev--talavera .ev-scratch__coin .ev-scratch__reveal { padding: .8rem; }
+  .ev--talavera .ev-scratch__coin .ev-scratch__reveal span { font-size: clamp(1.5rem, 7.5vw, 2.2rem); }
+  .ev--talavera .ev-scratch__coin--word .ev-scratch__reveal span { font-size: clamp(.9rem, 3.6vw, 1.1rem); }
+  .ev--talavera .ev-scratch__coin .ev-scratch__reveal small { font-size: .42rem; letter-spacing: .1em; }
+  .ev--talavera .ev-details__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .ev--talavera .ev-detail--photo { height: 21rem; }
+  .ev--talavera .ev-detail__body {
+    left: .45rem;
+    right: .45rem;
+    bottom: .55rem;
+    margin: 0;
+    padding: .65rem .65rem .7rem;
+  }
+  .ev--talavera .ev-detail__value { font-size: 1rem; }
+  .ev--talavera .ev-detail__note { font-size: .66rem; }
+  .ev--talavera .ev-detail__cut { width: 3.2rem; right: -.4rem; top: -.45rem; }
+  .ev--talavera .ev-detail__icon { width: 1.7rem; height: 1.7rem; padding: .38rem; }
+  .ev--talavera .ev-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ev--talavera .ev-gallery__head { width: 100%; }
+}
+
+@media (max-width: 380px) {
+  .ev--talavera.layout-split .ev-hero__media { height: 46svh; min-height: 17rem; }
+  .ev--talavera.layout-split .ev-hero__content { margin-top: -1.9rem; padding: 1.8rem 1rem 1.7rem; }
+  .ev--talavera.layout-split .ev-hero__title { font-size: 2.45rem; }
+  .ev--talavera .ev-scratch__coins { gap: .4rem; }
+  .ev--talavera .ev-scratch__coin .ev-scratch__reveal span { font-size: 1.35rem; }
+  .ev--talavera .ev-scratch__coin--word .ev-scratch__reveal span { font-size: .85rem; }
+  .ev--talavera .ev-scratch__coin .ev-scratch__reveal small { font-size: .38rem; }
+  .ev--talavera .ev-details__grid { gap: .6rem; }
+  .ev--talavera .ev-detail--photo { height: 20rem; }
+  .ev--talavera .ev-detail__body { margin-inline: 0; padding: .55rem .55rem .6rem; }
+  .ev--talavera .ev-detail__value { font-size: .94rem; }
+  .ev--talavera .ev-detail__note { font-size: .62rem; }
+  .ev--talavera .ev-detail__cut { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tal-divider { scroll-behavior: auto; }
+  .ev--talavera .ev-detail--photo { transition: none; }
 }

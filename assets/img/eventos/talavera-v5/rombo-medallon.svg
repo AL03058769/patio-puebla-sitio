@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" fill="none">
+  <defs>
+    <g id="tal-med-rosette">
+      <g fill="#1F4E8C">
+        <ellipse cx="0" cy="-11" rx="5" ry="12"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-11" rx="5" ry="12" transform="rotate(315)"/>
+      </g>
+      <circle r="6" fill="#D9A441"/>
+      <circle r="2.2" fill="#FBF7EE"/>
+    </g>
+    <g id="tal-med-leaf">
+      <path d="M0 0C12-20 39-28 63-12 43 11 18 18 0 0Z" fill="#1F4E8C"/>
+      <path d="M6-2C21-13 39-18 55-12" stroke="#FBF7EE" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
+    </g>
+  </defs>
+  <path d="M0 110H190M410 110H600" stroke="#1F4E8C" stroke-width="2" opacity=".55"/>
+  <path d="M300 18L392 110 300 202 208 110Z" fill="#FBF7EE" stroke="#1F4E8C" stroke-width="4"/>
+  <path d="M300 38L372 110 300 182 228 110Z" stroke="#1F4E8C" stroke-width="1.4" opacity=".55"/>
+  <use href="#tal-med-rosette" transform="translate(300 110)"/>
+  <use href="#tal-med-leaf" transform="translate(180 86) rotate(-52) scale(.75)"/>
+  <use href="#tal-med-leaf" transform="translate(420 86) rotate(-128) scale(.75)"/>
+  <use href="#tal-med-leaf" transform="translate(180 134) rotate(52) scale(.75)"/>
+  <use href="#tal-med-leaf" transform="translate(420 134) rotate(128) scale(.75)"/>
+  <path d="M84 110l8-8 8 8-8 8zM102 110l8-8 8 8-8 8z" fill="#1F4E8C" opacity=".7"/>
+  <path d="M482 110l8-8 8 8-8 8zM500 110l8-8 8 8-8 8z" fill="#1F4E8C" opacity=".7"/>
+  <circle cx="60" cy="110" r="4" fill="#D9A441"/>
+  <circle cx="540" cy="110" r="4" fill="#D9A441"/>
+</svg>

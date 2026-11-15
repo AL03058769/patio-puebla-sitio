@@ -117,21 +117,32 @@
   }
   renderWishes();
 
-  /* ---------- rascar la fecha ---------- */
-  var scratch = $("[data-scratch]");
-  var canvas = $("[data-scratch-canvas]");
-  var revealBtn = $("[data-scratch-reveal]");
-  if (scratch && canvas && canvas.getContext) {
+  /* ---------- rascar la fecha: monedas independientes ---------- */
+  var scratchNodes = $$("[data-scratch]");
+  var revealAllBtn = $("[data-scratch-reveal-all]");
+  var scratchStatus = $("[data-scratch-status]");
+  var controllers = [];
+
+  function initScratch(scratch) {
+    var canvas = $("[data-scratch-canvas]", scratch);
+    if (!canvas || !canvas.getContext) return null;
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var drawing = false;
     var last = null;
     var revealed = false;
+    var locked = false;
     var checkTimer = 0;
+    var surface = scratch.getAttribute("data-scratch-surface") || "RASCA AQUÍ";
+    var isCoin = scratch.classList.contains("ev-scratch__coin");
 
     function paint() {
+      if (revealed) return;
       var rect = scratch.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
+      if (!rect.width || !rect.height) {
+        window.requestAnimationFrame(paint);
+        return;
+      }
       canvas.width = Math.round(rect.width * dpr);
       canvas.height = Math.round(rect.height * dpr);
       canvas.style.width = rect.width + "px";
@@ -139,6 +150,10 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       var w = rect.width;
       var h = rect.height;
+      var size = Math.min(w, h);
+      var cx = w / 2;
+      var cy = h / 2;
+
       var grad = ctx.createLinearGradient(0, 0, w, h);
       grad.addColorStop(0, "#245A9A");
       grad.addColorStop(.48, "#1B4A86");
@@ -149,32 +164,58 @@
       // Trama de azulejo tenue.
       ctx.strokeStyle = "rgba(246,239,223,.10)";
       ctx.lineWidth = 1;
-      for (var x = 0; x < w; x += 34) {
+      for (var x = 0; x < w; x += 26) {
         ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
       }
-      for (var y = 0; y < h; y += 34) {
+      for (var y = 0; y < h; y += 26) {
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
       }
-      ctx.strokeStyle = "rgba(246,239,223,.55)";
-      ctx.lineWidth = 1.2;
-      ctx.strokeRect(10.5, 10.5, w - 21, h - 21);
+
+      if (isCoin) {
+        var radius = size * .42;
+        ctx.strokeStyle = "rgba(246,239,223,.62)";
+        ctx.lineWidth = 1.3;
+        ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI * 2); ctx.stroke();
+        ctx.strokeStyle = "rgba(217,164,65,.7)";
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(cx, cy, radius * .86, 0, Math.PI * 2); ctx.stroke();
+        // Roseta de ocho pétalos.
+        ctx.fillStyle = "rgba(246,239,223,.14)";
+        for (var p = 0; p < 8; p += 1) {
+          ctx.save();
+          ctx.translate(cx, cy);
+          ctx.rotate((Math.PI * 2 * p) / 8);
+          ctx.beginPath();
+          ctx.ellipse(0, -radius * .54, radius * .11, radius * .27, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      } else {
+        ctx.strokeStyle = "rgba(246,239,223,.55)";
+        ctx.lineWidth = 1.2;
+        ctx.strokeRect(10.5, 10.5, w - 21, h - 21);
+      }
 
       ctx.fillStyle = "#F6EFDF";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.font = "italic 400 " + Math.round(Math.min(w, h) * 0.19) + "px 'Instrument Serif', Georgia, serif";
-      ctx.fillText("rasca aquí", w / 2, h / 2 - 6);
-      ctx.font = "600 9px Manrope, system-ui, sans-serif";
+      var labelSize = isCoin
+        ? (surface.length > 4 ? size * .17 : size * .25)
+        : Math.round(size * .19);
+      ctx.font = "italic 400 " + Math.round(labelSize) + "px 'Instrument Serif', Georgia, serif";
+      ctx.fillText(surface, cx, isCoin ? cy - size * .03 : cy - 6);
+      ctx.font = "600 " + Math.max(6, Math.round(size * .038)) + "px Manrope, system-ui, sans-serif";
       ctx.globalAlpha = .72;
-      ctx.fillText("UNA PEQUEÑA SORPRESA", w / 2, h / 2 + 26);
+      ctx.fillText(isCoin ? "RASCA" : "UNA PEQUEÑA SORPRESA", cx, cy + (isCoin ? size * .23 : 26));
       ctx.globalAlpha = 1;
       scratch.classList.add("is-ready");
     }
 
     function erase(x, y) {
+      var radius = Math.max(18, Math.min(30, canvas.getBoundingClientRect().width * .17));
       ctx.globalCompositeOperation = "destination-out";
       ctx.beginPath();
-      ctx.arc(x, y, 26, 0, Math.PI * 2);
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
       ctx.fill();
       ctx.globalCompositeOperation = "source-over";
     }
@@ -202,9 +243,18 @@
       if (revealed) return;
       revealed = true;
       drawing = false;
+      locked = true;
       scratch.classList.add("is-revealed");
       canvas.style.pointerEvents = "none";
-      if (revealBtn) revealBtn.hidden = true;
+      updateScratchStatus();
+      updateScratchStage();
+    }
+
+    function setLocked(value) {
+      locked = value;
+      canvas.style.pointerEvents = value || revealed ? "none" : "auto";
+      scratch.classList.toggle("is-locked", value && !revealed);
+      scratch.classList.toggle("is-next", !value && !revealed);
     }
 
     function check() {
@@ -212,14 +262,14 @@
     }
 
     canvas.addEventListener("pointerdown", function (event) {
-      if (revealed) return;
+      if (revealed || locked) return;
       drawing = true;
       last = position(event);
       erase(last.x, last.y);
       canvas.setPointerCapture(event.pointerId);
     });
     canvas.addEventListener("pointermove", function (event) {
-      if (!drawing || revealed) return;
+      if (!drawing || revealed || locked) return;
       var point = position(event);
       if (last) {
         var dx = point.x - last.x;
@@ -235,7 +285,6 @@
     });
     canvas.addEventListener("pointerup", function () { drawing = false; last = null; check(); });
     canvas.addEventListener("pointercancel", function () { drawing = false; last = null; });
-    if (revealBtn) revealBtn.addEventListener("click", reveal);
 
     paint();
     var resizeTimer = 0;
@@ -244,8 +293,57 @@
       window.clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(paint, 180);
     });
-    if (reduceMotion) {
-      // Aun sin animación, rascar es una interacción directa: se conserva.
+
+    return {
+      node: scratch,
+      reveal: reveal,
+      setLocked: setLocked,
+      isRevealed: function () { return revealed; }
+    };
+  }
+
+  function updateScratchStage() {
+    var active = false;
+    controllers.forEach(function (controller) {
+      if (controller.isRevealed()) {
+        controller.node.classList.remove("is-next", "is-locked");
+        return;
+      }
+      controller.setLocked(active);
+      controller.node.classList.toggle("is-next", !active);
+      controller.node.classList.toggle("is-locked", active);
+      active = true;
+    });
+  }
+
+  function updateScratchStatus() {
+    if (!scratchStatus) return;
+    var total = controllers.length;
+    var done = controllers.filter(function (c) { return c.isRevealed(); }).length;
+    if (done === total && total > 0) {
+      scratchStatus.textContent = "Fecha revelada.";
+      if (revealAllBtn) revealAllBtn.hidden = true;
+      return;
     }
+    var next = ["día", "mes", "año"][done] || "";
+    scratchStatus.textContent = done + " de " + total + " reveladas · " + (done ? "Ahora el " + next : "Empieza por el día");
+  }
+
+  scratchNodes.forEach(function (node) {
+    var controller = initScratch(node);
+    if (controller) controllers.push(controller);
+  });
+
+  if (revealAllBtn) {
+    revealAllBtn.addEventListener("click", function () {
+      controllers.forEach(function (controller) { controller.reveal(); });
+    });
+    if (controllers.length) revealAllBtn.hidden = false;
+  }
+  updateScratchStage();
+  updateScratchStatus();
+
+  if (reduceMotion) {
+    // Aun sin animación, rascar es una interacción directa: se conserva.
   }
 })();

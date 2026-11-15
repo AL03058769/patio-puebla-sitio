@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 252" fill="none">
+  <defs>
+    <g id="tal-arch-leaf">
+      <path d="M0 0C13-22 43-32 70-13 48 12 20 20 0 0Z" fill="#1F4E8C"/>
+      <path d="M7-2C24-14 44-20 61-13" stroke="#FBF7EE" stroke-width="2" stroke-linecap="round" opacity=".62"/>
+    </g>
+    <g id="tal-arch-rosette">
+      <g fill="#1F4E8C">
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-9" rx="4.5" ry="10" transform="rotate(315)"/>
+      </g>
+      <circle r="5.5" fill="#D9A441"/>
+      <circle r="2" fill="#FBF7EE"/>
+    </g>
+  </defs>
+  <path d="M0 238H472M968 238H1440" stroke="#1F4E8C" stroke-width="2" opacity=".55"/>
+  <path d="M720 8V34" stroke="#1F4E8C" stroke-width="2" opacity=".45"/>
+  <use href="#tal-arch-rosette" transform="translate(720 54)"/>
+  <path d="M520 238V120A200 200 0 0 1 920 120V238" stroke="#1F4E8C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M540 238V126A180 180 0 0 1 900 126V238" stroke="#1F4E8C" stroke-width="1.6" opacity=".55"/>
+  <path d="M560 238V132A160 160 0 0 1 880 132V238" stroke="#D9A441" stroke-width="1.4" opacity=".55"/>
+  <use href="#tal-arch-leaf" transform="translate(508 212) rotate(-62) scale(.9)"/>
+  <use href="#tal-arch-leaf" transform="translate(478 232) rotate(-18) scale(.68)"/>
+  <use href="#tal-arch-leaf" transform="translate(932 212) rotate(-118) scale(.9)"/>
+  <use href="#tal-arch-leaf" transform="translate(962 232) rotate(-162) scale(.68)"/>
+  <path d="M516 238C540 214 562 204 588 208" stroke="#1F4E8C" stroke-width="2" opacity=".6"/>
+  <path d="M924 238C900 214 878 204 852 208" stroke="#1F4E8C" stroke-width="2" opacity=".6"/>
+  <path d="M300 238l9-9 9 9-9 9zM1122 238l9-9 9 9-9 9z" fill="#1F4E8C" opacity=".7"/>
+  <circle cx="360" cy="238" r="4" fill="#D9A441"/>
+  <circle cx="1080" cy="238" r="4" fill="#D9A441"/>
+</svg>

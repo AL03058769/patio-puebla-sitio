@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 132" fill="none">
+  <defs>
+    <g id="tal-rosette">
+      <g fill="#1F4E8C">
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-11" rx="5.5" ry="12" transform="rotate(315)"/>
+      </g>
+      <circle r="6.5" fill="#D9A441"/>
+      <circle r="2.4" fill="#FBF7EE"/>
+    </g>
+    <g id="tal-bud">
+      <path d="M0 0C-9-13-3-27 8-31 18-23 20-9 9 0Z" fill="#1F4E8C"/>
+      <path d="M8-29C4-19 5-9 8-2" stroke="#FBF7EE" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
+    </g>
+  </defs>
+  <path d="M0 38Q60 112 120 38Q180 112 240 38Q300 112 360 38Q420 112 480 38Q540 112 600 38Q660 112 720 38Q780 112 840 38Q900 112 960 38Q1020 112 1080 38Q1140 112 1200 38Q1260 112 1320 38Q1380 112 1440 38V132H0Z" fill="#FBF7EE" stroke="#1F4E8C" stroke-width="3"/>
+  <path d="M0 48Q60 122 120 48Q180 122 240 48Q300 122 360 48Q420 122 480 48Q540 122 600 48Q660 122 720 48Q780 122 840 48Q900 122 960 48Q1020 122 1080 48Q1140 122 1200 48Q1260 122 1320 48Q1380 122 1440 48" stroke="#D9A441" stroke-width="1.5" opacity=".6"/>
+  <use href="#tal-rosette" transform="translate(60 91)"/>
+  <use href="#tal-rosette" transform="translate(180 91) scale(.86)"/>
+  <use href="#tal-rosette" transform="translate(300 91)"/>
+  <use href="#tal-rosette" transform="translate(420 91) scale(.86)"/>
+  <use href="#tal-rosette" transform="translate(540 91)"/>
+  <use href="#tal-rosette" transform="translate(660 91) scale(.86)"/>
+  <use href="#tal-rosette" transform="translate(780 91)"/>
+  <use href="#tal-rosette" transform="translate(900 91) scale(.86)"/>
+  <use href="#tal-rosette" transform="translate(1020 91)"/>
+  <use href="#tal-rosette" transform="translate(1140 91) scale(.86)"/>
+  <use href="#tal-rosette" transform="translate(1260 91)"/>
+  <use href="#tal-rosette" transform="translate(1380 91) scale(.86)"/>
+  <use href="#tal-bud" transform="translate(120 24) rotate(18) scale(.8)"/>
+  <use href="#tal-bud" transform="translate(360 24) rotate(-16) scale(.7)"/>
+  <use href="#tal-bud" transform="translate(720 24) rotate(16) scale(.8)"/>
+  <use href="#tal-bud" transform="translate(1080 24) rotate(-14) scale(.7)"/>
+  <use href="#tal-bud" transform="translate(1320 24) rotate(14) scale(.8)"/>
+  <circle cx="30" cy="63" r="3.5" fill="#D9A441"/>
+  <circle cx="240" cy="60" r="3" fill="#D9A441"/>
+  <circle cx="480" cy="60" r="3" fill="#D9A441"/>
+  <circle cx="960" cy="60" r="3" fill="#D9A441"/>
+  <circle cx="1200" cy="60" r="3.5" fill="#D9A441"/>
+  <circle cx="1410" cy="64" r="3" fill="#D9A441"/>
+</svg>
